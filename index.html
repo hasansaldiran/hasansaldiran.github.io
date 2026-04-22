@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasan Saldıran — BT Sistemleri & Güvenlik Uzmanı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e0e;
+    --paper: #f5f3ee;
+    --accent: #1F4E79;
+    --accent2: #2E75B6;
+    --muted: #6b6760;
+    --border: #d8d4cc;
+    --card: #eeebe4;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 4rem 3rem 4rem 4rem;
+    position: relative;
+  }
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.1s forwards;
+  }
+  .hero-name {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s forwards;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-desc {
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.35s forwards;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.5s forwards;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn-filled { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-filled:hover { background: var(--accent2); border-color: var(--accent2); color: #fff; }
+
+  .hero-right {
+    background: var(--accent);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(255,255,255,0.03) 20px,
+      rgba(255,255,255,0.03) 21px
+    );
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.15);
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s 0.6s forwards;
+  }
+  .stat {
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.05);
+  }
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .hero-big-text {
+    position: absolute;
+    top: 3rem; left: 3rem; right: 3rem;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(255,255,255,0.06);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 4rem; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 3rem;
+  }
+  .section-divider {
+    width: 40px; height: 3px;
+    background: var(--accent);
+    margin: 1.5rem 0 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--ink); color: var(--paper); }
+  #about .section-label { color: var(--accent2); }
+  #about .section-title { color: var(--paper); }
+  #about .section-divider { background: var(--accent2); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(245,243,238,0.75);
+    margin-bottom: 1.25rem;
+  }
+  .about-text strong { color: var(--paper); font-weight: 700; }
+  .skills-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .skill-tag {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(245,243,238,0.15);
+    color: rgba(245,243,238,0.6);
+    transition: all 0.2s;
+  }
+  .skill-tag:hover {
+    border-color: var(--accent2);
+    color: var(--paper);
+    background: rgba(46,117,182,0.1);
+  }
+  .skills-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,243,238,0.4);
+    margin-bottom: 1rem;
+    grid-column: 1/-1;
+    margin-top: 1.5rem;
+  }
+  .skills-title:first-child { margin-top: 0; }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--paper); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 0;
+    transition: background 0.2s;
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--border); }
+  .exp-meta {
+    padding-right: 2rem;
+    padding-top: 0.15rem;
+  }
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .exp-company {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .exp-content {}
+  .exp-role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .exp-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .exp-tag {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.6rem;
+    background: var(--card);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--card); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+  }
+  .project-card {
+    background: var(--paper);
+    padding: 2rem;
+    display: flex; flex-direction: column;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .project-card:hover { background: var(--card); }
+  .project-card:hover::after { transform: scaleX(1); }
+  .project-lang {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .lang-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent2);
+    display: inline-block;
+  }
+  .lang-dot.python { background: #3572A5; }
+  .lang-dot.csharp { background: #178600; }
+  .lang-dot.html { background: #e34c26; }
+  .lang-dot.js { background: #f1e05a; }
+  .lang-dot.css { background: #563d7c; }
+  .project-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+  .project-desc {
+    font-size: 0.83rem;
+    line-height: 1.6;
+    color: var(--muted);
+    flex: 1;
+    margin-bottom: 1.25rem;
+  }
+  .project-link {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+  .project-card:hover .project-link { gap: 0.7rem; }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--accent);
+    color: #fff;
+    text-align: center;
+    padding: 7rem 4rem;
+  }
+  #contact .section-label { color: rgba(255,255,255,0.5); }
+  #contact .section-title { color: #fff; margin-bottom: 1rem; }
+  .contact-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 3rem;
+    max-width: 480px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.7;
+  }
+  .contact-links {
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+  }
+  .contact-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    color: #fff;
+    background: transparent;
+    transition: all 0.2s;
+  }
+  .contact-btn:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.8);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-text {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: rgba(245,243,238,0.3);
+  }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(245,243,238,0.35);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(245,243,238,0.8); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 280px; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-meta { padding-right: 0; margin-bottom: 0.5rem; }
+    section { padding: 4rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">HS — 2024</a>
+  <ul class="nav-links">
+    <li><a href="#about">Hakkımda</a></li>
+    <li><a href="#experience">Deneyim</a></li>
+    <li><a href="#projects">Projeler</a></li>
+    <li><a href="#contact">İletişim</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-tag">// BT Sistemleri & Güvenlik Uzmanı</p>
+    <h1 class="hero-name">Hasan<br><span>Saldıran</span></h1>
+    <p class="hero-desc">
+      Bilgisayar mühendisi. Kurumsal BT altyapısını güvende tutar, risk motorları inşa eder, sistemleri otomatize eder. Python, C# ve güvenlik çerçeveleri üzerinde çalışır.
+    </p>
+    <div class="hero-cta">
+      <a href="https://github.com/hasansaldiran" target="_blank" class="btn btn-filled">GitHub →</a>
+      <a href="https://www.linkedin.com/in/hasan-saldiran-0a8b29168/" target="_blank" class="btn">LinkedIn</a>
+      <a href="#contact" class="btn">İletişim</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-big-text">BT<br>SEC</div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">2+</span>
+        <span class="stat-label">Yıl Deneyim</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2K+</span>
+        <span class="stat-label">Kullanıcı Yönetimi</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2250+</span>
+        <span class="stat-label">BT Varlığı</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6+</span>
+        <span class="stat-label">Aktif Proje</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">// 01 — Hakkımda</div>
+  <div class="section-divider"></div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        <strong>Bilgisayar Mühendisliği</strong> altyapısına sahip, sistem mühendisliği kariyeri hedefleyen BT ve güvenlik uzmanıyım. Türkiye'nin önde gelen sağlık kuruluşlarından birinde, 2.000+ kullanıcı ve 2.250+ BT varlığını kapsayan kritik altyapının güvenliğini ve sürekliliğini sağlıyorum.
+      </p>
+      <p>
+        Teknik desteğin ötesinde, <strong>Python ile MITRE ATT&CK ve CIS Controls v8</strong> çerçevelerine dayalı kurumsal risk yönetim sistemleri ve otomasyon araçları geliştiriyorum. Kodu bir sorun çözme aracı olarak görüyor, uçtan uca sahiplenerek ölçülebilir çıktılara odaklanıyorum.
+      </p>
+      <p>
+        Uluslararası askeri ortamda <strong>500+ çok uluslu katılımcıya</strong> gerçek zamanlı teknik destek sağladım. NLP, görüntü işleme ve web geliştirme projelerinde pratik deneyim kazandım.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="skills-grid">
+        <div class="skills-title">Güvenlik & Altyapı</div>
+        <div class="skill-tag">MITRE ATT&CK</div>
+        <div class="skill-tag">CIS Controls v8</div>
+        <div class="skill-tag">Risk Yönetimi</div>
+        <div class="skill-tag">Active Directory</div>
+        <div class="skill-tag">Ağ Güvenliği</div>
+        <div class="skill-tag">HBYS / Pusula</div>
+
+        <div class="skills-title">Geliştirme</div>
+        <div class="skill-tag">Python</div>
+        <div class="skill-tag">C# / ASP.NET</div>
+        <div class="skill-tag">SQL / MSSQL</div>
+        <div class="skill-tag">Streamlit</div>
+        <div class="skill-tag">Flask</div>
+        <div class="skill-tag">Power BI</div>
+
+        <div class="skills-title">Yapay Zeka & Veri</div>
+        <div class="skill-tag">OpenCV</div>
+        <div class="skill-tag">NLP / NLTK</div>
+        <div class="skill-tag">Makine Öğrenmesi</div>
+        <div class="skill-tag">Veri Madenciliği</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">// 02 — Deneyim</div>
+  <div class="section-divider"></div>
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">Mar 2025 — Halen</div>
+        <div class="exp-company">Dünyagöz Hastaneler Grubu</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Sistem Geliştirme & Kullanıcı Destek Uzmanı</div>
+        <p class="exp-desc">2.000+ hastane personeli ve 2.250+ BT varlığını kapsayan kurumsal altyapıda L1/L2 teknik destek ve sistem yönetimi. Pusula HBYS yönetimi, Python ile MITRE ATT&CK + CIS Controls tabanlı risk motoru geliştirme, kimlik kartı otomasyon sistemi ve Power BI yönetici panosu.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Python</span>
+          <span class="exp-tag">Streamlit</span>
+          <span class="exp-tag">MITRE ATT&CK</span>
+          <span class="exp-tag">CIS Controls v8</span>
+          <span class="exp-tag">Power BI</span>
+          <span class="exp-tag">Lansweeper</span>
+          <span class="exp-tag">HBYS</span>
+          <span class="exp-tag">OpenCV</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">Mar 2024 — Şub 2025</div>
+        <div class="exp-company">ÇMHM</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Bilgi Sistemleri Güvenlik Uzmanı</div>
+        <p class="exp-desc">NATO tatbikatlarına ev sahipliği yapan TSK bünyesindeki uluslararası askeri merkezde 100+ sabit personel ve yılda 10–15 etkinlikte 20–500+ çok uluslu katılımcıya teknik destek. Ağ altyapısı kurulumu, cihaz yönetimi, erişim kontrolü.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Ağ Yönetimi</span>
+          <span class="exp-tag">Erişim Kontrolü</span>
+          <span class="exp-tag">Teknik Destek</span>
+          <span class="exp-tag">Çok Dilli</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">Tem 2022 — Eyl 2022</div>
+        <div class="exp-company">İBB — Akıllı Şehir</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Bilgi İşlem Stajyeri</div>
+        <p class="exp-desc">Flask + NLP ile İBB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taşımada araç/yolcu tespiti uygulaması geliştirdim.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Flask</span>
+          <span class="exp-tag">NLP</span>
+          <span class="exp-tag">OpenCV</span>
+          <span class="exp-tag">Python</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">// 03 — Projeler</div>
+  <div class="section-divider"></div>
+  <div class="projects-grid">
+
+    <a href="https://github.com/hasansaldiran/it-risk-engine" target="_blank" class="project-card reveal">
+      <div class="project-lang"><span class="lang-dot python"></span>Python</div>
+      <div class="project-name">BT Risk Yönetim Platformu</div>
+      <p class="project-desc">Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8 tabanlı kurumsal risk motoru. Z-Score anomali tespiti, Streamlit dashboard, Power BI panosu ve otomatik HTML raporlama.</p>
+      <span class="project-link">GitHub'da Gör →</span>
+    </a>
+
+    <a href="https://github.com/hasansaldiran/chatbot-nlp-flask" target="_blank" class="project-card reveal">
+      <div class="project-lang"><span class="lang-dot css"></span>Flask / NLP</div>
+      <div class="project-name">İBB Beyaz Masa Chatbot</div>
+      <p class="project-desc">NLTK + Keras + Flask tabanlı Türkçe intent chatbot. Vatandaş taleplerine otomatik yanıt üretmek amacıyla İBB Akıllı Şehir Müdürlüğü stajında geliştirildi.</p>
+      <span class="project-link">GitHub'da Gör →</span>
+    </a>
+
+    <a href="https://github.com/hasansaldiran/baskici" target="_blank" class="project-card reveal">
+      <div class="project-lang"><span class="lang-dot python"></span>Python</div>
+      <div class="project-name">Kimlik Kartı Otomasyon Sistemi</div>
+      <p class="project-desc">Biyometrik fotoğraf kırpma, kart ön/arka yüz ayırma ve şube bazlı sınıflandırma. python-docx + PyMuPDF + OpenCV ile uçtan uca basım hazırlık otomasyonu.</p>
+      <span class="project-link">GitHub'da Gör →</span>
+    </a>
+
+    <a href="https://github.com/hasansaldiran/kutuphane-otomasyonu" target="_blank" class="project-card reveal">
+      <div class="project-lang"><span class="lang-dot csharp"></span>C#</div>
+      <div class="project-name">Kütüphane Otomasyon Sistemi</div>
+      <p class="project-desc">C# WinForms + SQL Server kütüphane otomasyonu. Kitap, üye ve ödünç yönetimi modülleri, stored procedure, trigger ve view içeriyor.</p>
+      <span class="project-link">GitHub'da Gör →</span>
+    </a>
+
+    <a href="https://github.com/hasansaldiran/stok-takip" target="_blank" class="project-card reveal">
+      <div class="project-lang"><span class="lang-dot csharp"></span>C# / MSSQL</div>
+      <div class="project-name">Stok Takip Otomasyon Sistemi</div>
+      <p class="project-desc">İETT stajı kapsamında C# ve MSSQL ile geliştirilen kurumsal envanter ve stok yönetimi otomasyon uygulaması.</p>
+      <span class="project-link">GitHub'da Gör →</span>
+    </a>
+
+    <a href="https://github.com/hasansaldiran/uluastro-website" target="_blank" class="project-card reveal">
+      <div class="project-lang"><span class="lang-dot html"></span>HTML / CSS</div>
+      <div class="project-name">Astronomi Topluluğu Sitesi</div>
+      <p class="project-desc">Uludağ Üniversitesi Astronomi Topluluğu için gönüllü olarak geliştirilen statik web sitesi. uluastro.space arşivi.</p>
+      <span class="project-link">GitHub'da Gör →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">// 04 — İletişim</div>
+  <h2 class="section-title reveal">Birlikte çalışalım.</h2>
+  <p class="contact-sub reveal">Yeni fırsatlara, projelere ve iş birliklerine açığım. Mesaj atmaktan çekinme.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:hasansaldirann@gmail.com" class="contact-btn">✉ E-posta</a>
+    <a href="https://www.linkedin.com/in/hasan-saldiran-0a8b29168/" target="_blank" class="contact-btn">in LinkedIn</a>
+    <a href="https://github.com/hasansaldiran" target="_blank" class="contact-btn">⌥ GitHub</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-text">© 2024 Hasan Saldıran — hasansaldiran.github.io</span>
+  <div class="footer-links">
+    <a href="https://github.com/hasansaldiran" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/hasan-saldiran-0a8b29168/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>
