@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hasan SaldÄ±ran â BT Sistemleri & GÃ¼venlik UzmanÄ±</title>
+<title>Hasan Saldıran — BT Sistemleri & Güvenlik Uzmanı</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -39,7 +39,7 @@ body {
   cursor: none;
 }
 
-/* ââ CURSOR ââ */
+/* ── CURSOR ── */
 #cursor {
   width: 10px; height: 10px;
   background: var(--accent);
@@ -63,7 +63,7 @@ body {
 }
 body:hover #cursor { opacity: 1; }
 
-/* ââ GRID BACKGROUND ââ */
+/* ── GRID BACKGROUND ── */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: 0;
@@ -74,7 +74,7 @@ body::before {
   pointer-events: none;
 }
 
-/* ââ NAV ââ */
+/* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -123,10 +123,10 @@ nav {
 .nav-links a:hover { color: var(--accent); }
 .nav-links a:hover::after { transform: scaleX(1); }
 
-/* ââ SECTIONS ââ */
+/* ── SECTIONS ── */
 section { position: relative; z-index: 1; }
 
-/* ââ HERO ââ */
+/* ── HERO ── */
 #hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
@@ -288,7 +288,7 @@ section { position: relative; z-index: 1; }
   background: rgba(14,165,233,0.08);
 }
 
-/* ââ ABOUT ââ */
+/* ── ABOUT ── */
 #about {
   padding: 6rem 3rem;
   max-width: 1200px; margin: 0 auto;
@@ -366,7 +366,7 @@ section { position: relative; z-index: 1; }
 .t-str { color: var(--green); }
 .t-comment { color: var(--muted); opacity: 0.5; }
 
-/* ââ EXPERIENCE ââ */
+/* ── EXPERIENCE ── */
 #experience {
   padding: 6rem 3rem;
   background: var(--bg2);
@@ -442,7 +442,7 @@ section { position: relative; z-index: 1; }
   background: rgba(14,165,233,0.05);
 }
 
-/* ââ PROJECTS ââ */
+/* ── PROJECTS ── */
 #projects {
   padding: 6rem 3rem;
   max-width: 1200px; margin: 0 auto;
@@ -553,7 +553,7 @@ section { position: relative; z-index: 1; }
   color: var(--muted);
 }
 
-/* ââ SKILLS ââ */
+/* ── SKILLS ── */
 #skills {
   padding: 6rem 3rem;
   background: var(--bg2);
@@ -601,7 +601,7 @@ section { position: relative; z-index: 1; }
   background: rgba(14,165,233,0.05);
 }
 
-/* ââ CONTACT ââ */
+/* ── CONTACT ── */
 #contact {
   padding: 7rem 3rem;
   max-width: 800px; margin: 0 auto;
@@ -653,7 +653,7 @@ section { position: relative; z-index: 1; }
 }
 .contact-link .cl-icon { font-size: 1rem; }
 
-/* ââ FOOTER ââ */
+/* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border2);
   padding: 1.5rem 3rem;
@@ -677,7 +677,7 @@ footer {
 }
 .footer-links a:hover { color: var(--accent); }
 
-/* ââ SCROLL PROGRESS ââ */
+/* ── SCROLL PROGRESS ── */
 #progress {
   position: fixed; top: 64px; left: 0; right: 0;
   height: 2px;
@@ -691,7 +691,7 @@ footer {
   transition: width 0.1s;
 }
 
-/* ââ ANIMATIONS ââ */
+/* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -707,7 +707,7 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ââ RESPONSIVE ââ */
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 0 1.5rem; }
   .nav-links { gap: 1rem; }
@@ -736,6 +736,67 @@ footer {
 .blog-read-more:hover { opacity: 0.75; }
 .blog-coming-soon { text-align: center; color: var(--text-muted, #8b949e); font-size: 0.88rem; margin-top: 2.5rem; font-style: italic; }
 
+
+/* === Blog Article Styles === */
+.blog-full-article {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.article-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.article-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+}
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.article-meta span::before {
+  content: '// ';
+  color: var(--accent);
+  opacity: 0.5;
+}
+.article-body h3 {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin: 2rem 0 0.75rem;
+  font-family: var(--font-mono);
+}
+.article-body p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.article-body ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.article-body ul li {
+  margin-bottom: 0.25rem;
+}
+.article-body .keywords {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.article-body .reference {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding-left: 1rem;
+  border-left: 2px solid var(--border);
+  margin-bottom: 0.4rem;
+}
+
 </style>
 </head>
 <body>
@@ -755,25 +816,25 @@ footer {
     <li><a href="#experience">experience</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#skills">skills</a></li>
-    <li><a href="#contact">contact</a></li>
     <li><a href="#blog">blog</a></li>
+    <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero" style="min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding-top:8rem; padding-bottom:4rem; max-width:1200px; margin:0 auto; padding-left:3rem; padding-right:3rem;">
-  <p class="hero-pre">BT Sistemleri & GÃ¼venlik UzmanÄ±</p>
+  <p class="hero-pre">BT Sistemleri & Güvenlik Uzmanı</p>
   <h1 class="hero-h1">
-    Hasan<br><span class="name-accent">SaldÄ±ran</span>
+    Hasan<br><span class="name-accent">Saldıran</span>
   </h1>
   <p class="hero-sub">
-    <strong>Bilgisayar MÃ¼hendisi.</strong> Kurumsal BT altyapÄ±sÄ±nÄ± gÃ¼vende tutar, risk motorlarÄ± ve otomasyon sistemleri inÅa eder. <span style="color:var(--accent)">Python</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&CK</span> Ã¼zerine Ã§alÄ±ÅÄ±r.
+    <strong>Bilgisayar Mühendisi.</strong> Kurumsal BT altyapısını güvende tutar, risk motorları ve otomasyon sistemleri inşa eder. <span style="color:var(--accent)">Python</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&CK</span> üzerine çalışır.
   </p>
   <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary">Projeleri GÃ¶r â</a>
+    <a href="#projects" class="btn btn-primary">Projeleri Gör →</a>
     <a href="https://github.com/hasansaldiran" target="_blank" class="btn">GitHub</a>
     <a href="https://www.linkedin.com/in/hasansaldiran/" target="_blank" class="btn">LinkedIn</a>
-    <a href="#contact" class="btn">Ä°letiÅim</a>
+    <a href="#contact" class="btn">İletişim</a>
   </div>
   <div class="hero-terminal">
     <span class="prompt">hasansaldiran@dev:~$</span>
@@ -784,15 +845,15 @@ footer {
   <div class="hero-stats">
     <div class="hstat">
       <span class="hstat-num" data-count="2">0</span>
-      <span class="hstat-label">YÄ±l Deneyim</span>
+      <span class="hstat-label">Yıl Deneyim</span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="2000">0</span>
-      <span class="hstat-label">KullanÄ±cÄ±+</span>
+      <span class="hstat-label">Kullanıcı+</span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="2250">0</span>
-      <span class="hstat-label">BT VarlÄ±ÄÄ±+</span>
+      <span class="hstat-label">BT Varlığı+</span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="14">0</span>
@@ -819,22 +880,22 @@ footer {
 <section id="about">
   <div class="section-header reveal">
     <span class="section-num">01.</span>
-    <h2 class="section-title">HakkÄ±mda</h2>
+    <h2 class="section-title">Hakkımda</h2>
     <div class="section-line"></div>
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>
-        <strong>Bilgisayar MÃ¼hendisliÄi</strong> altyapÄ±sÄ±na sahip, sistem mÃ¼hendisliÄi kariyeri hedefleyen BT ve gÃ¼venlik uzmanÄ±yÄ±m. Kariyerime kullanÄ±cÄ±yla birebir temasa geÃ§erek, kritik sistemlerin iÃ§inden baÅladÄ±m â bunu kasÄ±tlÄ± bir tercih olarak gÃ¶rÃ¼yorum.
+        <strong>Bilgisayar Mühendisliği</strong> altyapısına sahip, sistem mühendisliği kariyeri hedefleyen BT ve güvenlik uzmanıyım. Kariyerime kullanıcıyla birebir temasa geçerek, kritik sistemlerin içinden başladım — bunu kasıtlı bir tercih olarak görüyorum.
       </p>
       <p>
-        <span class="hl">DÃ¼nyagÃ¶z Hastaneler Grubu</span>'nda 2.000+ kullanÄ±cÄ± ve 2.250+ BT varlÄ±ÄÄ±nÄ± kapsayan kurumsal saÄlÄ±k altyapÄ±sÄ±nÄ± yÃ¶netiyorum. Sadece destek vermekle kalmayÄ±p, kendi inisiyatifimle <span class="hl">Python</span> ile MITRE ATT&CK ve CIS Controls v8 Ã§erÃ§evelerine dayalÄ± kurumsal risk yÃ¶netim sistemi geliÅtirdim.
+        <span class="hl">Dünyagöz Hastaneler Grubu</span>'nda 2.000+ kullanıcı ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısını yönetiyorum. Sadece destek vermekle kalmayıp, kendi inisiyatifimle <span class="hl">Python</span> ile MITRE ATT&CK ve CIS Controls v8 çerçevelerine dayalı kurumsal risk yönetim sistemi geliştirdim.
       </p>
       <p>
-        Ãncesinde <span class="hl">Ãok Uluslu MÃ¼Återek Harp Merkezi KomutanlÄ±ÄÄ±</span>'nda NATO tatbikatlarÄ±na ev sahipliÄi yapan uluslararasÄ± askeri ortamda 500'Ã¼ aÅan Ã§ok uluslu katÄ±lÄ±mcÄ±ya gerÃ§ek zamanlÄ± teknik destek saÄladÄ±m.
+        Öncesinde <span class="hl">Çok Uluslu Müşterek Harp Merkezi Komutanlığı</span>'nda NATO tatbikatlarına ev sahipliği yapan uluslararası askeri ortamda 500'ü aşan çok uluslu katılımcıya gerçek zamanlı teknik destek sağladım.
       </p>
       <p>
-        Kodu bir sorun Ã§Ã¶zme aracÄ± olarak gÃ¶rÃ¼yorum â uÃ§tan uca sahiplenerek, Ã¶lÃ§Ã¼lebilir Ã§Ä±ktÄ±lara odaklanarak.
+        Kodu bir sorun çözme aracı olarak görüyorum — uçtan uca sahiplenerek, ölçülebilir çıktılara odaklanarak.
       </p>
     </div>
     <div class="reveal">
@@ -847,13 +908,13 @@ footer {
         </div>
         <div class="terminal-body">
           <div class="t-line"><span class="t-cmd">{</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"isim"</span>: <span class="t-str">"Hasan SaldÄ±ran"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"konum"</span>: <span class="t-str">"Ä°stanbul, TR"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"rol"</span>: <span class="t-str">"BT & GÃ¼venlik UzmanÄ±"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"deneyim"</span>: <span class="t-val">"2+ yÄ±l"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"eÄitim"</span>: <span class="t-str">"Bilgisayar MÃ¼h."</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"sertifika"</span>: <span class="t-str">"Ä°HA1 Pilotu"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"hedef"</span>: <span class="t-str">"Sistem MÃ¼hendisliÄi"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"isim"</span>: <span class="t-str">"Hasan Saldıran"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"konum"</span>: <span class="t-str">"İstanbul, TR"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"rol"</span>: <span class="t-str">"BT & Güvenlik Uzmanı"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"deneyim"</span>: <span class="t-val">"2+ yıl"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"eğitim"</span>: <span class="t-str">"Bilgisayar Müh."</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"sertifika"</span>: <span class="t-str">"İHA1 Pilotu"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"hedef"</span>: <span class="t-str">"Sistem Mühendisliği"</span>,</span></div>
           <div class="t-line"><span class="t-out"><span class="t-key">"durum"</span>: <span class="t-val" style="color:var(--green)">available</span></span></div>
           <div class="t-line"><span class="t-cmd">}</span></div>
         </div>
@@ -874,13 +935,13 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">Mar 2025 â Halen</div>
-          <div class="exp-company">DÃ¼nyagÃ¶z Hastaneler Grubu</div>
-          <span class="exp-type">Tam ZamanlÄ±</span>
+          <div class="exp-period">Mar 2025 — Halen</div>
+          <div class="exp-company">Dünyagöz Hastaneler Grubu</div>
+          <span class="exp-type">Tam Zamanlı</span>
         </div>
         <div class="exp-content">
-          <div class="exp-role">Sistem GeliÅtirme & KullanÄ±cÄ± Destek UzmanÄ±</div>
-          <p class="exp-desc">2.000+ hastane personeli ve 2.250+ BT varlÄ±ÄÄ±nÄ± kapsayan kurumsal saÄlÄ±k altyapÄ±sÄ±nda L1/L2 teknik destek ve sistem yÃ¶netimi. Pusula HBYS yÃ¶netimi, Python ile MITRE ATT&CK + CIS Controls v8 tabanlÄ± risk motoru, kimlik kartÄ± otomasyon sistemi ve Power BI yÃ¶netici panosu geliÅtirme.</p>
+          <div class="exp-role">Sistem Geliştirme & Kullanıcı Destek Uzmanı</div>
+          <p class="exp-desc">2.000+ hastane personeli ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısında L1/L2 teknik destek ve sistem yönetimi. Pusula HBYS yönetimi, Python ile MITRE ATT&CK + CIS Controls v8 tabanlı risk motoru, kimlik kartı otomasyon sistemi ve Power BI yönetici panosu geliştirme.</p>
           <div class="exp-tags">
             <span class="exp-tag">Python</span><span class="exp-tag">Streamlit</span>
             <span class="exp-tag">MITRE ATT&CK</span><span class="exp-tag">CIS Controls v8</span>
@@ -893,29 +954,29 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">Mar 2024 â Åub 2025</div>
-          <div class="exp-company">ÃMHM</div>
-          <span class="exp-type">Tam ZamanlÄ±</span>
+          <div class="exp-period">Mar 2024 — Şub 2025</div>
+          <div class="exp-company">ÇMHM</div>
+          <span class="exp-type">Tam Zamanlı</span>
         </div>
         <div class="exp-content">
-          <div class="exp-role">Bilgi Sistemleri GÃ¼venlik UzmanÄ±</div>
-          <p class="exp-desc">NATO tatbikatlarÄ±na ev sahipliÄi yapan TSK bÃ¼nyesindeki uluslararasÄ± askeri merkezde 100+ sabit personel ve yÄ±lda 10â15 etkinlikte 20â500+ Ã§ok uluslu katÄ±lÄ±mcÄ±ya gerÃ§ek zamanlÄ± teknik destek. AÄ altyapÄ±sÄ± kurulumu, cihaz yÃ¶netimi, eriÅim kontrolÃ¼ ve bilgi gÃ¼venliÄi operasyonlarÄ±.</p>
+          <div class="exp-role">Bilgi Sistemleri Güvenlik Uzmanı</div>
+          <p class="exp-desc">NATO tatbikatlarına ev sahipliği yapan TSK bünyesindeki uluslararası askeri merkezde 100+ sabit personel ve yılda 10–15 etkinlikte 20–500+ çok uluslu katılımcıya gerçek zamanlı teknik destek. Ağ altyapısı kurulumu, cihaz yönetimi, erişim kontrolü ve bilgi güvenliği operasyonları.</p>
           <div class="exp-tags">
-            <span class="exp-tag">AÄ YÃ¶netimi</span><span class="exp-tag">EriÅim KontrolÃ¼</span>
-            <span class="exp-tag">GÃ¼venlik OperasyonlarÄ±</span><span class="exp-tag">Ãok Dilli Destek</span>
+            <span class="exp-tag">Ağ Yönetimi</span><span class="exp-tag">Erişim Kontrolü</span>
+            <span class="exp-tag">Güvenlik Operasyonları</span><span class="exp-tag">Çok Dilli Destek</span>
           </div>
         </div>
       </div>
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">Tem 2022 â Eyl 2022</div>
-          <div class="exp-company">Ä°BB â AkÄ±llÄ± Åehir</div>
+          <div class="exp-period">Tem 2022 — Eyl 2022</div>
+          <div class="exp-company">İBB — Akıllı Şehir</div>
           <span class="exp-type">Staj</span>
         </div>
         <div class="exp-content">
-          <div class="exp-role">Bilgi Ä°Ålem Stajyeri</div>
-          <p class="exp-desc">Flask + NLP ile Ä°BB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taÅÄ±mada araÃ§/yolcu tespiti uygulamasÄ± geliÅtirdim.</p>
+          <div class="exp-role">Bilgi İşlem Stajyeri</div>
+          <p class="exp-desc">Flask + NLP ile İBB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taşımada araç/yolcu tespiti uygulaması geliştirdim.</p>
           <div class="exp-tags">
             <span class="exp-tag">Flask</span><span class="exp-tag">NLP</span>
             <span class="exp-tag">OpenCV</span><span class="exp-tag">Python</span>
@@ -925,13 +986,13 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">Åub 2020 â Mar 2020</div>
-          <div class="exp-company">BurulaÅ</div>
+          <div class="exp-period">Şub 2020 — Mar 2020</div>
+          <div class="exp-company">Burulaş</div>
           <span class="exp-type">Staj</span>
         </div>
         <div class="exp-content">
           <div class="exp-role">Bilgi Sistemleri Stajyeri</div>
-          <p class="exp-desc">ASP.NET ile kurumsal web uygulamalarÄ± geliÅtirerek toplu taÅÄ±ma bilgi sistemleri altyapÄ±sÄ±nÄ± destekledim.</p>
+          <p class="exp-desc">ASP.NET ile kurumsal web uygulamaları geliştirerek toplu taşıma bilgi sistemleri altyapısını destekledim.</p>
           <div class="exp-tags">
             <span class="exp-tag">ASP.NET</span><span class="exp-tag">C#</span><span class="exp-tag">SQL</span>
           </div>
@@ -940,13 +1001,13 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">Haz 2019 â AÄu 2019</div>
-          <div class="exp-company">Ä°ETT</div>
+          <div class="exp-period">Haz 2019 — Ağu 2019</div>
+          <div class="exp-company">İETT</div>
           <span class="exp-type">Staj</span>
         </div>
         <div class="exp-content">
-          <div class="exp-role">Bilgi Ä°Ålem Stajyeri</div>
-          <p class="exp-desc">C# ve MSSQL ile stok takip otomasyon uygulamasÄ± tasarladÄ±m ve geliÅtirdim.</p>
+          <div class="exp-role">Bilgi İşlem Stajyeri</div>
+          <p class="exp-desc">C# ve MSSQL ile stok takip otomasyon uygulaması tasarladım ve geliştirdim.</p>
           <div class="exp-tags">
             <span class="exp-tag">C#</span><span class="exp-tag">MSSQL</span><span class="exp-tag">WinForms</span>
           </div>
@@ -966,170 +1027,170 @@ footer {
   </div>
 
   <div class="projects-filter reveal">
-    <button class="filter-btn active" data-filter="all">TÃ¼mÃ¼</button>
+    <button class="filter-btn active" data-filter="all">Tümü</button>
     <button class="filter-btn" data-filter="python">Python</button>
     <button class="filter-btn" data-filter="csharp">C#</button>
     <button class="filter-btn" data-filter="html">HTML</button>
-    <button class="filter-btn" data-filter="security">GÃ¼venlik</button>
+    <button class="filter-btn" data-filter="security">Güvenlik</button>
   </div>
 
   <div class="projects-grid">
 
     <a href="https://github.com/hasansaldiran/it-risk-engine" target="_blank" class="project-card reveal" data-lang="python" data-tags="security">
       <div class="proj-top">
-        <span class="proj-icon">ð¡ï¸</span>
+        <span class="proj-icon">🛡️</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <div class="proj-name">BT Risk YÃ¶netim Platformu</div>
-      <p class="proj-desc">Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8 tabanlÄ± kurumsal risk motoru. Z-Score anomali tespiti, Streamlit dashboard, Power BI panosu ve otomatik HTML raporlama.</p>
+      <div class="proj-name">BT Risk Yönetim Platformu</div>
+      <p class="proj-desc">Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8 tabanlı kurumsal risk motoru. Z-Score anomali tespiti, Streamlit dashboard, Power BI panosu ve otomatik HTML raporlama.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
-        <span class="proj-stars">â Ãne ÃÄ±kan</span>
+        <span class="proj-link">GitHub'da Gör →</span>
+        <span class="proj-stars">★ Öne Çıkan</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/chatbot-nlp-flask" target="_blank" class="project-card reveal" data-lang="css" data-tags="nlp">
       <div class="proj-top">
-        <span class="proj-icon">ð¤</span>
+        <span class="proj-icon">🤖</span>
         <span class="proj-lang-badge lang-css">Flask/NLP</span>
       </div>
-      <div class="proj-name">Ä°BB Beyaz Masa Chatbot</div>
-      <p class="proj-desc">NLTK + Keras + Flask tabanlÄ± TÃ¼rkÃ§e intent chatbot. VatandaÅ taleplerine otomatik yanÄ±t Ã¼retmek iÃ§in Ä°BB AkÄ±llÄ± Åehir MÃ¼dÃ¼rlÃ¼ÄÃ¼ stajÄ±nda geliÅtirildi.</p>
+      <div class="proj-name">İBB Beyaz Masa Chatbot</div>
+      <p class="proj-desc">NLTK + Keras + Flask tabanlı Türkçe intent chatbot. Vatandaş taleplerine otomatik yanıt üretmek için İBB Akıllı Şehir Müdürlüğü stajında geliştirildi.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/baskici" target="_blank" class="project-card reveal" data-lang="python">
       <div class="proj-top">
-        <span class="proj-icon">ðªª</span>
+        <span class="proj-icon">🪪</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <div class="proj-name">Kimlik KartÄ± Otomasyon Sistemi</div>
-      <p class="proj-desc">Personel kimlik kartÄ± vesikalÄ±k yerleÅim + sayfa dÃ¼zeni otomasyonu. python-docx + PyMuPDF ile basÄ±m hazÄ±rlÄ±k sÃ¼reÃ§lerini otomatize eder.</p>
+      <div class="proj-name">Kimlik Kartı Otomasyon Sistemi</div>
+      <p class="proj-desc">Personel kimlik kartı vesikalık yerleşim + sayfa düzeni otomasyonu. python-docx + PyMuPDF ile basım hazırlık süreçlerini otomatize eder.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/vesikalik-tespit" target="_blank" class="project-card reveal" data-lang="python">
       <div class="proj-top">
-        <span class="proj-icon">ð·</span>
+        <span class="proj-icon">📷</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <div class="proj-name">VesikalÄ±k Tespit (OpenCV)</div>
-      <p class="proj-desc">Taranan PDF/JPG'lerden OpenCV ile yÃ¼z tespiti ve vesikalÄ±k kÄ±rpma. Kimlik kartÄ± otomasyon sisteminin gÃ¶rÃ¼ntÃ¼ iÅleme modÃ¼lÃ¼.</p>
+      <div class="proj-name">Vesikalık Tespit (OpenCV)</div>
+      <p class="proj-desc">Taranan PDF/JPG'lerden OpenCV ile yüz tespiti ve vesikalık kırpma. Kimlik kartı otomasyon sisteminin görüntü işleme modülü.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/vehicle-detection-opencv" target="_blank" class="project-card reveal" data-lang="python">
       <div class="proj-top">
-        <span class="proj-icon">ð</span>
+        <span class="proj-icon">🚗</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <div class="proj-name">AraÃ§ Tespiti (OpenCV)</div>
-      <p class="proj-desc">Ãnceden eÄitilmiÅ Haar Cascade ile video Ã¼zerinde gerÃ§ek zamanlÄ± araÃ§ tespiti. Ä°BB stajÄ± gÃ¶rÃ¼ntÃ¼ iÅleme projesi.</p>
+      <div class="proj-name">Araç Tespiti (OpenCV)</div>
+      <p class="proj-desc">Önceden eğitilmiş Haar Cascade ile video üzerinde gerçek zamanlı araç tespiti. İBB stajı görüntü işleme projesi.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/car-counting" target="_blank" class="project-card reveal" data-lang="python">
       <div class="proj-top">
-        <span class="proj-icon">ð¢</span>
+        <span class="proj-icon">🔢</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <div class="proj-name">AraÃ§ Sayma (OpenCV)</div>
-      <p class="proj-desc">OpenCV BackgroundSubtractorMOG2 ile tek Åeritte araÃ§ sayma demosu. Toplu taÅÄ±ma veri analizi iÃ§in geliÅtirildi.</p>
+      <div class="proj-name">Araç Sayma (OpenCV)</div>
+      <p class="proj-desc">OpenCV BackgroundSubtractorMOG2 ile tek şeritte araç sayma demosu. Toplu taşıma veri analizi için geliştirildi.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/kimlik-automation" target="_blank" class="project-card reveal" data-lang="python">
       <div class="proj-top">
-        <span class="proj-icon">ð¦</span>
+        <span class="proj-icon">📦</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <div class="proj-name">Kimlik Otomasyon (DaÄÄ±tÄ±m)</div>
-      <p class="proj-desc">Personel vesikalÄ±k ZIP dosyalarÄ±nÄ± personel.xlsx ile eÅleÅtirip Åubelere gÃ¶re otomatik daÄÄ±tan araÃ§.</p>
+      <div class="proj-name">Kimlik Otomasyon (Dağıtım)</div>
+      <p class="proj-desc">Personel vesikalık ZIP dosyalarını personel.xlsx ile eşleştirip şubelere göre otomatik dağıtan araç.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/kutuphane-otomasyonu" target="_blank" class="project-card reveal" data-lang="csharp">
       <div class="proj-top">
-        <span class="proj-icon">ð</span>
+        <span class="proj-icon">📚</span>
         <span class="proj-lang-badge lang-csharp">C#</span>
       </div>
-      <div class="proj-name">KÃ¼tÃ¼phane Otomasyon Sistemi</div>
-      <p class="proj-desc">C# WinForms + SQL Server kÃ¼tÃ¼phane otomasyonu. Kitap, Ã¼ye ve Ã¶dÃ¼nÃ§ yÃ¶netimi; stored procedure, trigger ve view iÃ§erir.</p>
+      <div class="proj-name">Kütüphane Otomasyon Sistemi</div>
+      <p class="proj-desc">C# WinForms + SQL Server kütüphane otomasyonu. Kitap, üye ve ödünç yönetimi; stored procedure, trigger ve view içerir.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/stok-takip" target="_blank" class="project-card reveal" data-lang="csharp">
       <div class="proj-top">
-        <span class="proj-icon">ð</span>
+        <span class="proj-icon">📊</span>
         <span class="proj-lang-badge lang-csharp">C#</span>
       </div>
       <div class="proj-name">Stok Takip Sistemi</div>
-      <p class="proj-desc">C# WinForms + MS Access tabanlÄ± Ã¼rÃ¼n/mÃ¼Återi/stok takip uygulamasÄ±. Ä°ETT stajÄ± kapsamÄ±nda geliÅtirildi.</p>
+      <p class="proj-desc">C# WinForms + MS Access tabanlı ürün/müşteri/stok takip uygulaması. İETT stajı kapsamında geliştirildi.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/market-otomasyonu" target="_blank" class="project-card reveal" data-lang="vb">
       <div class="proj-top">
-        <span class="proj-icon">ð</span>
+        <span class="proj-icon">🛒</span>
         <span class="proj-lang-badge lang-vb">VB.NET</span>
       </div>
       <div class="proj-name">Market Otomasyon Sistemi</div>
-      <p class="proj-desc">VB.NET WinForms + MS Access tabanlÄ± market otomasyonu. ÃrÃ¼n, satÄ±Å ve stok yÃ¶netimi modÃ¼lleri iÃ§erir.</p>
+      <p class="proj-desc">VB.NET WinForms + MS Access tabanlı market otomasyonu. Ürün, satış ve stok yönetimi modülleri içerir.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/guide-map" target="_blank" class="project-card reveal" data-lang="js">
       <div class="proj-top">
-        <span class="proj-icon">ðºï¸</span>
+        <span class="proj-icon">🗺️</span>
         <span class="proj-lang-badge lang-js">JavaScript</span>
       </div>
-      <div class="proj-name">Ä°stanbul Gezi Rehberi</div>
-      <p class="proj-desc">ASP.NET WebForms + ASP.NET Core MVC + Google Maps API ile Ä°stanbul gezi rehberi uygulamasÄ±.</p>
+      <div class="proj-name">İstanbul Gezi Rehberi</div>
+      <p class="proj-desc">ASP.NET WebForms + ASP.NET Core MVC + Google Maps API ile İstanbul gezi rehberi uygulaması.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/uluastro-website" target="_blank" class="project-card reveal" data-lang="html">
       <div class="proj-top">
-        <span class="proj-icon">ð</span>
+        <span class="proj-icon">🌌</span>
         <span class="proj-lang-badge lang-html">HTML</span>
       </div>
-      <div class="proj-name">Astronomi TopluluÄu Sitesi</div>
-      <p class="proj-desc">UludaÄ Ãniversitesi Astronomi TopluluÄu iÃ§in gÃ¶nÃ¼llÃ¼ olarak geliÅtirilen statik web sitesi. uluastro.space arÅivi.</p>
+      <div class="proj-name">Astronomi Topluluğu Sitesi</div>
+      <p class="proj-desc">Uludağ Üniversitesi Astronomi Topluluğu için gönüllü olarak geliştirilen statik web sitesi. uluastro.space arşivi.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
+        <span class="proj-link">GitHub'da Gör →</span>
       </div>
     </a>
 
     <a href="https://github.com/hasansaldiran/meyve-sebze-tespiti" target="_blank" class="project-card reveal" data-lang="python">
       <div class="proj-top">
-        <span class="proj-icon">ð</span>
+        <span class="proj-icon">🍎</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <div class="proj-name">Meyve &amp; Sebze HastalÄ±k Tespiti</div>
-      <p class="proj-desc">MobileNetV2 ile 36 sÄ±nÄ±f meyve/sebze tanÄ±ma; ResNet-9 ile 38 sÄ±nÄ±f yaprak hastalÄ±k tespiti. Streamlit arayÃ¼zÃ¼ Â· Flask REST API.</p>
+      <div class="proj-name">Meyve &amp; Sebze Hastalık Tespiti</div>
+      <p class="proj-desc">MobileNetV2 ile 36 sınıf meyve/sebze tanıma; ResNet-9 ile 38 sınıf yaprak hastalık tespiti. Streamlit arayüzü · Flask REST API.</p>
       <div class="proj-footer">
-        <span class="proj-link">GitHub'da GÃ¶r â</span>
-        <span class="proj-stars">â Ãne ÃÄ±kan</span>
+        <span class="proj-link">GitHub'da Gör →</span>
+        <span class="proj-stars">★ Öne Çıkan</span>
       </div>
     </a>
 
@@ -1146,19 +1207,19 @@ footer {
     </div>
     <div class="skills-grid">
       <div class="skill-group reveal">
-        <div class="skill-group-title">GÃ¼venlik & Risk</div>
+        <div class="skill-group-title">Güvenlik & Risk</div>
         <div class="skill-items">
           <span class="skill-item">MITRE ATT&CK</span>
           <span class="skill-item">CIS Controls v8</span>
-          <span class="skill-item">Risk YÃ¶netimi</span>
-          <span class="skill-item">EriÅim KontrolÃ¼</span>
-          <span class="skill-item">GÃ¼venlik OperasyonlarÄ±</span>
+          <span class="skill-item">Risk Yönetimi</span>
+          <span class="skill-item">Erişim Kontrolü</span>
+          <span class="skill-item">Güvenlik Operasyonları</span>
           <span class="skill-item">Anomali Tespiti</span>
           <span class="skill-item">CVE/NVD</span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <div class="skill-group-title">GeliÅtirme</div>
+        <div class="skill-group-title">Geliştirme</div>
         <div class="skill-items">
           <span class="skill-item">Python</span>
           <span class="skill-item">C#</span>
@@ -1171,7 +1232,7 @@ footer {
         </div>
       </div>
       <div class="skill-group reveal">
-        <div class="skill-group-title">AraÃ§lar & Platform</div>
+        <div class="skill-group-title">Araçlar & Platform</div>
         <div class="skill-items">
           <span class="skill-item">Streamlit</span>
           <span class="skill-item">Flask</span>
@@ -1188,29 +1249,29 @@ footer {
           <span class="skill-item">OpenCV</span>
           <span class="skill-item">NLP / NLTK</span>
           <span class="skill-item">Keras</span>
-          <span class="skill-item">Makine ÃÄrenmesi</span>
-          <span class="skill-item">Veri MadenciliÄi</span>
-          <span class="skill-item">GÃ¶rÃ¼ntÃ¼ Ä°Åleme</span>
+          <span class="skill-item">Makine Öğrenmesi</span>
+          <span class="skill-item">Veri Madenciliği</span>
+          <span class="skill-item">Görüntü İşleme</span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <div class="skill-group-title">Sistem & AltyapÄ±</div>
+        <div class="skill-group-title">Sistem & Altyapı</div>
         <div class="skill-items">
           <span class="skill-item">Windows Server</span>
           <span class="skill-item">Active Directory</span>
-          <span class="skill-item">AÄ YÃ¶netimi</span>
+          <span class="skill-item">Ağ Yönetimi</span>
           <span class="skill-item">HBYS (Pusula/Medax)</span>
           <span class="skill-item">UAT Testi</span>
-          <span class="skill-item">DonanÄ±m YÃ¶netimi</span>
+          <span class="skill-item">Donanım Yönetimi</span>
         </div>
       </div>
       <div class="skill-group reveal">
         <div class="skill-group-title">Sertifika</div>
         <div class="skill-items">
-          <span class="skill-item">Ä°HA1 Pilot LisansÄ±</span>
-          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">ISC2 CC (PlanlÄ±)</span>
-          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">BTL1 (PlanlÄ±)</span>
-          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">CompTIA Sec+ (PlanlÄ±)</span>
+          <span class="skill-item">İHA1 Pilot Lisansı</span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">ISC2 CC (Planlı)</span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">BTL1 (Planlı)</span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">CompTIA Sec+ (Planlı)</span>
         </div>
       </div>
     </div>
@@ -1227,50 +1288,164 @@ footer {
     <div class="section-line"></div>
   </div>
 
-  <div class="blog-grid reveal">
+  <div class="blog-full-article reveal">
+    <article class="article-content">
+      <header class="article-header">
+        <h2 class="article-title">Veri Madenciliği / Data Mining</h2>
+        <div class="article-meta">
+          <span class="article-author">Hasan SALDIRAN</span>
+          <span class="article-date">Haziran 2020</span>
+          <span class="article-affiliation">Bursa Uludağ Üniversitesi · Bilgisayar Programcılığı</span>
+        </div>
+      </header>
 
-    <article class="blog-card">
-      <div class="blog-card-meta">
-        <span class="blog-tag">Veri Madenciliği</span>
-        <span class="blog-tag">Makine Öğrenmesi</span>
-        <span class="blog-date">Haziran 2020</span>
-      </div>
-      <h3 class="blog-card-title">Veri Madenciliği Uygulamaları</h3>
-      <p class="blog-card-excerpt">
-        Bilgisayar Programcılığı ön lisans bitirme projesi olarak hazırladığım bu çalışmada veri önişleme, sınıflandırma ve kümeleme algoritmalarını karşılaştırmalı olarak ele aldım. Karar ağaçları, k-NN ve k-Means gibi temel yöntemler gerçek veri setleri üzerinde uygulandı.
-      </p>
-      <div class="blog-card-footer">
-        <span class="blog-read-time">📄 Akademik Makale · Uludağ Üniversitesi</span>
-        <a href="https://github.com/hasansaldiran/Veri-Madencili%C4%9Fi-Makale" target="_blank" class="blog-read-more">Makaleyi Gör →</a>
+      <div class="article-body">
+
+        <h3>Özet</h3>
+        <p>Günümüz teknolojisi hızla gelişmekte ve bilgisayar bilimleri her geçen gün büyümektedir. Bununla birlikte hemen hemen her alanda çeşitli yöntemlerle veriler toplanmakta ve depolanmaktadır. Dolayısıyla elde edilen büyük veri hızla artmakta, bu verilerin analizi ve sonucu büyük önem kazanmaktadır. Çeşitli yöntemlerle ve bilgisayar sistemleriyle elde edilen bu veriler ilk halleriyle bir anlam ifade etmezler. Bu veriler kullanılacağı amaç doğrultusunda işlendiği zaman önem kazanmaktadır. Bu çalışmada veri madenciliğinin ne olduğu, tarihsel süreci, süreci, metotları, uygulama alanları, gizlilik problemleri ve etik konuları, Türkiye'deki çalışmalar ve geleceği incelenmektedir.</p>
+        <p class="keywords"><em>Anahtar Kelimeler: Veri madenciliği, Veri bilimi, Büyük veri, Bilgi keşfi</em></p>
+        <p class="keywords"><em>Keywords: Data mining, Data science, Big data, Knowledge discovery</em></p>
+
+        <h3>1. Giriş</h3>
+        <p>Bilgi keşfi büyük veri yığınlarının tıpkı madenlerin keşfedilip işlenerek değerli hale getirilmeleri gibi büyük verinin içindeki gizli, önceden bilinmeyen, kullanışlı bilgilerin elde edilmesi işlemidir. Bu süreçte bilgisayar teknolojisinden ve özellikle de yapay zeka, makine öğrenimi, istatistik gibi alt dallarından yararlanılmaktadır.</p>
+        <p>Günümüz gelişmiş toplumlarında verinin, bilginin yönetiminde daha çok öz bilgi ile ilgilenilmektedir. Veritabanı içindeki bu öz bilgi ne denli büyük ve komplike olursa olsun bu verilerden önemli bilgileri çıkarma, yani veri madenciliği bir zorunluluk haline gelmiştir.</p>
+        <p>Veri Madenciliği; yığılmış, istenilen amaca yönelik faydalı bilgiler vermeyen verilerin anlamlı ve öz bilgiye dönüştürülmesi sürecidir. Veriden doğrudan bilgi elde edilebileceği gibi, elde edilen bu bilgiden de yeni bilgiler türetilebilir.</p>
+
+        <h3>2. Veri Madenciliği (Data Mining)</h3>
+        <p>Veri madenciliği; makine öğrenimi, istatistik ve veri tabanı sistemlerinin kesiştiği yöntemleri içeren büyük veri kümelerindeki örüntülerin keşfedilmesi sürecidir. Veri madenciliği çözümleme metodolojisi, özellikle iş zekası (BI) ve araştırma alanlarında geniş bir uygulama alanı bulmakta; karar vermeyi destekleme ve yönetim süreçlerini iyileştirme hedefleriyle kullanılmaktadır.</p>
+        <p>Veri madenciliği işletmeler için oldukça fazla fayda sağlar. Bunlardan en önemlisi veri grupları arasındaki benzer eğilimleri bulmaktır. Bu sayede şirketler ürünlerin hangi durum ve koşullarda daha iyi satıldığını veya müşteri grupları arasındaki davranış farklılıklarını belirleyebilir.</p>
+        <p>Aslında veri madenciliği bilgiyi keşfetme probleminde bir çözüm değil, çözüme götürecek kararları destekleyen, çözüme ulaşmak için çözümleyiciye yardımcı olan bir araçtır. Karar alan kişi ya da bilgi keşfi için çalışan uzman, yorumlama aşamasında etkin bir rol üstlenir.</p>
+
+        <h3>2.1. Veri Madenciliğinin Etimolojisi</h3>
+        <p>"Veri madenciliği" terimi, 1983 yılında İktisadi Araştırmalar Dergisi'nde yayınlanan bir makalede iktisatçı Michael Lovell tarafından kullanılmıştır. Terimin bugünkü anlamda kullanımı Clifton'a (2010) göre 1990'ların başından itibaren yaygınlaşmıştır.</p>
+        <p>Akademik toplulukta, araştırma için büyük forumlar 1995 yılında Montreal'de AAAI sponsorluğu altında 1. Uluslararası Veri Madenciliği ve Bilgi Keşfi Çalıştayı ile başlamış, 1997'de ise KDD dergisi yayın hayatına girmiştir. 1998'den itibaren bu konferanslar yıllık düzenlenmekte ve uluslararası bilim camiasının ilgisini çekmektedir.</p>
+
+        <h3>2.2. Veri Madenciliğinin Tarihi</h3>
+        <p>Günümüzde teknoloji tahmin edilemeyecek düzeyde gelişmiştir. Bununla birlikte internete erişim dünyanın birçok yerinden mümkün hale gelmiş ve küresel çapta devasa boyutlarda veri üretimi söz konusu olmaktadır.</p>
+        <p>Bilgisayarlar ilk olarak 1950'li yıllarda sayım için kullanılmaya başlamıştır. Birkaç yıl sonra 1960'larda verilerin depolanması, erişimi ve işlenmesi için veri tabanları geliştirilmiştir. 1980'lerde ise ilişkisel veri tabanları ve Yapısal Sorgulama Dili (SQL) hayata geçirilmiştir. 1990'larda veri ambarlaması (data warehousing) ve veri madenciliği işletme tarafından benimsendi. 2000'li yıllarda ise web madenciliği, metin madenciliği ve sosyal ağ analizi gibi yeni alt dallar ortaya çıktı.</p>
+
+        <h3>2.3. Veri Madenciliği Süreci</h3>
+        <p>Veri madenciliği aslında birkaç aşamadan oluşan bir süreçtir. Verileri büyük veri yığınları arasından bulmak, bulunan verileri analiz etmek ve elde edilen bulguları yorumlamak bu sürecin temel adımlarını oluşturur. Endüstri standardı olan CRISP-DM (Cross-Industry Standard Process for Data Mining) modeli bu sürecin çerçevesini belirlemiştir.</p>
+        <p>Veri madenciliği sürecinde izlenen adımlar genellikle aşağıdaki şekildedir (Shearer, 2000):</p>
+        <ul>
+          <li>Problemlerin tanımlanması,</li>
+          <li>Verilerin hazırlanması,</li>
+          <li>Modelin kurulması ve değerlendirilmesi,</li>
+          <li>Modelin kullanılması,</li>
+          <li>Modelin izlenmesi.</li>
+        </ul>
+        <p><strong>Problemin tanımlanması:</strong> Veri madenciliği çalışmalarında başarılı olmanın ilk ve en önemli şartı, projenin kullanılacağı amaç doğrultusunda ortaya çıkan problemin doğru belirlenmesi ve analiz edilmesidir. Amaç ne kadar açık ve net belirlenirse çalışma o kadar başarılı olacaktır.</p>
+        <p><strong>Verilerin hazırlanması:</strong> Modelin kurulması aşamasında ortaya çıkacak sorunlar, bu aşamaya sık sık geri dönülmesine ve veri hazırlama sürecinde yeniden çalışılmasına yol açacaktır. Bu aşama, proje süresinin en fazlasını alan aşamadır.</p>
+        <p><strong>Modelin kurulması ve değerlendirilmesi:</strong> Bir probleme en uygun modeli bulabilmek için, olabildiğince çok modelin denenmesi ve sonuçların karşılaştırılması gerekir. Başarılı bir modelin iş ihtiyaçlarını da karşılaması gerektiği unutulmamalıdır.</p>
+        <p><strong>Modelin kullanılması:</strong> Oluşturulmuş ve herkes tarafından kabul edilen bir model doğrudan uygulamaya dönebileceği gibi, diğer veri madenciliği süreçlerinin de girdisi olabilir.</p>
+        <p><strong>Modelin izlenmesi:</strong> Gün geçtikçe veri tabanlarındaki, disklerdeki ve veriyi elde etmedeki değişikliklerle sistemlerin özellikleri değişir. Bu nedenle modelin izlenmesi ve güncel tutulması büyük önem taşır.</p>
+
+        <h3>2.4. Veri Madenciliği Metotları</h3>
+        <p>Veri madenciliği sürecinde kullanılan pek çok yöntem mevcuttur. Gün geçtikçe bu sürece katkı verecek yeni yöntemler oluşmakta ve mevcut yöntemler iyileştirilmektedir. Veri madenciliği modelleri, gördükleri işlevlere göre temel olarak 3 grupta toplanır:</p>
+        <ul>
+          <li>Sınıflama (Classification) ve Regresyon (Regression),</li>
+          <li>Kümeleme (Clustering),</li>
+          <li>Birliktelik Kuralları (Association Rules).</li>
+        </ul>
+        <p>Sınıflama ve regresyon modelleri tahmin edici, kümeleme ve birliktelik kuralları ise tanımlayıcı modeller grubuna girmektedir. Sınıflandırma ile regresyon arasındaki temel fark, hedef değişkenin süreksiz (ayrık) veya sürekli olmasıyla ilgilidir.</p>
+
+        <h3>2.5. Veri Madenciliği Uygulama Alanları</h3>
+        <p>Günümüzde, veri madenciliği firmalar tarafından öncelikle müşteri odaklı olarak (finansal, iletişimsel ve pazarlama) kullanılmaktadır. Bunun yanı sıra veri madenciliğinin pek çok uygulama alanı mevcuttur:</p>
+        <ul>
+          <li>Sağlık Sektörü</li>
+          <li>Telekomünikasyon</li>
+          <li>Finans (Bankacılık, Borsa)</li>
+          <li>Pazarlama</li>
+          <li>Sigortacılık</li>
+          <li>Astronomi</li>
+          <li>Biyoloji</li>
+          <li>Tıp</li>
+        </ul>
+
+        <h3>2.6. Veri Madenciliğini Etkileyen Faktörler</h3>
+        <p>Veri madenciliği temel olarak 5 ana faktörden etkilenir:</p>
+        <p><strong>Veri:</strong> Veri madenciliğinin bu kadar gelişmesindeki en önemli faktördür.</p>
+        <p><strong>Donanım:</strong> Gelişen bellek ve işlem hızı kapasitesi sayesinde, birkaç yıl önce madencilik yapılamayan veriler üzerinde çalışmak mümkün hale gelmiştir.</p>
+        <p><strong>Bilgisayar ağları:</strong> Yeni nesil internet, çok yüksek hızları kullanmayı sağlamaktadır. Böyle bir bilgisayar ağı ortamı oluşturulduğunda, veriye erişim kolaylaşmakta ve veri madenciliği daha hızlı ve etkili bir şekilde gerçekleştirilebilmektedir.</p>
+        <p><strong>Bilimsel hesaplamalar:</strong> Günümüz bilim adamları ve mühendisleri, simülasyonu, bilimin üçüncü yolu olarak görmekteler. Veri madenciliği de bu bağlamda büyük önem taşımaktadır.</p>
+        <p><strong>Ticari eğilimler:</strong> Günümüzde, işletmeler rekabet ortamında varlıklarını koruyabilmek için daha hızlı hareket etmeli, daha iyi kararlar vermeli ve daha verimli olmalıdır.</p>
+
+        <h3>2.7. Veri Madenciliğinde Karşılaşılan Problemler</h3>
+        <p>Büyük hacimli verilerin bulunduğu veri ortamlarında büyük sorunlar ortaya çıkabilir. Bu nedenle küçük veri kümelerinde, basit yapay zeka tekniklerini kullanarak modeller kurmak kolayken büyük veri kümelerinde bu süreç zorlaşmaktadır.</p>
+        <p><strong>Artık veri:</strong> Artık veri, problemde istenilen sonucu elde etmek için kullanılan örneklem kümesindeki gereksiz niteliklerdir. Bu durum, öğrenme sürecini olumsuz etkileyebilir.</p>
+        <p><strong>Belirsizlik:</strong> Yanlışlıkların şiddeti ve verideki gürültünün derecesi ile ilgilidir.</p>
+        <p><strong>Boş veri:</strong> Bir veri tabanında boş değer, birincil anahtarda yer almayan herhangi bir niteliğin değeri olabilir. Boş değerler farklı anlamlar ifade edebilir.</p>
+        <p><strong>Dinamik veri:</strong> Kurumsal çevrim içi veri tabanları dinamiktir ve içeriği sürekli olarak değişir. Bu durum, bilgi keşfi metodolojilerinin uygulanmasını güçleştirir.</p>
+        <p><strong>Eksik veri:</strong> Veri kümesinin büyüklüğünden ya da doğasından kaynaklanmaktadır. Eksik veriler olduğunda yapılması gerekenler:</p>
+        <ul>
+          <li>Eksik veri içeren kayıt veya kayıtlar çıkarılabilir.</li>
+          <li>Değişkenin ortalaması eksik verilerin yerine kullanılabilir.</li>
+          <li>Var olan verilere dayalı olarak en uygun değer kullanılabilir.</li>
+        </ul>
+
+        <h3>2.8. Veri Madenciliği Standartları</h3>
+        <p>Veri madenciliği süreci standartlarını tanımlamak için çeşitli çabalar olmuştur. 1999 Veri Madenciliği için Avrupa Akademi Ağı (ESPRIT) projesi olan CRISP-DM (Endüstriler Arası Veri Madenciliği için Standart Süreç), sektörler arası genel bir metodoloji tanımlamıştır. Çıkarılan modellerin değişimi için anahtar standart, veri madenciliği süreçleri için kullanılan Tahmine Dayalı Model İşaretleme Dili'dir (PMML).</p>
+
+        <h3>3. Gizlilik Problemleri ve Etik</h3>
+        <p>"Veri madenciliği" teriminin kendisi etik bir etkiye sahip olmasa da genellikle insanların davranışlarıyla ilgili veriler üzerinde uygulandığından önemli gizlilik, yasal ve etik sorunlar ortaya çıkarmaktadır.</p>
+        <p>Bireyin gizliliğine yönelik tehdit, veriler bir kez derlendiğinde veri madencisinin veya yeni derlenmiş veri kümesine erişim sağlayan herkesin bu verileri başlangıçtaki amaç dışında kullanabileceği anlamına gelir.</p>
+        <p>Bir veri madencisinin veriyi toplamaya başlamadan önce haberdar olması gereken başlıca konular şunlardır:</p>
+        <ul>
+          <li>Toplanılacak verinin hangi amaç için toplandığı,</li>
+          <li>Verilerin nasıl kullanılacağı,</li>
+          <li>Verileri ve türevlerini kimlerin kullanacağı,</li>
+          <li>Elde edildikten sonra verilerin korumasını gerçekleştirecek güvenliğin durumu,</li>
+          <li>Toplanılan verilerin nasıl güncellenebileceği.</li>
+        </ul>
+        <p>Veriler anonim hale gelecek şekilde de değiştirilebilir. Böylece bireyler kolayca tespit edilemez. Bununla birlikte anonimleştirme, verinin kullanışlılığını da azaltabilir.</p>
+        <p>Yakın tarihte yaşanan ve Facebook'un bir teknoloji şirketine verilen en büyük cezayı almasıyla sonuçlanan bir gizlilik ihlali davası, bu alandaki risklerin somut bir örneğini oluşturmaktadır.</p>
+        <p><strong>Avrupa'da Gizlilik Durumu:</strong> Avrupa oldukça güçlü gizlilik yasalarına sahiptir. GDPR (Genel Veri Koruma Yönetmeliği) kapsamında kişisel verilerin işlenmesine ilişkin katı kurallar belirlenmiştir.</p>
+        <p><strong>Amerika'da Gizlilik Durumu:</strong> Amerika Birleşik Devletleri'nde, gizlilik endişeleri ABD Kongresi tarafından Sağlık Sigortası Taşınabilirliği ve Hesap Verebilirlik Yasası (HIPAA) gibi çeşitli yasal düzenlemelerle ele alınmaktadır.</p>
+
+        <h3>4. Türkiye'deki Veri Madenciliği Çalışmaları</h3>
+        <p>Günümüzde en çok uygulanan faydalı bilgiye ulaşma disiplinlerinden birisi olan veri madenciliği, ülkemizde de pek çok alanda kullanılmaktadır.</p>
+        <p><strong>4.1. Eğitim Alanında Gerçekleştirilen Bazı Çalışmalar:</strong> Serdar Çiftci (2006) uzaktan eğitime katılan öğrencilerin ders çalışma etkinliklerini incelemiştir. Murat Kayri (2008) öğrencilerin performans göstergelerinin sürekli izlenmesine yönelik elektronik portfolyo değerlendirmeleri için veri madenciliği yaklaşımı geliştirmiştir. Bozkır ve Sezer (2009) Hacettepe Üniversitesi öğrencilerinin beslenme alışkanlıklarını veri madenciliği teknikleriyle analiz etmiştir.</p>
+        <p><strong>4.2. Tıp Alanında Gerçekleştirilen Bazı Çalışmalar:</strong> Şengül Doğan ve İbrahim Türkoğlu (2008) kan biyokimya parametreleri ile demir eksikliği anemisi tespiti üzerine karar ağaçları kullanan bir çalışma gerçekleştirmiştir. Mustafa Danacı ve ekibi (2010) veri madenciliği yöntemleriyle meme kanseri hücrelerinin tahminini araştırmıştır.</p>
+        <p><strong>4.3. Bankacılık ve Borsa Alanlarında Gerçekleştirilen Bazı Çalışmalar:</strong> Albayrak ve Yılmaz (2009) İMKB 100 endeksinde sektörel banka sınıflandırması için karar ağacı algoritmaları uygulamıştır. Savaşçı ve Tatlıdil (2006) bankaların kredi kartı pazarında uyguladıkları müşteri ilişkileri yönetimi stratejilerini incelemiştir.</p>
+        <p><strong>4.4. Mühendislik Alanında Gerçekleştirilen Bazı Çalışmalar:</strong> Duru ve Canbay (2007) veri madenciliği ile deprem verilerinin analizini gerçekleştirmiştir. Bilgin ve Çamurcu (2008) çok boyutlu veri görselleştirme tekniklerini araştırmıştır.</p>
+        <p><strong>4.5. Ticaret Alanında Yapılan Bazı Çalışmalar:</strong> Taşkın ve Emel (2010) perakendecilik sektöründe veri madenciliğinde kümeleme yaklaşımları ve Kohonen ağlarını incelemiştir. Gürbüz ve ekibi (2008) bir havayolu işletmesine ait parça söküm raporlarına ilişkin veri madenciliği uygulaması gerçekleştirmiştir.</p>
+
+        <h3>5. Veri Madenciliğinin Geleceği</h3>
+        <p>Veri madenciliği teknolojisinin gündeme getirdiği en önemli konulardan biri, bir işletme veya teknoloji konusuna sahip olmayan, verilerden elde edilen bilgiyi nereye götürmek istediğini bilmeyen bir topluluğun bu teknolojiden nasıl faydalanabileceğidir. Veri madenciliğindeki önemli bir diğer konu ise artık iş dünyasında da oldukça çok kullanılan gerçek zamanlı verilerdir. Gerçek zamanlı analitik, nesnelerin internetinin (IoT) yaygınlaşmasıyla birlikte kritik bir öneme kavuşmaktadır.</p>
+        <p>Diğer bir konu ise veri bütünlüğüdür. Açıkçası veri analizi, ancak analiz edilen veriler kadar iyi olabilir. Veri miktarının artmasıyla birlikte hangi verilerin güvenilir, hangi verilerin eksik veya hatalı olduğunu belirlemek giderek daha güç bir hal almaktadır.</p>
+        <p>Son olarak, maliyet sorunu vardır. Sistem donanım maliyetlerinin son beş yıl içinde önemli ölçüde düşmesine rağmen yazılım, uzman insan kaynağı ve süreç yönetimi maliyetleri yüksek kalmaya devam etmektedir. Bulut bilişim ve açık kaynak araçların yaygınlaşması bu engeli önemli ölçüde aşağı çekmiştir.</p>
+
+        <h3>6. Sonuç</h3>
+        <p>Veri madenciliğine gösterilen ilgi tüm dünyada gün geçtikçe artmaktadır. Hemen hemen her alanda kullanılan veri madenciliği, büyük veri yığınlarından anlamlı bilgi çıkarmak için vazgeçilmez bir araç haline gelmiştir. Yapay zeka ve makine öğrenmesindeki ilerlemelerle birlikte veri madenciliği teknikleri de hızla gelişmekte ve daha geniş uygulama alanları bulmaktadır.</p>
+        <p>Ülkemizdeki veri madenciliği çalışmalarına baktığımızda, bu çalışmaların ekonomimizde, eğitimde, ticari faaliyetlerde ve diğer alanlarda giderek artan bir öneme sahip olduğu görülmektedir. Araştırmacılarımızın bu alana olan ilgisi artmakta, uluslararası arenada da ülkemizin varlığı güçlenmektedir.</p>
+        <p>Tüm bu faydalarına karşın veri madenciliğinin birçok probleme yol açabileceği de unutulmamalıdır. Veri madenciliği uygulamalarında gizlilik ve etik konularına gereken önemin verilmesi, bireylerin kişisel verilerinin korunması bakımından büyük önem taşımaktadır.</p>
+        <p>Veri madenciliği akademik alanda da gün geçtikçe daha fazla ilgi kaynağı olmaktadır. Ülkemizde birçok kurum ve üniversite bu alana yatırım yapmakta, konuya ilişkin araştırma ve çalışmalar hız kazanmaktadır.</p>
+
       </div>
     </article>
-
   </div>
-
-  <p class="blog-coming-soon reveal">Yeni yazılar yakında — homelab deneyleri, güvenlik notları ve proje günlükleri.</p>
-
 </section>
 
 <section id="contact">
-  <p class="contact-eyebrow reveal">Bana ulaÅ</p>
-  <h2 class="contact-title reveal">Birlikte<br>Ã§alÄ±ÅalÄ±m.</h2>
-  <p class="contact-sub reveal">Yeni fÄ±rsatlara, projelere ve iÅ birliklerine aÃ§Ä±ÄÄ±m. Mesaj atmaktan Ã§ekinme.</p>
+  <p class="contact-eyebrow reveal">Bana ulaş</p>
+  <h2 class="contact-title reveal">Birlikte<br>çalışalım.</h2>
+  <p class="contact-sub reveal">Yeni fırsatlara, projelere ve iş birliklerine açığım. Mesaj atmaktan çekinme.</p>
   <div class="contact-links reveal">
     <a href="mailto:hasansaldirann@gmail.com" class="contact-link">
-      <span class="cl-icon">â</span> hasansaldirann@gmail.com
+      <span class="cl-icon">✉</span> hasansaldirann@gmail.com
     </a>
     <a href="https://www.linkedin.com/in/hasansaldiran/" target="_blank" class="contact-link">
       <span class="cl-icon">in</span> LinkedIn
     </a>
     <a href="https://github.com/hasansaldiran" target="_blank" class="contact-link">
-      <span class="cl-icon">â¥</span> GitHub
+      <span class="cl-icon">⌥</span> GitHub
     </a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-text">Â© <span id="year"></span> <span>Hasan SaldÄ±ran</span> â hasansaldiran.github.io</span>
+  <span class="footer-text">© <span id="year"></span> <span>Hasan Saldıran</span> — hasansaldiran.github.io</span>
   <div class="footer-links">
     <a href="https://github.com/hasansaldiran" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/hasansaldiran/" target="_blank">LinkedIn</a>
