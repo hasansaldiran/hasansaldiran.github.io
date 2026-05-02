@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hasansaldiran.github.io/sitemap.xml
