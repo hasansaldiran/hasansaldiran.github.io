@@ -805,6 +805,180 @@ footer {
   margin-bottom: 0.4rem;
 }
 
+
+/* === Blog Cards === */
+.blog-filter {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.blog-filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  transition: all 0.2s;
+}
+.blog-filter-btn:hover,
+.blog-filter-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(100,255,218,0.07);
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px rgba(100,255,218,0.08);
+}
+.blog-card.hidden { display: none; }
+.blog-card-inner { padding: 1.4rem; }
+.blog-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.blog-tag {
+  background: rgba(100,255,218,0.1);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+.blog-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.blog-card-title {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+.blog-card-excerpt {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.blog-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+.blog-read-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.blog-card-cta {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  transition: letter-spacing 0.2s;
+}
+.blog-card:hover .blog-card-cta { letter-spacing: 1px; }
+
+/* === Modal === */
+.blog-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+}
+.blog-modal.open { display: flex; }
+.blog-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,25,47,0.85);
+  backdrop-filter: blur(4px);
+}
+.blog-modal-content {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 720px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  z-index: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+.blog-modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  z-index: 2;
+}
+.blog-modal-close:hover { border-color: var(--accent); color: var(--accent); }
+.blog-modal-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  clear: both;
+}
+.blog-modal-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+.blog-modal-body h3 {
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 1.5rem 0 0.6rem;
+  font-family: var(--font-mono);
+}
+.blog-modal-body p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 0.9rem;
+  font-size: 0.95rem;
+}
+.blog-modal-body ul {
+  color: var(--text-secondary);
+  margin: 0.5rem 0 0.9rem 1.5rem;
+  line-height: 1.8;
+}
+.blog-modal-body strong { color: var(--text-primary); }
+
 </style>
   <meta name="description" content="Hasan Saldıran — BT Sistemleri ve Güvenlik Uzmanı. Python, MITRE ATT&CK, CIS Controls v8 alanlarında uzman. Dünyagöz Hastaneler Grubu. İstanbul, Türkiye.">
   <meta name="keywords" content="Hasan Saldiran, BT Güvenlik, IT Security, MITRE ATT&CK, CIS Controls, Python, Lansweeper, Dünyagöz, ÇMHM, Bilgisayar Mühendisi, İstanbul">
@@ -1304,143 +1478,211 @@ footer {
     <div class="section-line"></div>
   </div>
 
-  <div class="blog-full-article reveal">
-    <article class="article-content">
-      <header class="article-header">
-        <h2 class="article-title">Veri Madenciliği / Data Mining</h2>
-        <div class="article-meta">
-          <span class="article-author">Hasan SALDIRAN</span>
-          <span class="article-date">Haziran 2020</span>
-          <span class="article-affiliation">Bursa Uludağ Üniversitesi · Bilgisayar Programcılığı</span>
+  <div class="blog-filter">
+    <button class="blog-filter-btn active" data-filter="all">Tümü</button>
+    <button class="blog-filter-btn" data-filter="Teknoloji">Teknoloji</button>
+    <button class="blog-filter-btn" data-filter="Uzay">Uzay</button>
+    <button class="blog-filter-btn" data-filter="Bilim">Bilim</button>
+  </div>
+
+  <div class="blog-grid" id="blogGrid">
+    
+    <article class="blog-card reveal" data-category="Teknoloji" onclick="openPost('veri-madenciligi-giris')">
+      <div class="blog-card-inner">
+        <div class="blog-card-top">
+          <span class="blog-tag">Teknoloji</span>
+          <span class="blog-date">Nisan 2021</span>
         </div>
-      </header>
-
-      <div class="article-body">
-
-        <h3>Özet</h3>
-        <p>Günümüz teknolojisi hızla gelişmekte ve bilgisayar bilimleri her geçen gün büyümektedir. Bununla birlikte hemen hemen her alanda çeşitli yöntemlerle veriler toplanmakta ve depolanmaktadır. Dolayısıyla elde edilen büyük veri hızla artmakta, bu verilerin analizi ve sonucu büyük önem kazanmaktadır. Çeşitli yöntemlerle ve bilgisayar sistemleriyle elde edilen bu veriler ilk halleriyle bir anlam ifade etmezler. Bu veriler kullanılacağı amaç doğrultusunda işlendiği zaman önem kazanmaktadır. Bu çalışmada veri madenciliğinin ne olduğu, tarihsel süreci, süreci, metotları, uygulama alanları, gizlilik problemleri ve etik konuları, Türkiye'deki çalışmalar ve geleceği incelenmektedir.</p>
-        <p class="keywords"><em>Anahtar Kelimeler: Veri madenciliği, Veri bilimi, Büyük veri, Bilgi keşfi</em></p>
-        <p class="keywords"><em>Keywords: Data mining, Data science, Big data, Knowledge discovery</em></p>
-
-        <h3>1. Giriş</h3>
-        <p>Bilgi keşfi büyük veri yığınlarının tıpkı madenlerin keşfedilip işlenerek değerli hale getirilmeleri gibi büyük verinin içindeki gizli, önceden bilinmeyen, kullanışlı bilgilerin elde edilmesi işlemidir. Bu süreçte bilgisayar teknolojisinden ve özellikle de yapay zeka, makine öğrenimi, istatistik gibi alt dallarından yararlanılmaktadır.</p>
-        <p>Günümüz gelişmiş toplumlarında verinin, bilginin yönetiminde daha çok öz bilgi ile ilgilenilmektedir. Veritabanı içindeki bu öz bilgi ne denli büyük ve komplike olursa olsun bu verilerden önemli bilgileri çıkarma, yani veri madenciliği bir zorunluluk haline gelmiştir.</p>
-        <p>Veri Madenciliği; yığılmış, istenilen amaca yönelik faydalı bilgiler vermeyen verilerin anlamlı ve öz bilgiye dönüştürülmesi sürecidir. Veriden doğrudan bilgi elde edilebileceği gibi, elde edilen bu bilgiden de yeni bilgiler türetilebilir.</p>
-
-        <h3>2. Veri Madenciliği (Data Mining)</h3>
-        <p>Veri madenciliği; makine öğrenimi, istatistik ve veri tabanı sistemlerinin kesiştiği yöntemleri içeren büyük veri kümelerindeki örüntülerin keşfedilmesi sürecidir. Veri madenciliği çözümleme metodolojisi, özellikle iş zekası (BI) ve araştırma alanlarında geniş bir uygulama alanı bulmakta; karar vermeyi destekleme ve yönetim süreçlerini iyileştirme hedefleriyle kullanılmaktadır.</p>
-        <p>Veri madenciliği işletmeler için oldukça fazla fayda sağlar. Bunlardan en önemlisi veri grupları arasındaki benzer eğilimleri bulmaktır. Bu sayede şirketler ürünlerin hangi durum ve koşullarda daha iyi satıldığını veya müşteri grupları arasındaki davranış farklılıklarını belirleyebilir.</p>
-        <p>Aslında veri madenciliği bilgiyi keşfetme probleminde bir çözüm değil, çözüme götürecek kararları destekleyen, çözüme ulaşmak için çözümleyiciye yardımcı olan bir araçtır. Karar alan kişi ya da bilgi keşfi için çalışan uzman, yorumlama aşamasında etkin bir rol üstlenir.</p>
-
-        <h3>2.1. Veri Madenciliğinin Etimolojisi</h3>
-        <p>"Veri madenciliği" terimi, 1983 yılında İktisadi Araştırmalar Dergisi'nde yayınlanan bir makalede iktisatçı Michael Lovell tarafından kullanılmıştır. Terimin bugünkü anlamda kullanımı Clifton'a (2010) göre 1990'ların başından itibaren yaygınlaşmıştır.</p>
-        <p>Akademik toplulukta, araştırma için büyük forumlar 1995 yılında Montreal'de AAAI sponsorluğu altında 1. Uluslararası Veri Madenciliği ve Bilgi Keşfi Çalıştayı ile başlamış, 1997'de ise KDD dergisi yayın hayatına girmiştir. 1998'den itibaren bu konferanslar yıllık düzenlenmekte ve uluslararası bilim camiasının ilgisini çekmektedir.</p>
-
-        <h3>2.2. Veri Madenciliğinin Tarihi</h3>
-        <p>Günümüzde teknoloji tahmin edilemeyecek düzeyde gelişmiştir. Bununla birlikte internete erişim dünyanın birçok yerinden mümkün hale gelmiş ve küresel çapta devasa boyutlarda veri üretimi söz konusu olmaktadır.</p>
-        <p>Bilgisayarlar ilk olarak 1950'li yıllarda sayım için kullanılmaya başlamıştır. Birkaç yıl sonra 1960'larda verilerin depolanması, erişimi ve işlenmesi için veri tabanları geliştirilmiştir. 1980'lerde ise ilişkisel veri tabanları ve Yapısal Sorgulama Dili (SQL) hayata geçirilmiştir. 1990'larda veri ambarlaması (data warehousing) ve veri madenciliği işletme tarafından benimsendi. 2000'li yıllarda ise web madenciliği, metin madenciliği ve sosyal ağ analizi gibi yeni alt dallar ortaya çıktı.</p>
-
-        <h3>2.3. Veri Madenciliği Süreci</h3>
-        <p>Veri madenciliği aslında birkaç aşamadan oluşan bir süreçtir. Verileri büyük veri yığınları arasından bulmak, bulunan verileri analiz etmek ve elde edilen bulguları yorumlamak bu sürecin temel adımlarını oluşturur. Endüstri standardı olan CRISP-DM (Cross-Industry Standard Process for Data Mining) modeli bu sürecin çerçevesini belirlemiştir.</p>
-        <p>Veri madenciliği sürecinde izlenen adımlar genellikle aşağıdaki şekildedir (Shearer, 2000):</p>
-        <ul>
-          <li>Problemlerin tanımlanması,</li>
-          <li>Verilerin hazırlanması,</li>
-          <li>Modelin kurulması ve değerlendirilmesi,</li>
-          <li>Modelin kullanılması,</li>
-          <li>Modelin izlenmesi.</li>
-        </ul>
-        <p><strong>Problemin tanımlanması:</strong> Veri madenciliği çalışmalarında başarılı olmanın ilk ve en önemli şartı, projenin kullanılacağı amaç doğrultusunda ortaya çıkan problemin doğru belirlenmesi ve analiz edilmesidir. Amaç ne kadar açık ve net belirlenirse çalışma o kadar başarılı olacaktır.</p>
-        <p><strong>Verilerin hazırlanması:</strong> Modelin kurulması aşamasında ortaya çıkacak sorunlar, bu aşamaya sık sık geri dönülmesine ve veri hazırlama sürecinde yeniden çalışılmasına yol açacaktır. Bu aşama, proje süresinin en fazlasını alan aşamadır.</p>
-        <p><strong>Modelin kurulması ve değerlendirilmesi:</strong> Bir probleme en uygun modeli bulabilmek için, olabildiğince çok modelin denenmesi ve sonuçların karşılaştırılması gerekir. Başarılı bir modelin iş ihtiyaçlarını da karşılaması gerektiği unutulmamalıdır.</p>
-        <p><strong>Modelin kullanılması:</strong> Oluşturulmuş ve herkes tarafından kabul edilen bir model doğrudan uygulamaya dönebileceği gibi, diğer veri madenciliği süreçlerinin de girdisi olabilir.</p>
-        <p><strong>Modelin izlenmesi:</strong> Gün geçtikçe veri tabanlarındaki, disklerdeki ve veriyi elde etmedeki değişikliklerle sistemlerin özellikleri değişir. Bu nedenle modelin izlenmesi ve güncel tutulması büyük önem taşır.</p>
-
-        <h3>2.4. Veri Madenciliği Metotları</h3>
-        <p>Veri madenciliği sürecinde kullanılan pek çok yöntem mevcuttur. Gün geçtikçe bu sürece katkı verecek yeni yöntemler oluşmakta ve mevcut yöntemler iyileştirilmektedir. Veri madenciliği modelleri, gördükleri işlevlere göre temel olarak 3 grupta toplanır:</p>
-        <ul>
-          <li>Sınıflama (Classification) ve Regresyon (Regression),</li>
-          <li>Kümeleme (Clustering),</li>
-          <li>Birliktelik Kuralları (Association Rules).</li>
-        </ul>
-        <p>Sınıflama ve regresyon modelleri tahmin edici, kümeleme ve birliktelik kuralları ise tanımlayıcı modeller grubuna girmektedir. Sınıflandırma ile regresyon arasındaki temel fark, hedef değişkenin süreksiz (ayrık) veya sürekli olmasıyla ilgilidir.</p>
-
-        <h3>2.5. Veri Madenciliği Uygulama Alanları</h3>
-        <p>Günümüzde, veri madenciliği firmalar tarafından öncelikle müşteri odaklı olarak (finansal, iletişimsel ve pazarlama) kullanılmaktadır. Bunun yanı sıra veri madenciliğinin pek çok uygulama alanı mevcuttur:</p>
-        <ul>
-          <li>Sağlık Sektörü</li>
-          <li>Telekomünikasyon</li>
-          <li>Finans (Bankacılık, Borsa)</li>
-          <li>Pazarlama</li>
-          <li>Sigortacılık</li>
-          <li>Astronomi</li>
-          <li>Biyoloji</li>
-          <li>Tıp</li>
-        </ul>
-
-        <h3>2.6. Veri Madenciliğini Etkileyen Faktörler</h3>
-        <p>Veri madenciliği temel olarak 5 ana faktörden etkilenir:</p>
-        <p><strong>Veri:</strong> Veri madenciliğinin bu kadar gelişmesindeki en önemli faktördür.</p>
-        <p><strong>Donanım:</strong> Gelişen bellek ve işlem hızı kapasitesi sayesinde, birkaç yıl önce madencilik yapılamayan veriler üzerinde çalışmak mümkün hale gelmiştir.</p>
-        <p><strong>Bilgisayar ağları:</strong> Yeni nesil internet, çok yüksek hızları kullanmayı sağlamaktadır. Böyle bir bilgisayar ağı ortamı oluşturulduğunda, veriye erişim kolaylaşmakta ve veri madenciliği daha hızlı ve etkili bir şekilde gerçekleştirilebilmektedir.</p>
-        <p><strong>Bilimsel hesaplamalar:</strong> Günümüz bilim adamları ve mühendisleri, simülasyonu, bilimin üçüncü yolu olarak görmekteler. Veri madenciliği de bu bağlamda büyük önem taşımaktadır.</p>
-        <p><strong>Ticari eğilimler:</strong> Günümüzde, işletmeler rekabet ortamında varlıklarını koruyabilmek için daha hızlı hareket etmeli, daha iyi kararlar vermeli ve daha verimli olmalıdır.</p>
-
-        <h3>2.7. Veri Madenciliğinde Karşılaşılan Problemler</h3>
-        <p>Büyük hacimli verilerin bulunduğu veri ortamlarında büyük sorunlar ortaya çıkabilir. Bu nedenle küçük veri kümelerinde, basit yapay zeka tekniklerini kullanarak modeller kurmak kolayken büyük veri kümelerinde bu süreç zorlaşmaktadır.</p>
-        <p><strong>Artık veri:</strong> Artık veri, problemde istenilen sonucu elde etmek için kullanılan örneklem kümesindeki gereksiz niteliklerdir. Bu durum, öğrenme sürecini olumsuz etkileyebilir.</p>
-        <p><strong>Belirsizlik:</strong> Yanlışlıkların şiddeti ve verideki gürültünün derecesi ile ilgilidir.</p>
-        <p><strong>Boş veri:</strong> Bir veri tabanında boş değer, birincil anahtarda yer almayan herhangi bir niteliğin değeri olabilir. Boş değerler farklı anlamlar ifade edebilir.</p>
-        <p><strong>Dinamik veri:</strong> Kurumsal çevrim içi veri tabanları dinamiktir ve içeriği sürekli olarak değişir. Bu durum, bilgi keşfi metodolojilerinin uygulanmasını güçleştirir.</p>
-        <p><strong>Eksik veri:</strong> Veri kümesinin büyüklüğünden ya da doğasından kaynaklanmaktadır. Eksik veriler olduğunda yapılması gerekenler:</p>
-        <ul>
-          <li>Eksik veri içeren kayıt veya kayıtlar çıkarılabilir.</li>
-          <li>Değişkenin ortalaması eksik verilerin yerine kullanılabilir.</li>
-          <li>Var olan verilere dayalı olarak en uygun değer kullanılabilir.</li>
-        </ul>
-
-        <h3>2.8. Veri Madenciliği Standartları</h3>
-        <p>Veri madenciliği süreci standartlarını tanımlamak için çeşitli çabalar olmuştur. 1999 Veri Madenciliği için Avrupa Akademi Ağı (ESPRIT) projesi olan CRISP-DM (Endüstriler Arası Veri Madenciliği için Standart Süreç), sektörler arası genel bir metodoloji tanımlamıştır. Çıkarılan modellerin değişimi için anahtar standart, veri madenciliği süreçleri için kullanılan Tahmine Dayalı Model İşaretleme Dili'dir (PMML).</p>
-
-        <h3>3. Gizlilik Problemleri ve Etik</h3>
-        <p>"Veri madenciliği" teriminin kendisi etik bir etkiye sahip olmasa da genellikle insanların davranışlarıyla ilgili veriler üzerinde uygulandığından önemli gizlilik, yasal ve etik sorunlar ortaya çıkarmaktadır.</p>
-        <p>Bireyin gizliliğine yönelik tehdit, veriler bir kez derlendiğinde veri madencisinin veya yeni derlenmiş veri kümesine erişim sağlayan herkesin bu verileri başlangıçtaki amaç dışında kullanabileceği anlamına gelir.</p>
-        <p>Bir veri madencisinin veriyi toplamaya başlamadan önce haberdar olması gereken başlıca konular şunlardır:</p>
-        <ul>
-          <li>Toplanılacak verinin hangi amaç için toplandığı,</li>
-          <li>Verilerin nasıl kullanılacağı,</li>
-          <li>Verileri ve türevlerini kimlerin kullanacağı,</li>
-          <li>Elde edildikten sonra verilerin korumasını gerçekleştirecek güvenliğin durumu,</li>
-          <li>Toplanılan verilerin nasıl güncellenebileceği.</li>
-        </ul>
-        <p>Veriler anonim hale gelecek şekilde de değiştirilebilir. Böylece bireyler kolayca tespit edilemez. Bununla birlikte anonimleştirme, verinin kullanışlılığını da azaltabilir.</p>
-        <p>Yakın tarihte yaşanan ve Facebook'un bir teknoloji şirketine verilen en büyük cezayı almasıyla sonuçlanan bir gizlilik ihlali davası, bu alandaki risklerin somut bir örneğini oluşturmaktadır.</p>
-        <p><strong>Avrupa'da Gizlilik Durumu:</strong> Avrupa oldukça güçlü gizlilik yasalarına sahiptir. GDPR (Genel Veri Koruma Yönetmeliği) kapsamında kişisel verilerin işlenmesine ilişkin katı kurallar belirlenmiştir.</p>
-        <p><strong>Amerika'da Gizlilik Durumu:</strong> Amerika Birleşik Devletleri'nde, gizlilik endişeleri ABD Kongresi tarafından Sağlık Sigortası Taşınabilirliği ve Hesap Verebilirlik Yasası (HIPAA) gibi çeşitli yasal düzenlemelerle ele alınmaktadır.</p>
-
-        <h3>4. Türkiye'deki Veri Madenciliği Çalışmaları</h3>
-        <p>Günümüzde en çok uygulanan faydalı bilgiye ulaşma disiplinlerinden birisi olan veri madenciliği, ülkemizde de pek çok alanda kullanılmaktadır.</p>
-        <p><strong>4.1. Eğitim Alanında Gerçekleştirilen Bazı Çalışmalar:</strong> Serdar Çiftci (2006) uzaktan eğitime katılan öğrencilerin ders çalışma etkinliklerini incelemiştir. Murat Kayri (2008) öğrencilerin performans göstergelerinin sürekli izlenmesine yönelik elektronik portfolyo değerlendirmeleri için veri madenciliği yaklaşımı geliştirmiştir. Bozkır ve Sezer (2009) Hacettepe Üniversitesi öğrencilerinin beslenme alışkanlıklarını veri madenciliği teknikleriyle analiz etmiştir.</p>
-        <p><strong>4.2. Tıp Alanında Gerçekleştirilen Bazı Çalışmalar:</strong> Şengül Doğan ve İbrahim Türkoğlu (2008) kan biyokimya parametreleri ile demir eksikliği anemisi tespiti üzerine karar ağaçları kullanan bir çalışma gerçekleştirmiştir. Mustafa Danacı ve ekibi (2010) veri madenciliği yöntemleriyle meme kanseri hücrelerinin tahminini araştırmıştır.</p>
-        <p><strong>4.3. Bankacılık ve Borsa Alanlarında Gerçekleştirilen Bazı Çalışmalar:</strong> Albayrak ve Yılmaz (2009) İMKB 100 endeksinde sektörel banka sınıflandırması için karar ağacı algoritmaları uygulamıştır. Savaşçı ve Tatlıdil (2006) bankaların kredi kartı pazarında uyguladıkları müşteri ilişkileri yönetimi stratejilerini incelemiştir.</p>
-        <p><strong>4.4. Mühendislik Alanında Gerçekleştirilen Bazı Çalışmalar:</strong> Duru ve Canbay (2007) veri madenciliği ile deprem verilerinin analizini gerçekleştirmiştir. Bilgin ve Çamurcu (2008) çok boyutlu veri görselleştirme tekniklerini araştırmıştır.</p>
-        <p><strong>4.5. Ticaret Alanında Yapılan Bazı Çalışmalar:</strong> Taşkın ve Emel (2010) perakendecilik sektöründe veri madenciliğinde kümeleme yaklaşımları ve Kohonen ağlarını incelemiştir. Gürbüz ve ekibi (2008) bir havayolu işletmesine ait parça söküm raporlarına ilişkin veri madenciliği uygulaması gerçekleştirmiştir.</p>
-
-        <h3>5. Veri Madenciliğinin Geleceği</h3>
-        <p>Veri madenciliği teknolojisinin gündeme getirdiği en önemli konulardan biri, bir işletme veya teknoloji konusuna sahip olmayan, verilerden elde edilen bilgiyi nereye götürmek istediğini bilmeyen bir topluluğun bu teknolojiden nasıl faydalanabileceğidir. Veri madenciliğindeki önemli bir diğer konu ise artık iş dünyasında da oldukça çok kullanılan gerçek zamanlı verilerdir. Gerçek zamanlı analitik, nesnelerin internetinin (IoT) yaygınlaşmasıyla birlikte kritik bir öneme kavuşmaktadır.</p>
-        <p>Diğer bir konu ise veri bütünlüğüdür. Açıkçası veri analizi, ancak analiz edilen veriler kadar iyi olabilir. Veri miktarının artmasıyla birlikte hangi verilerin güvenilir, hangi verilerin eksik veya hatalı olduğunu belirlemek giderek daha güç bir hal almaktadır.</p>
-        <p>Son olarak, maliyet sorunu vardır. Sistem donanım maliyetlerinin son beş yıl içinde önemli ölçüde düşmesine rağmen yazılım, uzman insan kaynağı ve süreç yönetimi maliyetleri yüksek kalmaya devam etmektedir. Bulut bilişim ve açık kaynak araçların yaygınlaşması bu engeli önemli ölçüde aşağı çekmiştir.</p>
-
-        <h3>6. Sonuç</h3>
-        <p>Veri madenciliğine gösterilen ilgi tüm dünyada gün geçtikçe artmaktadır. Hemen hemen her alanda kullanılan veri madenciliği, büyük veri yığınlarından anlamlı bilgi çıkarmak için vazgeçilmez bir araç haline gelmiştir. Yapay zeka ve makine öğrenmesindeki ilerlemelerle birlikte veri madenciliği teknikleri de hızla gelişmekte ve daha geniş uygulama alanları bulmaktadır.</p>
-        <p>Ülkemizdeki veri madenciliği çalışmalarına baktığımızda, bu çalışmaların ekonomimizde, eğitimde, ticari faaliyetlerde ve diğer alanlarda giderek artan bir öneme sahip olduğu görülmektedir. Araştırmacılarımızın bu alana olan ilgisi artmakta, uluslararası arenada da ülkemizin varlığı güçlenmektedir.</p>
-        <p>Tüm bu faydalarına karşın veri madenciliğinin birçok probleme yol açabileceği de unutulmamalıdır. Veri madenciliği uygulamalarında gizlilik ve etik konularına gereken önemin verilmesi, bireylerin kişisel verilerinin korunması bakımından büyük önem taşımaktadır.</p>
-        <p>Veri madenciliği akademik alanda da gün geçtikçe daha fazla ilgi kaynağı olmaktadır. Ülkemizde birçok kurum ve üniversite bu alana yatırım yapmakta, konuya ilişkin araştırma ve çalışmalar hız kazanmaktadır.</p>
-
+        <h3 class="blog-card-title">Veri Madenciliğine Giriş</h3>
+        <p class="blog-card-excerpt">Veri madenciliğinin tanımı, etimolojisi ve tarihsel gelişimi. Büyük veriden anlamlı bilgiye ulaşmanın temel kavramları.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">⏱ 6 dk okuma</span>
+          <span class="blog-card-cta">Oku →</span>
+        </div>
+      </div>
+    </article>
+    <article class="blog-card reveal" data-category="Teknoloji" onclick="openPost('veri-madenciligi-genel')">
+      <div class="blog-card-inner">
+        <div class="blog-card-top">
+          <span class="blog-tag">Teknoloji</span>
+          <span class="blog-date">Nisan 2021</span>
+        </div>
+        <h3 class="blog-card-title">Veri Madenciliği: Süreç ve Metotlar</h3>
+        <p class="blog-card-excerpt">Veri madenciliği süreci, CRISP-DM modeli, sınıflama, kümeleme ve birliktelik kuralları metotlarının kapsamlı incelemesi.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">⏱ 8 dk okuma</span>
+          <span class="blog-card-cta">Oku →</span>
+        </div>
+      </div>
+    </article>
+    <article class="blog-card reveal" data-category="Teknoloji" onclick="openPost('blockchain-nedir')">
+      <div class="blog-card-inner">
+        <div class="blog-card-top">
+          <span class="blog-tag">Teknoloji</span>
+          <span class="blog-date">Mayıs 2021</span>
+        </div>
+        <h3 class="blog-card-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h3>
+        <p class="blog-card-excerpt">Dağıtık defter teknolojisi, kripto para birimleri ve akıllı sözleşmeler. Blockchain'in çalışma prensibi ve kullanım alanları.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">⏱ 7 dk okuma</span>
+          <span class="blog-card-cta">Oku →</span>
+        </div>
+      </div>
+    </article>
+    <article class="blog-card reveal" data-category="Uzay" onclick="openPost('tua-turkiye-uzay')">
+      <div class="blog-card-inner">
+        <div class="blog-card-top">
+          <span class="blog-tag">Uzay</span>
+          <span class="blog-date">Mayıs 2021</span>
+        </div>
+        <h3 class="blog-card-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h3>
+        <p class="blog-card-excerpt">Türkiye'nin uzay hedefleri ve TUA'nın kuruluş hikayesi. Milli uzay programı, roket projeleri ve 2023 hedefleri.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">⏱ 6 dk okuma</span>
+          <span class="blog-card-cta">Oku →</span>
+        </div>
+      </div>
+    </article>
+    <article class="blog-card reveal" data-category="Bilim" onclick="openPost('neuralink-beyin-makine')">
+      <div class="blog-card-inner">
+        <div class="blog-card-top">
+          <span class="blog-tag">Bilim</span>
+          <span class="blog-date">Haziran 2021</span>
+        </div>
+        <h3 class="blog-card-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h3>
+        <p class="blog-card-excerpt">Elon Musk'ın Neuralink projesi ve beyin-bilgisayar arayüzü teknolojisi. İnsan beynini dijital dünyaya bağlamanın bilimi.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">⏱ 7 dk okuma</span>
+          <span class="blog-card-cta">Oku →</span>
+        </div>
       </div>
     </article>
   </div>
 </section>
+
+
+  <div id="modal-veri-madenciligi-giris" class="blog-modal">
+    <div class="blog-modal-overlay" onclick="closePost('veri-madenciligi-giris')"></div>
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" onclick="closePost('veri-madenciligi-giris')">✕</button>
+      <div class="blog-modal-header">
+        <span class="blog-tag">Teknoloji</span>
+        <span class="blog-date">Nisan 2021 · ⏱ 6 dk okuma</span>
+      </div>
+      <h2 class="blog-modal-title">Veri Madenciliğine Giriş</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Merhaba! Bu yazımızda veri madenciliğine giriş yapacağız. Veri madenciliği ile ilgili bu ilk yazımızda veri madenciliğinin tanımından, etimolojisinden ve tarihsel gelişiminden bahsedeceğiz.</p>
+<h3>2. Veri Madenciliği Nedir?</h3>
+<p>Veri madenciliği; makine öğrenimi, istatistik ve veri tabanı sistemlerinin kesiştiği yöntemleri içeren büyük veri kümelerindeki örüntülerin keşfedilmesi sürecidir. Başka bir deyişle veri madenciliği, büyük veri yığınlarından gizli, önceden bilinmeyen ve potansiyel olarak kullanışlı bilgilerin çıkarılması işlemidir.</p>
+<p>Veri Madenciliği; yığılmış, istenilen amaca yönelik faydalı bilgiler vermeyen verilerin anlamlı ve öz bilgiye dönüştürülmesi sürecidir. Veriden doğrudan bilgi elde edilebileceği gibi, elde edilen bu bilgiden de yeni bilgiler türetilebilir.</p>
+<h3>3. Veri Madenciliğinin Etimolojisi</h3>
+<p>"Veri madenciliği" terimi, 1983 yılında İktisadi Araştırmalar Dergisi'nde yayınlanan bir makalede iktisatçı Michael Lovell tarafından kullanılmıştır. Terimin bugünkü anlamda kullanımı 1990'ların başından itibaren yaygınlaşmıştır.</p>
+<p>Akademik toplulukta büyük forumlar 1995 yılında Montreal'de AAAI sponsorluğu altında 1. Uluslararası Veri Madenciliği ve Bilgi Keşfi Çalıştayı ile başlamış, 1997'de KDD dergisi yayın hayatına girmiştir.</p>
+<h3>4. Veri Madenciliğinin Tarihsel Gelişimi</h3>
+<p>Bilgisayarlar ilk olarak 1950'li yıllarda sayım için kullanılmaya başlamıştır. 1960'larda veri tabanları geliştirildi. 1980'lerde ilişkisel veri tabanları ve SQL hayata geçirildi. 1990'larda veri ambarlaması ve veri madenciliği iş dünyası tarafından benimsendi. 2000'li yıllarda web madenciliği, metin madenciliği ve sosyal ağ analizi gibi yeni alt dallar ortaya çıktı.</p>
+<h3>5. Sonuç</h3>
+<p>Veri madenciliği, günümüz dijital çağında giderek artan önemiyle hem akademik hem de endüstriyel alanda vazgeçilmez bir disiplin haline gelmiştir. Bir sonraki yazımızda veri madenciliği sürecini, metotlarını ve uygulama alanlarını inceleyeceğiz.</p></div>
+    </div>
+  </div>
+  <div id="modal-veri-madenciligi-genel" class="blog-modal">
+    <div class="blog-modal-overlay" onclick="closePost('veri-madenciligi-genel')"></div>
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" onclick="closePost('veri-madenciligi-genel')">✕</button>
+      <div class="blog-modal-header">
+        <span class="blog-tag">Teknoloji</span>
+        <span class="blog-date">Nisan 2021 · ⏱ 8 dk okuma</span>
+      </div>
+      <h2 class="blog-modal-title">Veri Madenciliği: Süreç ve Metotlar</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Bu içeriğimizde daha önce kelime anlamına ve tarihine değindiğimiz veri madenciliğinin süreci, metotları, uygulama alanları ve karşılaşılan problemleri inceleyeceğiz.</p>
+<h3>2. Veri Madenciliği Süreci</h3>
+<p>Veri madenciliği birkaç aşamadan oluşan bir süreçtir. Endüstri standardı CRISP-DM (Cross-Industry Standard Process for Data Mining) modeli bu sürecin çerçevesini belirlemiştir.</p>
+<p>Veri madenciliği sürecinde izlenen adımlar:</p>
+<ul><li>Problemlerin tanımlanması</li><li>Verilerin hazırlanması</li><li>Modelin kurulması ve değerlendirilmesi</li><li>Modelin kullanılması</li><li>Modelin izlenmesi</li></ul>
+<h3>3. Veri Madenciliği Metotları</h3>
+<p>Veri madenciliği modelleri işlevlerine göre 3 grupta toplanır:</p>
+<ul><li><strong>Sınıflama (Classification) ve Regresyon:</strong> Tahmin edici modeller grubuna girer. Hedef değişkenin süreksiz (ayrık) veya sürekli olmasına göre ikiye ayrılır.</li><li><strong>Kümeleme (Clustering):</strong> Tanımlayıcı modeller grubuna girer. Benzer özellikteki verileri gruplar.</li><li><strong>Birliktelik Kuralları (Association Rules):</strong> Veriler arasındaki ilişkileri ortaya çıkarır. Market sepeti analizi klasik bir örneğidir.</li></ul>
+<h3>4. Uygulama Alanları</h3>
+<p>Veri madenciliği; sağlık sektörü, telekomünikasyon, finans (bankacılık, borsa), pazarlama, sigortacılık, astronomi, biyoloji ve tıp gibi pek çok alanda kullanılmaktadır.</p>
+<h3>5. Karşılaşılan Problemler</h3>
+<p>Büyük veri ortamlarında artık veri, belirsizlik, boş veri, dinamik veri ve eksik veri gibi sorunlarla karşılaşılır. Bu sorunların doğru yönetimi, başarılı bir veri madenciliği çalışmasının temel koşullarından biridir.</p></div>
+    </div>
+  </div>
+  <div id="modal-blockchain-nedir" class="blog-modal">
+    <div class="blog-modal-overlay" onclick="closePost('blockchain-nedir')"></div>
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" onclick="closePost('blockchain-nedir')">✕</button>
+      <div class="blog-modal-header">
+        <span class="blog-tag">Teknoloji</span>
+        <span class="blog-date">Mayıs 2021 · ⏱ 7 dk okuma</span>
+      </div>
+      <h2 class="blog-modal-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Merhaba! Bu yazımızda son yıllarda finans dünyasında ve teknoloji gündeminde sıkça duyulan Blockchain (Blok Zinciri) teknolojisini ele alacağız.</p>
+<h3>2. Blockchain Nedir?</h3>
+<p>Blockchain, verilerin birbirine kriptografik olarak bağlı bloklar halinde saklandığı, merkezi bir otoriteye ihtiyaç duymayan dağıtık bir defter teknolojisidir. Her blok, bir önceki bloğun hash değerini içerdiğinden zincirin herhangi bir halkasını değiştirmek son derece güçtür.</p>
+<p>Temel özellikleri şöyle sıralayabiliriz: merkezi olmayan yapı (decentralization), değişmezlik (immutability), şeffaflık (transparency) ve güvenlik (security).</p>
+<h3>3. Nasıl Çalışır?</h3>
+<p>Bir işlem gerçekleştiğinde ağdaki tüm katılımcılara duyurulur. Madenciler (miners) bu işlemi doğrulamak için rekabet eder. Doğrulanan işlem bir blok oluşturur ve zincire eklenir. Bu süreç "Proof of Work" veya "Proof of Stake" gibi konsensüs mekanizmaları ile güvence altına alınır.</p>
+<h3>4. Kullanım Alanları</h3>
+<p>Blockchain teknolojisi yalnızca kripto para birimleriyle sınırlı değildir. Akıllı sözleşmeler (Smart Contracts), tedarik zinciri yönetimi, sağlık kayıtları, dijital kimlik doğrulama, oylama sistemleri ve NFT'ler bu teknolojinin uygulama alanları arasında yer almaktadır.</p>
+<h3>5. Bitcoin ve Ethereum</h3>
+<p>Bitcoin, 2009 yılında Satoshi Nakamoto tarafından tanıtılan ilk blockchain uygulamasıdır. Ethereum ise 2015'te Vitalik Buterin tarafından geliştirilen ve akıllı sözleşmeleri destekleyen ikinci nesil bir blockchain platformudur.</p>
+<h3>6. Sonuç</h3>
+<p>Blockchain teknolojisi, güven sorununu merkezi bir aracıya ihtiyaç duymadan çözen devrimci bir yaklaşım sunmaktadır. Önümüzdeki yıllarda pek çok sektörde köklü dönüşümlere yol açması beklenmektedir.</p></div>
+    </div>
+  </div>
+  <div id="modal-tua-turkiye-uzay" class="blog-modal">
+    <div class="blog-modal-overlay" onclick="closePost('tua-turkiye-uzay')"></div>
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" onclick="closePost('tua-turkiye-uzay')">✕</button>
+      <div class="blog-modal-header">
+        <span class="blog-tag">Uzay</span>
+        <span class="blog-date">Mayıs 2021 · ⏱ 6 dk okuma</span>
+      </div>
+      <h2 class="blog-modal-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Merhaba! Bu yazımızda Türkiye'nin uzay alanındaki en önemli kurumsal adımlarından biri olan Türkiye Uzay Ajansı'nı (TUA) tanıyacağız.</p>
+<h3>2. TUA Nedir?</h3>
+<p>Türkiye Uzay Ajansı (TUA), Türkiye'nin ulusal uzay politikalarını belirlemek, uzay alanındaki çalışmaları koordine etmek ve uluslararası iş birliklerini yürütmek amacıyla 2018 yılında kurulmuştur. Cumhurbaşkanlığına bağlı olarak faaliyet gösteren TUA, Türkiye'nin uzay vizyonunu hayata geçirmekle görevlidir.</p>
+<h3>3. Türkiye'nin Uzay Hedefleri</h3>
+<p>Türkiye'nin 2023 yılı için belirlediği uzay hedefleri arasında en önemlisi Ay'a kontrollü iniş yapmaktır. Bu hedef doğrultusunda yerli ve milli roket geliştirme çalışmaları sürdürülmektedir.</p>
+<p>Diğer önemli hedefler şunlardır: yerli uydu teknolojilerinin geliştirilmesi, uzay üssü kurulması için yer seçimi çalışmaları ve uluslararası uzay iş birliklerinin güçlendirilmesi.</p>
+<h3>4. TUA'nın Faaliyetleri</h3>
+<p>TUA, üniversiteler ve savunma sanayii kuruluşlarıyla iş birliği yaparak uzay teknolojileri alanında Ar-Ge çalışmalarını desteklemektedir. Ayrıca genç yetenekleri uzay bilimine kazandırmak amacıyla çeşitli eğitim ve farkındalık programları düzenlemektedir.</p>
+<h3>5. ROKETSAN ve Uzay</h3>
+<p>Türkiye'nin roket teknolojisindeki en güçlü aktörü ROKETSAN, TUA ile koordineli olarak yerli roket motorları geliştirmektedir. Bu çalışmalar Türkiye'nin bağımsız uzay erişim kapasitesini güçlendirecektir.</p>
+<h3>6. Sonuç</h3>
+<p>TUA'nın kuruluşu, Türkiye'nin uzay alanındaki kararlılığının somut bir göstergesidir. Teknoloji bağımsızlığı hedefiyle yürütülen bu çalışmalar, gelecek nesillere ilham vermeye devam edecektir.</p></div>
+    </div>
+  </div>
+  <div id="modal-neuralink-beyin-makine" class="blog-modal">
+    <div class="blog-modal-overlay" onclick="closePost('neuralink-beyin-makine')"></div>
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" onclick="closePost('neuralink-beyin-makine')">✕</button>
+      <div class="blog-modal-header">
+        <span class="blog-tag">Bilim</span>
+        <span class="blog-date">Haziran 2021 · ⏱ 7 dk okuma</span>
+      </div>
+      <h2 class="blog-modal-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Bu yazımızda son yıllarda adından sıkça söz ettiren Elon Musk'ın kurucusu olduğu Neuralink şirketini ve beyin-makine arayüzü (Brain-Machine Interface / BMI) teknolojisini ele alacağız.</p>
+<h3>2. Neuralink Nedir?</h3>
+<p>Neuralink, 2016 yılında Elon Musk ve bir grup nörobilimci tarafından kurulan bir nörotek şirketidir. Şirketin temel amacı, insan beynine implante edilebilecek yüksek bant genişlikli beyin-bilgisayar arayüzleri geliştirmektir.</p>
+<h3>3. Beyin-Makine Arayüzü (BMI) Nedir?</h3>
+<p>Beyin-makine arayüzü (BMI), beyin sinyallerini okuyarak bunları bilgisayar komutlarına dönüştüren bir teknolojik sistemdir. İki temel türü vardır: invazif (beyne implante edilen) ve non-invazif (EEG başlığı gibi dışarıdan takılan) sistemler.</p>
+<h3>4. Neuralink Nasıl Çalışır?</h3>
+<p>Neuralink cihazı, beyne yerleştirilen ultra ince iplikçikler (threads) aracılığıyla nöronların elektriksel aktivitesini kaydeder. Bu iplikçikler insan saçının yaklaşık 1/4'ü kadar incedir. Toplanan veriler kablosuz olarak dış cihazlara aktarılır.</p>
+<p>Şirket, 2020 yılında "Link" adını verdiği ilk cihazını tanıttı. Bir madeni para büyüklüğündeki bu cihaz, kafatası kemiğine yerleştirilerek beyin aktivitesini kaydedebilmektedir.</p>
+<h3>5. Uygulama Alanları</h3>
+<p>Kısa vadede Neuralink'in hedeflediği uygulamalar şunlardır: felçli hastaların bilgisayar ve akıllı telefon kontrolü, hafıza bozukluklarının tedavisi, görme engellilere yapay görme sağlanması ve nörolojik hastalıkların tedavisi.</p>
+<p>Uzun vadede ise insan zekasının yapay zeka ile entegrasyonu (Musk'ın "AI ile simbiyoz" vizyonu) ve bellek yükleme/indirme gibi spekülatif hedefler de gündemdedir.</p>
+<h3>6. Etik Tartışmalar</h3>
+<p>Bu teknoloji beraberinde ciddi etik soruları da getirmektedir: Beyin verilerinin gizliliği nasıl korunacak? Zengin-yoksul arasındaki bilişsel uçurum derinleşecek mi? İnsan kimliğinin sınırları nerede başlar ve nerede biter?</p>
+<h3>7. Sonuç</h3>
+<p>Neuralink ve beyin-makine arayüzü teknolojisi, insanlık tarihinin en dönüştürücü icatlarından biri olma potansiyeli taşımaktadır. Tıbbi uygulamalardan başlayarak zamanla insan-bilgisayar etkileşimini kökten değiştirecek bu teknoloji, hem heyecan verici hem de dikkatli bir yaklaşım gerektiren bir alan olmaya devam etmektedir.</p></div>
+    </div>
+  </div>
 
 <section id="contact">
   <p class="contact-eyebrow reveal">Bana ulaş</p>
@@ -1571,6 +1813,40 @@ window.addEventListener('scroll', () => {
     a.style.color = active ? 'var(--accent)' : '';
   });
 });
+</script>
+<script>
+
+function openPost(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePost(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.blog-modal.open').forEach(m => {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.blog-card').forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
 </script>
 </body>
 </html>
