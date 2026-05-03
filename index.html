@@ -985,6 +985,141 @@ footer {
 }
 .blog-modal-body strong { color: var(--text-primary); }
 
+
+/* =============================================
+   RESPONSIVE / MOBILE
+   ============================================= */
+
+/* LinkedIn badge wrap */
+.li-badge-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+/* Hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  nav {
+    padding: 1rem 1.2rem;
+    position: relative;
+  }
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem 1.5rem;
+    gap: 0.2rem;
+    z-index: 999;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 0.6rem 0; font-size: 0.95rem; }
+
+  /* HERO */
+  .hero-content { padding: 0 1.2rem; }
+  .hero-greeting { font-size: 1rem; }
+  .hero-name { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .hero-tagline { font-size: clamp(1.2rem, 5vw, 2rem); }
+  .hero-desc { font-size: 0.9rem; }
+  .hero-cta { flex-direction: column; gap: 0.8rem; }
+  .hero-cta a { width: 100%; text-align: center; }
+
+  /* SECTIONS — genel padding */
+  section {
+    padding: 60px 1.2rem !important;
+  }
+  #blog {
+    padding: 60px 1.2rem !important;
+  }
+
+  /* ABOUT */
+  .about-grid,
+  .about-content {
+    grid-template-columns: 1fr !important;
+    flex-direction: column;
+  }
+
+  /* EXPERIENCE */
+  .exp-item, .exp-header {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .exp-date { text-align: left !important; }
+
+  /* PROJECTS */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .projects-filter { gap: 0.4rem; }
+  .filter-btn { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+
+  /* SKILLS */
+  .skills-grid,
+  .skills-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* BLOG */
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .blog-filter { gap: 0.4rem; }
+  .blog-filter-btn { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+
+  /* BLOG MODAL */
+  .blog-modal-content {
+    width: 95%;
+    max-height: 90vh;
+    padding: 1.5rem 1.2rem;
+  }
+  .blog-modal-title { font-size: 1.2rem; }
+
+  /* CONTACT */
+  .contact-title { font-size: clamp(2rem, 8vw, 3rem); }
+  .contact-links { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+
+  /* SECTION HEADER */
+  .section-header { flex-wrap: wrap; gap: 0.5rem; }
+  .section-line { flex: 1; min-width: 40px; }
+}
+
+@media (max-width: 480px) {
+  .hero-name { font-size: 2rem; }
+  .hero-tagline { font-size: 1.2rem; }
+  nav { padding: 0.8rem 1rem; }
+  .blog-modal-content { padding: 1.2rem 1rem; }
+}
+
 </style>
   <meta name="description" content="Hasan Saldıran — BT Sistemleri ve Güvenlik Uzmanı. Python, MITRE ATT&CK, CIS Controls v8 alanlarında uzman. Dünyagöz Hastaneler Grubu. İstanbul, Türkiye.">
   <meta name="keywords" content="Hasan Saldiran, BT Güvenlik, IT Security, MITRE ATT&CK, CIS Controls, Python, Lansweeper, Dünyagöz, ÇMHM, Bilgisayar Mühendisi, İstanbul">
@@ -994,6 +1129,7 @@ footer {
   <meta property="og:url" content="https://hasansaldiran.github.io/">
   <meta property="og:type" content="website">
   <meta name="google-site-verification" content="xWxpGCHVLCwXIJbSBlb1LWYZVTzcy0nvx2brUZZOdoY">
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 <body>
 
@@ -1007,7 +1143,8 @@ footer {
 <!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">hs@portfolio:~$</a>
-  <ul class="nav-links">
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">about</a></li>
     <li><a href="#experience">experience</a></li>
     <li><a href="#projects">projects</a></li>
@@ -1705,6 +1842,10 @@ footer {
       <span class="cl-icon">⌥</span> GitHub
     </a>
   </div>
+
+  <div class="li-badge-wrap reveal">
+    <div class="badge-base LI-profile-badge" data-locale="tr_TR" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="hasansaldiran" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://tr.linkedin.com/in/hasansaldiran?trk=profile-badge">Hasan SALDIRAN</a></div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1853,6 +1994,19 @@ document.querySelectorAll('.blog-filter-btn').forEach(btn => {
   });
 });
 
+
+  // Hamburger menu toggle
+  document.getElementById('navHamburger').addEventListener('click', function() {
+    this.classList.toggle('open');
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  // Close menu when a nav link is clicked
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navHamburger').classList.remove('open');
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
 </script>
 </body>
 </html>
