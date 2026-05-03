@@ -1120,6 +1120,45 @@ footer {
   .blog-modal-content { padding: 1.2rem 1rem; }
 }
 
+
+/* Scroll to top button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,212,255,0.3);
+}
+#scrollTopBtn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#scrollTopBtn:hover {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,212,255,0.5);
+}
+/* Tech pills wrap */
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
 </style>
   <meta name="description" content="Hasan Saldıran — BT Sistemleri ve Güvenlik Uzmanı. Python, MITRE ATT&CK, CIS Controls v8 alanlarında uzman. Dünyagöz Hastaneler Grubu. İstanbul, Türkiye.">
   <meta name="keywords" content="Hasan Saldiran, BT Güvenlik, IT Security, MITRE ATT&CK, CIS Controls, Python, Lansweeper, Dünyagöz, ÇMHM, Bilgisayar Mühendisi, İstanbul">
@@ -1197,8 +1236,10 @@ footer {
     <span class="tech-pill">Python</span>
     <span class="tech-pill">C#</span>
     <span class="tech-pill">ASP.NET</span>
+    <span class="tech-pill">JavaScript</span>
     <span class="tech-pill">MITRE ATT&CK</span>
     <span class="tech-pill">CIS Controls v8</span>
+    <span class="tech-pill">NIST NVD</span>
     <span class="tech-pill">Streamlit</span>
     <span class="tech-pill">Flask</span>
     <span class="tech-pill">OpenCV</span>
@@ -1206,6 +1247,12 @@ footer {
     <span class="tech-pill">Lansweeper</span>
     <span class="tech-pill">SQL/MSSQL</span>
     <span class="tech-pill">Active Directory</span>
+    <span class="tech-pill">Microsoft Intune</span>
+    <span class="tech-pill">Apple Business Manager</span>
+    <span class="tech-pill">Google Gemini AI</span>
+    <span class="tech-pill">yfinance</span>
+    <span class="tech-pill">Git</span>
+    <span class="tech-pill">Linux</span>
   </div>
 </section>
 
@@ -1843,9 +1890,7 @@ footer {
     </a>
   </div>
 
-  <div class="li-badge-wrap reveal">
-    <div class="badge-base LI-profile-badge" data-locale="tr_TR" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="hasansaldiran" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://tr.linkedin.com/in/hasansaldiran?trk=profile-badge">Hasan SALDIRAN</a></div>
-  </div>
+  
 </section>
 
 <!-- FOOTER -->
@@ -2007,6 +2052,18 @@ document.querySelectorAll('.blog-filter-btn').forEach(btn => {
       document.getElementById('navLinks').classList.remove('open');
     });
   });
+
+// Scroll to top visibility
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('scrollTopBtn');
+  if(btn) {
+    if(window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }
+});
 </script>
+
+<!-- Scroll to top -->
+<button id="scrollTopBtn" aria-label="Yukarı çık" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
 </body>
 </html>
