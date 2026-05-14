@@ -728,6 +728,82 @@ footer {
   #cursor, #cursor-ring { display: none; }
 }
 
+@media (max-width: 768px) {
+  /* NAV */
+  nav { padding: 1rem 1.2rem; position: relative; flex-wrap: wrap; }
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none; flex-direction: column;
+    position: absolute; top: 100%; right: 0; left: 0;
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem 1.5rem; gap: 0.2rem; z-index: 999;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 0.6rem 0; font-size: 0.95rem; }
+  #lang-toggle { margin-left: auto; margin-right: 3rem; font-size: 0.65rem; padding: 0.25rem 0.6rem; }
+
+  /* HERO */
+  #hero { padding-left: 1.2rem !important; padding-right: 1.2rem !important; padding-top: 6rem !important; }
+  .hero-pre { font-size: 0.65rem; }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-cta { flex-wrap: wrap; gap: 0.7rem; }
+  .hero-cta .btn { flex: 1 1 calc(50% - 0.35rem); text-align: center; min-width: 120px; }
+  .hero-stats { flex-wrap: wrap; max-width: 100%; }
+  .hstat { flex: 1 1 50%; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .hstat:nth-child(2n) { border-right: none; }
+  .hstat:nth-child(3), .hstat:nth-child(4) { border-bottom: none; }
+  .tech-pills { gap: 0.4rem; }
+  .tech-pill { font-size: 0.65rem; padding: 0.2rem 0.5rem; }
+
+  /* SECTIONS */
+  section { padding: 60px 1.2rem !important; }
+  #blog { padding: 60px 1.2rem !important; }
+
+  /* ABOUT */
+  .about-grid, .about-content { grid-template-columns: 1fr !important; flex-direction: column; }
+
+  /* EXPERIENCE */
+  .exp-item { grid-template-columns: 1fr !important; gap: 0.5rem; }
+  .exp-date { text-align: left !important; }
+
+  /* PROJECTS */
+  .projects-grid { grid-template-columns: 1fr !important; }
+  .projects-filter { gap: 0.4rem; flex-wrap: wrap; }
+  .filter-btn { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+
+  /* SKILLS */
+  .skills-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* BLOG */
+  .blog-grid { grid-template-columns: 1fr !important; }
+  .blog-filter { gap: 0.4rem; flex-wrap: wrap; }
+  .blog-filter-btn { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+
+  /* BLOG MODAL */
+  .blog-modal-content { width: 95%; max-height: 90vh; padding: 1.5rem 1.2rem; }
+  .blog-modal-title { font-size: 1.1rem; }
+
+  /* CONTACT */
+  .contact-title { font-size: clamp(2rem, 8vw, 3rem); }
+  .contact-links { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+
+  /* SECTION HEADER */
+  .section-header { flex-wrap: wrap; gap: 0.5rem; }
+  .section-line { flex: 1; min-width: 40px; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 0.8rem 1rem; }
+  #lang-toggle { margin-right: 2.8rem; }
+  .hero-h1 { font-size: clamp(2.8rem, 15vw, 4.5rem); }
+  .hero-cta .btn { flex: 1 1 100%; }
+  .hstat-num { font-size: 1.3rem; }
+  .hstat-label { font-size: 0.6rem; }
+  .skills-grid { grid-template-columns: 1fr !important; }
+  .blog-modal-content { padding: 1.2rem 1rem; }
+}
+
 /* ===== BLOG ===== */
 #blog { padding: 100px 0; }
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
@@ -1026,7 +1102,6 @@ footer {
   nav {
     padding: 1rem 1.2rem;
     position: relative;
-    flex-wrap: wrap;
   }
   .nav-hamburger { display: flex; }
   .nav-links {
@@ -1036,7 +1111,7 @@ footer {
     top: 100%;
     right: 0;
     left: 0;
-    background: var(--bg2);
+    background: var(--bg-nav);
     border-bottom: 1px solid var(--border);
     padding: 1rem 1.5rem 1.5rem;
     gap: 0.2rem;
@@ -1045,40 +1120,15 @@ footer {
   .nav-links.open { display: flex; }
   .nav-links li { width: 100%; }
   .nav-links a { display: block; padding: 0.6rem 0; font-size: 0.95rem; }
-  /* Lang toggle mobilde hamburger yanına küçük yerleş */
-  #lang-toggle {
-    margin-left: auto;
-    margin-right: 3rem; /* hamburger için yer bırak */
-    font-size: 0.65rem;
-    padding: 0.25rem 0.6rem;
-  }
 
-  /* HERO — inline style override */
-  #hero {
-    padding-left: 1.2rem !important;
-    padding-right: 1.2rem !important;
-    padding-top: 6rem !important;
-  }
-  .hero-pre { font-size: 0.65rem; }
-  .hero-sub { font-size: 0.95rem; }
-  .hero-cta { flex-wrap: wrap; gap: 0.7rem; }
-  .hero-cta .btn { flex: 1 1 calc(50% - 0.35rem); text-align: center; min-width: 120px; }
-  /* Hero stats — 2x2 grid on mobile */
-  .hero-stats {
-    flex-wrap: wrap;
-    max-width: 100%;
-  }
-  .hstat {
-    flex: 1 1 50%;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .hstat:nth-child(2n) { border-right: none; }
-  .hstat:nth-child(3),
-  .hstat:nth-child(4) { border-bottom: none; }
-  /* Tech pills wrap */
-  .tech-pills { gap: 0.4rem; }
-  .tech-pill { font-size: 0.65rem; padding: 0.2rem 0.5rem; }
+  /* HERO */
+  .hero-content { padding: 0 1.2rem; }
+  .hero-greeting { font-size: 1rem; }
+  .hero-name { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .hero-tagline { font-size: clamp(1.2rem, 5vw, 2rem); }
+  .hero-desc { font-size: 0.9rem; }
+  .hero-cta { flex-direction: column; gap: 0.8rem; }
+  .hero-cta a { width: 100%; text-align: center; }
 
   /* SECTIONS — genel padding */
   section {
@@ -1096,30 +1146,30 @@ footer {
   }
 
   /* EXPERIENCE */
-  .exp-item {
-    grid-template-columns: 1fr !important;
-    gap: 0.5rem;
+  .exp-item, .exp-header {
+    flex-direction: column;
+    gap: 0.3rem;
   }
-  .exp-meta { gap: 0.3rem; }
   .exp-date { text-align: left !important; }
 
   /* PROJECTS */
   .projects-grid {
     grid-template-columns: 1fr !important;
   }
-  .projects-filter { gap: 0.4rem; flex-wrap: wrap; }
+  .projects-filter { gap: 0.4rem; }
   .filter-btn { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
 
   /* SKILLS */
-  .skills-grid {
-    grid-template-columns: 1fr 1fr !important;
+  .skills-grid,
+  .skills-list {
+    grid-template-columns: 1fr !important;
   }
 
   /* BLOG */
   .blog-grid {
     grid-template-columns: 1fr !important;
   }
-  .blog-filter { gap: 0.4rem; flex-wrap: wrap; }
+  .blog-filter { gap: 0.4rem; }
   .blog-filter-btn { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
 
   /* BLOG MODAL */
@@ -1127,10 +1177,8 @@ footer {
     width: 95%;
     max-height: 90vh;
     padding: 1.5rem 1.2rem;
-    margin: 0 auto;
   }
-  .blog-modal-title { font-size: 1.1rem; }
-  .blog-modal-body h3 { font-size: 1rem; }
+  .blog-modal-title { font-size: 1.2rem; }
 
   /* CONTACT */
   .contact-title { font-size: clamp(2rem, 8vw, 3rem); }
@@ -1142,13 +1190,9 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .hero-name { font-size: 2rem; }
+  .hero-tagline { font-size: 1.2rem; }
   nav { padding: 0.8rem 1rem; }
-  #lang-toggle { margin-right: 2.8rem; }
-  .hero-h1 { font-size: clamp(2.8rem, 15vw, 4.5rem); }
-  .hero-cta .btn { flex: 1 1 100%; }
-  .hstat-num { font-size: 1.3rem; }
-  .hstat-label { font-size: 0.6rem; }
-  .skills-grid { grid-template-columns: 1fr !important; }
   .blog-modal-content { padding: 1.2rem 1rem; }
 }
 
@@ -1354,14 +1398,14 @@ body.page-loaded .hero-stats {
         </div>
         <div class="terminal-body">
           <div class="t-line"><span class="t-cmd">{</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"ad"</span>: <span class="t-str">"Hasan Saldıran"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"konum"</span>: <span class="t-str">"İstanbul, TR"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"pozisyon"</span>: <span class="t-str">"BT Sistemleri &amp; Güvenlik Uzmanı"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"şirket"</span>: <span class="t-str">"Dünyagöz Hastaneler Grubu"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"deneyim"</span>: <span class="t-str">"2+ yıl"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"uzmanlık"</span>: [<span class="t-str">"MITRE ATT&amp;CK"</span>, <span class="t-str">"CIS Controls v8"</span>, <span class="t-str">"Python"</span>],</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"hedef"</span>: <span class="t-str">"Sistem Mühendisliği"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span class="t-key">"durum"</span>: <span class="t-val" style="color:var(--green)">available</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"ad"</span></span>: <span class="t-str">"Hasan Saldıran"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"konum"</span></span>: <span class="t-str">"İstanbul, TR"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"pozisyon"</span></span>: <span class="t-str">"BT Sistemleri &amp; Güvenlik Uzmanı"</span></span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"şirket"</span></span>: <span class="t-str">"Dünyagöz Hastaneler Grubu"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"deneyim"</span></span>: <span class="t-str">"2+ yıl"</span></span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"uzmanlık"</span></span>: [<span class="t-str">"MITRE ATT&amp;CK"</span>, <span class="t-str">"CIS Controls v8"</span>, <span class="t-str">"Python"</span>],</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"hedef"</span></span>: <span class="t-str">"Sistem Mühendisliği"</span></span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"durum"</span></span>: <span class="t-val" style="color:var(--green)">available</span></span></div>
           <div class="t-line"><span class="t-cmd">}</span></div>
         </div></div>
       </div>
@@ -1675,10 +1719,10 @@ body.page-loaded .hero-stats {
         <div class="skill-items">
           <span class="skill-item">MITRE ATT&CK</span>
           <span class="skill-item">CIS Controls v8</span>
-          <span class="skill-item">Risk Yönetimi</span>
-          <span class="skill-item">Erişim Kontrolü</span>
-          <span class="skill-item">Güvenlik Operasyonları</span>
-          <span class="skill-item">Anomali Tespiti</span>
+          <span class="skill-item">Risk Yönetimi</span></span>
+          <span class="skill-item">Erişim Kontrolü</span></span>
+          <span class="skill-item">Güvenlik Operasyonları</span></span>
+          <span class="skill-item">Anomali Tespiti</span></span>
           <span class="skill-item">CVE/NVD</span>
         </div>
       </div>
@@ -1713,9 +1757,9 @@ body.page-loaded .hero-stats {
           <span class="skill-item">OpenCV</span>
           <span class="skill-item">NLP / NLTK</span>
           <span class="skill-item">Keras</span>
-          <span class="skill-item">Makine Öğrenmesi</span>
-          <span class="skill-item">Veri Madenciliği</span>
-          <span class="skill-item">Görüntü İşleme</span>
+          <span class="skill-item">Makine Öğrenmesi</span></span>
+          <span class="skill-item">Veri Madenciliği</span></span>
+          <span class="skill-item">Görüntü İşleme</span></span>
         </div>
       </div>
       <div class="skill-group reveal">
@@ -1723,19 +1767,19 @@ body.page-loaded .hero-stats {
         <div class="skill-items">
           <span class="skill-item">Windows Server</span>
           <span class="skill-item">Active Directory</span>
-          <span class="skill-item">Ağ Yönetimi</span>
+          <span class="skill-item">Ağ Yönetimi</span></span>
           <span class="skill-item">HBYS (Pusula/Medax)</span>
           <span class="skill-item">UAT Testi</span>
-          <span class="skill-item">Donanım Yönetimi</span>
+          <span class="skill-item">Donanım Yönetimi</span></span>
         </div>
       </div>
       <div class="skill-group reveal">
         <div class="skill-group-title">Sertifika</div>
         <div class="skill-items">
-          <span class="skill-item">İHA1 Pilot Lisansı</span>
-          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">ISC2 CC (Planlı)</span>
-          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">BTL1 (Planlı)</span>
-          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">CompTIA Sec+ (Planlı)</span>
+          <span class="skill-item">İHA1 Pilot Lisansı</span></span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">ISC2 CC (Planlı)</span></span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">BTL1 (Planlı)</span></span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">CompTIA Sec+ (Planlı)</span></span>
         </div>
       </div>
     </div>
@@ -1765,13 +1809,13 @@ body.page-loaded .hero-stats {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Teknoloji</span>
-          <span class="blog-date">Nisan 2021</span>
+          <span class="blog-date">Nisan 2021</span></span>
         </div>
         <h3 class="blog-card-title">Veri Madenciliğine Giriş</h3>
         <p class="blog-card-excerpt">Veri madenciliğinin tanımı, etimolojisi ve tarihsel gelişimi. Büyük veriden anlamlı bilgiye ulaşmanın temel kavramları.</p>
         <div class="blog-card-footer">
-          <span class="blog-read-time">⏱ 6 dk okuma</span>
-          <span class="blog-card-cta">Oku →</span>
+          <span class="blog-read-time">⏱ 6 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1779,13 +1823,13 @@ body.page-loaded .hero-stats {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Teknoloji</span>
-          <span class="blog-date">Nisan 2021</span>
+          <span class="blog-date">Nisan 2021</span></span>
         </div>
         <h3 class="blog-card-title">Veri Madenciliği: Süreç ve Metotlar</h3>
         <p class="blog-card-excerpt">Veri madenciliği süreci, CRISP-DM modeli, sınıflama, kümeleme ve birliktelik kuralları metotlarının kapsamlı incelemesi.</p>
         <div class="blog-card-footer">
-          <span class="blog-read-time">⏱ 8 dk okuma</span>
-          <span class="blog-card-cta">Oku →</span>
+          <span class="blog-read-time">⏱ 8 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1793,13 +1837,13 @@ body.page-loaded .hero-stats {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Teknoloji</span>
-          <span class="blog-date">Mayıs 2021</span>
+          <span class="blog-date">Mayıs 2021</span></span>
         </div>
         <h3 class="blog-card-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h3>
         <p class="blog-card-excerpt">Dağıtık defter teknolojisi, kripto para birimleri ve akıllı sözleşmeler. Blockchain'in çalışma prensibi ve kullanım alanları.</p>
         <div class="blog-card-footer">
-          <span class="blog-read-time">⏱ 7 dk okuma</span>
-          <span class="blog-card-cta">Oku →</span>
+          <span class="blog-read-time">⏱ 7 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1807,13 +1851,13 @@ body.page-loaded .hero-stats {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Uzay</span>
-          <span class="blog-date">Mayıs 2021</span>
+          <span class="blog-date">Mayıs 2021</span></span>
         </div>
         <h3 class="blog-card-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h3>
         <p class="blog-card-excerpt">Türkiye'nin uzay hedefleri ve TUA'nın kuruluş hikayesi. Milli uzay programı, roket projeleri ve 2023 hedefleri.</p>
         <div class="blog-card-footer">
-          <span class="blog-read-time">⏱ 6 dk okuma</span>
-          <span class="blog-card-cta">Oku →</span>
+          <span class="blog-read-time">⏱ 6 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1821,13 +1865,13 @@ body.page-loaded .hero-stats {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Bilim</span>
-          <span class="blog-date">Haziran 2021</span>
+          <span class="blog-date">Haziran 2021</span></span>
         </div>
         <h3 class="blog-card-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h3>
         <p class="blog-card-excerpt">Elon Musk'ın Neuralink projesi ve beyin-bilgisayar arayüzü teknolojisi. İnsan beynini dijital dünyaya bağlamanın bilimi.</p>
         <div class="blog-card-footer">
-          <span class="blog-read-time">⏱ 7 dk okuma</span>
-          <span class="blog-card-cta">Oku →</span>
+          <span class="blog-read-time">⏱ 7 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1841,7 +1885,7 @@ body.page-loaded .hero-stats {
       <button class="blog-modal-close" onclick="closePost('veri-madenciligi-giris')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Teknoloji</span>
-        <span class="blog-date">Nisan 2021 · ⏱ 6 dk okuma</span>
+        <span class="blog-date">Nisan 2021 · ⏱ 6 dk okuma</span></span>
       </div>
       <h2 class="blog-modal-title">Veri Madenciliğine Giriş</h2>
       <div class="blog-modal-body"><h3>1. Giriş</h3>
@@ -1864,7 +1908,7 @@ body.page-loaded .hero-stats {
       <button class="blog-modal-close" onclick="closePost('veri-madenciligi-genel')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Teknoloji</span>
-        <span class="blog-date">Nisan 2021 · ⏱ 8 dk okuma</span>
+        <span class="blog-date">Nisan 2021 · ⏱ 8 dk okuma</span></span>
       </div>
       <h2 class="blog-modal-title">Veri Madenciliği: Süreç ve Metotlar</h2>
       <div class="blog-modal-body"><h3>1. Giriş</h3>
@@ -1888,7 +1932,7 @@ body.page-loaded .hero-stats {
       <button class="blog-modal-close" onclick="closePost('blockchain-nedir')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Teknoloji</span>
-        <span class="blog-date">Mayıs 2021 · ⏱ 7 dk okuma</span>
+        <span class="blog-date">Mayıs 2021 · ⏱ 7 dk okuma</span></span>
       </div>
       <h2 class="blog-modal-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h2>
       <div class="blog-modal-body"><h3>1. Giriş</h3>
@@ -1912,7 +1956,7 @@ body.page-loaded .hero-stats {
       <button class="blog-modal-close" onclick="closePost('tua-turkiye-uzay')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Uzay</span>
-        <span class="blog-date">Mayıs 2021 · ⏱ 6 dk okuma</span>
+        <span class="blog-date">Mayıs 2021 · ⏱ 6 dk okuma</span></span>
       </div>
       <h2 class="blog-modal-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h2>
       <div class="blog-modal-body"><h3>1. Giriş</h3>
@@ -1936,7 +1980,7 @@ body.page-loaded .hero-stats {
       <button class="blog-modal-close" onclick="closePost('neuralink-beyin-makine')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Bilim</span>
-        <span class="blog-date">Haziran 2021 · ⏱ 7 dk okuma</span>
+        <span class="blog-date">Haziran 2021 · ⏱ 7 dk okuma</span></span>
       </div>
       <h2 class="blog-modal-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h2>
       <div class="blog-modal-body"><h3>1. Giriş</h3>
@@ -2399,12 +2443,71 @@ var TRANSLATIONS = [
 var MODAL_BODIES = {
   'modal-veri-madenciligi-giris': {
     tr: '<h3>1. Giriş</h3><p>Merhaba! Bu yazımızda veri madenciliğine giriş yapacağız. Veri madenciliği ile ilgili bu ilk yazımızda veri madenciliğinin tanımından, etimolojisinden ve tarihsel gelişiminden bahsedeceğiz.</p><h3>2. Veri Madenciliği Nedir?</h3><p>Veri madenciliği; makine öğrenimi, istatistik ve veri tabanı sistemlerinin kesiştiği yöntemleri içeren büyük veri kümelerindeki örüntülerin keşfedilmesi sürecidir. Başka bir deyişle veri madenciliği, büyük veri yığınlarından gizli, önceden bilinmeyen ve potansiyel olarak kullanışlı bilgilerin çıkarılması işlemidir.</p><p>Veri Madenciliği; yığılmış, istenilen amaca yönelik faydalı bilgiler vermeyen verilerin anlamlı ve öz bilgiye dönüştürülmesi sürecidir. Veriden doğrudan bilgi elde edilebileceği gibi, elde edilen bu bilgiden de yeni bilgiler türetilebilir.</p><h3>3. Veri Madenciliğinin Etimolojisi</h3><p>"Veri madenciliği" terimi, 1983 yılında İktisadi Araştırmalar Dergisi\'nde yayınlanan bir makalede iktisatçı Michael Lovell tarafından kullanılmıştır. Terimin bugünkü anlamda kullanımı 1990\'ların başından itibaren yaygınlaşmıştır.</p><p>Akademik toplulukta büyük forumlar 1995 yılında Montreal\'de AAAI sponsorluğu altında 1. Uluslararası Veri Madenciliği ve Bilgi Keşfi Çalıştayı ile başlamış, 1997\'de KDD dergisi yayın hayatına girmiştir.</p><h3>4. Veri Madenciliğinin Tarihsel Gelişimi</h3><p>Bilgisayarlar ilk olarak 1950\'li yıllarda sayım için kullanılmaya başlamıştır. 1960\'larda veri tabanları geliştirildi. 1980\'lerde ilişkisel veri tabanları ve SQL hayata geçirildi. 1990\'larda veri ambarlaması ve veri madenciliği iş dünyası tarafından benimsendi. 2000\'li yıllarda web madenciliği, metin madenciliği ve sosyal ağ analizi gibi yeni alt dallar ortaya çıktı.</p><h3>5. Sonuç</h3><p>Veri madenciliği, günümüz dijital çağında giderek artan önemiyle hem akademik hem de endüstriyel alanda vazgeçilmez bir disiplin haline gelmiştir. Bir sonraki yazımızda veri madenciliği sürecini, metotlarını ve uygulama alanlarını inceleyeceğiz.</p>',
-    en: '<h3>1. Introduction</h3><p>In this post we introduce data mining — its definition, etymology, and historical development.</p><h3>2. What Is Data Mining?</h3><p>Data mining is the process of discovering patterns in large datasets using methods at the intersection of machine learning, statistics, and database systems — extracting hidden, previously unknown, and potentially useful information from large volumes of data.</p><p>It transforms accumulated raw data into meaningful, concise knowledge. Knowledge can be derived directly from data, and further knowledge can be generated from that derived knowledge.</p><h3>3. Etymology</h3><p>The term "data mining" was used by economist Michael Lovell in a 1983 article in the Journal of Economic Research. Its modern meaning became widespread from the early 1990s.</p><p>The first major academic forum began in 1995 in Montreal with the 1st International Workshop on Knowledge Discovery in Databases, under AAAI sponsorship. The KDD journal launched in 1997.</p><h3>4. Historical Development</h3><p>Computers were first used for census processing in the 1950s. Databases followed in the 1960s, relational databases and SQL in the 1980s, and data warehousing was adopted by industry in the 1990s. The 2000s brought web mining, text mining, and social network analysis.</p><h3>5. Conclusion</h3><p>Data mining has become an indispensable discipline in both academia and industry. In the next post we will examine the data mining process, its methods, and application areas.</p>'
+    en: '<h3>1. Introduction</h3><p>In this post we introduce data mining — its definition, etymology, and historical development.</p><h3>2. What Is Data Mining?</h3><p>Data mining is the process of discovering patterns in large datasets using methods at the intersection of machine learning, statistics, and database systems — extracting hidden, previously unknown, and potentially useful information from large volumes of data.</p><p>It transforms accumulated raw data into meaningful, concise knowledge. Knowledge can be derived directly from data, and further knowledge can be generated from that derived knowledge.</p><h3>3. Etymology</h3><p>The term was used by economist Michael Lovell in 1983. Its modern meaning became widespread from the early 1990s.</p><h3>4. Historical Development</h3><p>Computers were used for census in the 1950s. Databases in the 1960s, SQL in the 1980s, data warehousing in the 1990s. The 2000s brought web mining and text mining.</p><h3>5. Conclusion</h3><p>Data mining has become an indispensable discipline in both academia and industry.</p>'
   },
   'modal-veri-madenciligi-genel': {
     tr: '<h3>1. Giriş</h3><p>Bu içeriğimizde daha önce kelime anlamına ve tarihine değindiğimiz veri madenciliğinin süreci, metotları, uygulama alanları ve karşılaşılan problemleri inceleyeceğiz.</p><h3>2. Veri Madenciliği Süreci</h3><p>Veri madenciliği birkaç aşamadan oluşan bir süreçtir. Endüstri standardı CRISP-DM (Cross-Industry Standard Process for Data Mining) modeli bu sürecin çerçevesini belirlemiştir.</p><p>Veri madenciliği sürecinde izlenen adımlar:</p><ul><li>Problemlerin tanımlanması</li><li>Verilerin hazırlanması</li><li>Modelin kurulması ve değerlendirilmesi</li><li>Modelin kullanılması</li><li>Modelin izlenmesi</li></ul><h3>3. Veri Madenciliği Metotları</h3><p>Veri madenciliği modelleri işlevlerine göre 3 grupta toplanır:</p><ul><li><strong>Sınıflama (Classification) ve Regresyon:</strong> Tahmin edici modeller grubuna girer. Hedef değişkenin süreksiz (ayrık) veya sürekli olmasına göre ikiye ayrılır.</li><li><strong>Kümeleme (Clustering):</strong> Tanımlayıcı modeller grubuna girer. Benzer özellikteki verileri gruplar.</li><li><strong>Birliktelik Kuralları (Association Rules):</strong> Veriler arasındaki ilişkileri ortaya çıkarır. Market sepeti analizi klasik bir örneğidir.</li></ul><h3>4. Uygulama Alanları</h3><p>Veri madenciliği; sağlık sektörü, telekomünikasyon, finans (bankacılık, borsa), pazarlama, sigortacılık, astronomi, biyoloji ve tıp gibi pek çok alanda kullanılmaktadır.</p><h3>5. Karşılaşılan Problemler</h3><p>Büyük veri ortamlarında artık veri, belirsizlik, boş veri, dinamik veri ve eksik veri gibi sorunlarla karşılaşılır. Bu sorunların doğru yönetimi, başarılı bir veri madenciliği çalışmasının temel koşullarından biridir.</p>',
-    en: '<h3>1. Introduction</h3><p>In this post we examine the process, methods, application areas, and challenges of data mining — building on the definition and history covered in the previous article.</p><h3>2. The Data Mining Process</h3><p>Data mining is a multi-step process. The industry-standard CRISP-DM (Cross-Industry Standard Process for Data Mining) model defines its framework.</p><p>Steps followed in the data mining process:</p><ul><li>Problem definition</li><li>Data preparation</li><li>Model building and evaluation</li><li>Model deployment</li><li>Model monitoring</li></ul><h3>3. Data Mining Methods</h3><p>Data mining models are grouped into three categories by function:</p><ul><li><strong>Classification and Regression:</strong> Predictive models. Divided based on whether the target variable is discrete or continuous.</li><li><strong>Clustering:</strong> Descriptive models. Groups data with similar characteristics.</li><li><strong>Association Rules:</strong> Reveals relationships between data points. Market basket analysis is the classic example.</li></ul><h3>4. Application Areas</h3><p>Data mining is used across healthcare, telecommunications, finance (banking, stock markets), marketing, insurance, astronomy, biology, and medicine.</p><h3>5. Common Challenges</h3><p>In large data environments, challenges include redundant data, ambiguity, missing values, dynamic data, and incomplete data. Managing these correctly is a fundamental requirement for successful data mining.</p>'
+    en: '<h3>1. Introduction</h3><p>In this post we examine the process, methods, application areas, and challenges of data mining.</p><h3>2. The Data Mining Process</h3><p>The CRISP-DM model defines its framework. Steps: problem definition, data preparation, model building and evaluation, model deployment, model monitoring.</p><h3>3. Methods</h3><ul><li><strong>Classification and Regression:</strong> Predictive models.</li><li><strong>Clustering:</strong> Descriptive models.</li><li><strong>Association Rules:</strong> Market basket analysis.</li></ul><h3>4. Application Areas</h3><p>Healthcare, telecommunications, finance, marketing, insurance, astronomy, biology, and medicine.</p><h3>5. Common Challenges</h3><p>Redundant data, ambiguity, missing values, dynamic data, and incomplete data.</p>'
   },
   'modal-blockchain-nedir': {
-    tr: '<h3>1. Giriş</h3><p>Merhaba! Bu yazımızda son yıllarda finans dünyasında ve teknoloji gündeminde sıkça duyulan Blockchain (Blok Zinciri) teknolojisini ele alacağız.</p><h3>2. Blockchain Nedir?</h3><p>Blockchain, verilerin birbirine kriptografik olarak bağlı bloklar halinde saklandığı, merkezi bir otoriteye ihtiyaç duymayan dağıtık bir defter teknolojisidir. Her blok, bir önceki bloğun hash değerini içerdiğinden zincirin herhangi bir halkasını değiştirmek son derece güçtür.</p><p>Temel özellikleri şöyle sıralayabiliriz: merkezi olmayan yapı (decentralization), değişmezlik (immutability), şeffaflık (transparency) ve güvenlik (security).</p><h3>3. Nasıl Çalışır?</h3><p>Bir işlem gerçekleştiğinde ağdaki tüm katılımcılara duyurulur. Madenciler (miners) bu işlemi doğrulamak için rekabet eder. Doğrulanan işlem bir blok oluşturur ve zincire eklenir. Bu süreç "Proof of Work" veya "Proof of Stake" gibi konsensüs mekanizmaları ile güvence altına alınır.</p><h3>4. Kullanım Alanları</h3><p>Blockchain teknolojisi yalnızca kripto para birimleriyle sınırlı değildir. Akıllı sözleşmeler (Smart Contracts), tedarik zinciri yönetimi, sağlık kayıtları, dijital kimlik doğrulama, oylama sistemleri ve NFT\'ler bu teknolojinin uygulama alanları arasında yer almaktadır.</p><h3>5. Bitcoin ve Ethereum</h3><p>Bitcoin, 2009 yılında Satoshi Nakamoto tarafından tanıtılan ilk blockchain uygulamasıdır. Ethereum ise 2015\'te Vitalik Buterin tarafından geliştirilen ve akıllı sözleşmeleri destekleyen ikinci nesil bir blockchain platformudur.</p><h3>6. Sonuç</h3><p>Blockchain teknolojisi, güven sorununu merkezi bir aracıya ihtiyaç duymadan çözen devrimci bir yaklaşım sunmaktadır. Önümüzdeki yıllarda pek çok sektörde köklü dönüşümlere yol açması beklenmektedir.</p>',
-    en: '<h3>1. Introduction</h3><p>In this post we explore Blockchain technology — a topic that has dominated the finance world and tech agenda in recent years.</p><h3>2. What Is Blockchain?</h3><p>Blockchain is a distributed ledger in which data is stored in cryptographically linked blocks, with no central authority required. Because each block contains the hash of the previous block, altering any link in the chain is extremely difficult.</p><p>Its core properties are: decentralization, immutability, transparency, and security.</p><h3>3. How Does It Work?</h3><p>When a transaction occurs, it is broadcast to all participants in the ne
+    tr: '<h3>1. Giriş</h3><p>Merhaba! Bu yazımızda son yıllarda finans dünyasında ve teknoloji gündeminde sıkça duyulan Blockchain (Blok Zinciri) teknolojisini ele alacağız.</p><h3>2. Blockchain Nedir?</h3><p>Blockchain, verilerin birbirine kriptografik olarak bağlı bloklar halinde saklandığı, merkezi bir otoriteye ihtiyaç duymayan dağıtık bir defter teknolojisidir. Temel özellikleri: merkezi olmayan yapı, değişmezlik, şeffaflık ve güvenlik.</p><h3>3. Nasıl Çalışır?</h3><p>Bir işlem gerçekleştiğinde ağdaki katılımcılara duyurulur. Madenciler doğrulama için rekabet eder. Doğrulanan işlem zincire eklenir. "Proof of Work" veya "Proof of Stake" mekanizmaları kullanılır.</p><h3>4. Kullanım Alanları</h3><p>Akıllı sözleşmeler, tedarik zinciri, sağlık kayıtları, dijital kimlik, oylama sistemleri ve NFT\'ler.</p><h3>5. Bitcoin ve Ethereum</h3><p>Bitcoin (2009, Satoshi Nakamoto) ilk blockchain uygulamasıdır. Ethereum (2015, Vitalik Buterin) akıllı sözleşmeleri destekler.</p><h3>6. Sonuç</h3><p>Blockchain, güven sorununu merkezi bir aracıya ihtiyaç duymadan çözen devrimci bir yaklaşımdır.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we explore Blockchain technology.</p><h3>2. What Is Blockchain?</h3><p>Blockchain is a distributed ledger in which data is stored in cryptographically linked blocks, with no central authority. Core properties: decentralization, immutability, transparency, and security.</p><h3>3. How Does It Work?</h3><p>A transaction is broadcast to all participants. Miners compete to validate it. The validated transaction is added to the chain, secured by Proof of Work or Proof of Stake consensus mechanisms.</p><h3>4. Use Cases</h3><p>Smart Contracts, supply chain management, health records, digital identity verification, voting systems, and NFTs.</p><h3>5. Bitcoin and Ethereum</h3><p>Bitcoin (2009, Satoshi Nakamoto) is the first blockchain. Ethereum (2015, Vitalik Buterin) supports smart contracts.</p><h3>6. Conclusion</h3><p>Blockchain offers a revolutionary approach to solving the trust problem without a central intermediary.</p>'
+  },
+  'modal-tua-turkiye-uzay': {
+    tr: '<h3>1. Giriş</h3><p>Merhaba! Bu yazımızda Türkiye\'nin uzay alanındaki en önemli kurumsal adımlarından biri olan Türkiye Uzay Ajansı\'nı (TUA) tanıyacağız.</p><h3>2. TUA Nedir?</h3><p>Türkiye Uzay Ajansı (TUA), Türkiye\'nin ulusal uzay politikalarını belirlemek, uzay alanındaki çalışmaları koordine etmek ve uluslararası iş birliklerini yürütmek amacıyla 2018 yılında kurulmuştur. Cumhurbaşkanlığına bağlı olarak faaliyet gösteren TUA, Türkiye\'nin uzay vizyonunu hayata geçirmekle görevlidir.</p><h3>3. Türkiye\'nin Uzay Hedefleri</h3><p>Türkiye\'nin 2023 yılı için belirlediği uzay hedefleri arasında en önemlisi Ay\'a kontrollü iniş yapmaktır. Bu hedef doğrultusunda yerli ve milli roket geliştirme çalışmaları sürdürülmektedir.</p><p>Diğer önemli hedefler şunlardır: yerli uydu teknolojilerinin geliştirilmesi, uzay üssü kurulması için yer seçimi çalışmaları ve uluslararası uzay iş birliklerinin güçlendirilmesi.</p><h3>4. TUA\'nın Faaliyetleri</h3><p>TUA, üniversiteler ve savunma sanayii kuruluşlarıyla iş birliği yaparak uzay teknolojileri alanında Ar-Ge çalışmalarını desteklemektedir. Ayrıca genç yetenekleri uzay bilimine kazandırmak amacıyla çeşitli eğitim ve farkındalık programları düzenlemektedir.</p><h3>5. ROKETSAN ve Uzay</h3><p>Türkiye\'nin roket teknolojisindeki en güçlü aktörü ROKETSAN, TUA ile koordineli olarak yerli roket motorları geliştirmektedir. Bu çalışmalar Türkiye\'nin bağımsız uzay erişim kapasitesini güçlendirecektir.</p><h3>6. Sonuç</h3><p>TUA\'nın kuruluşu, Türkiye\'nin uzay alanındaki kararlılığının somut bir göstergesidir. Teknoloji bağımsızlığı hedefiyle yürütülen bu çalışmalar, gelecek nesillere ilham vermeye devam edecektir.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we explore the Turkish Space Agency (TUA).</p><h3>2. What Is TUA?</h3><p>TUA was established in 2018 to define Turkey\'s national space policies, coordinate space activities, and manage international partnerships.</p><h3>3. Turkey\'s Space Goals</h3><p>Key 2023 targets include a controlled lunar landing. Domestic satellite technologies and space base site selection are also underway.</p><h3>4. TUA\'s Activities</h3><p>R&D collaboration with universities and defence industry organisations. Training programmes to attract young talent into space science.</p><h3>5. ROKETSAN</h3><p>ROKETSAN develops domestic rocket engines in coordination with TUA.</p><h3>6. Conclusion</h3><p>TUA\'s establishment demonstrates Turkey\'s determination in the space domain.</p>'
+  },
+  'modal-neuralink-beyin-makine': {
+    tr: '<h3>1. Giriş</h3><p>Bu yazımızda son yıllarda adından sıkça söz ettiren Elon Musk\'ın kurucusu olduğu Neuralink şirketini ve beyin-makine arayüzü (Brain-Machine Interface / BMI) teknolojisini ele alacağız.</p><h3>2. Neuralink Nedir?</h3><p>Neuralink, 2016 yılında Elon Musk ve nörobilimciler tarafından kurulan bir nörotek şirketidir. Amacı insan beynine implante edilebilecek beyin-bilgisayar arayüzleri geliştirmektir.</p><h3>3. BMI Nedir?</h3><p>Beyin sinyallerini bilgisayar komutlarına dönüştüren sistemdir. İnvazif ve non-invazif (EEG) olmak üzere iki türü vardır.</p><h3>4. Nasıl Çalışır?</h3><p>Ultra ince iplikçikler nöron aktivitesini kaydeder. 2020\'de tanıtılan "Link" cihazı madeni para büyüklüğündedir.</p><h3>5. Uygulama Alanları</h3><p>Felçli hastalar için bilgisayar kontrolü, hafıza tedavisi, yapay görme ve nörolojik hastalık tedavisi.</p><h3>6. Etik Tartışmalar</h3><p>Beyin verisi gizliliği, bilişsel eşitsizlik ve insan kimliğinin sınırları tartışılmaktadır.</p><h3>7. Sonuç</h3><p>Beyin-makine arayüzü teknolojisi, hem heyecan verici hem dikkatli yaklaşım gerektiren bir alandır.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we look at Neuralink and brain-machine interface (BMI) technology.</p><h3>2. What Is Neuralink?</h3><p>Neuralink is a neurotech company founded in 2016 by Elon Musk and neuroscientists, developing high-bandwidth brain-computer interfaces that can be implanted in the human brain.</p><h3>3. What Is a BMI?</h3><p>A system that reads brain signals and converts them into computer commands. Two main types: invasive (implanted) and non-invasive (EEG headset).</p><h3>4. How Does It Work?</h3><p>Ultra-thin threads record neuron activity wirelessly. The "Link" device (2020) is coin-sized and placed in the skull.</p><h3>5. Application Areas</h3><p>Computer control for paralysed patients, memory disorder treatment, artificial vision for the visually impaired, and neurological disease treatment.</p><h3>6. Ethical Debates</h3><p>Brain data privacy, cognitive inequality, and the boundaries of human identity.</p><h3>7. Conclusion</h3><p>Brain-machine interface technology remains both exciting and a field that demands careful consideration.</p>'
+  }
+};
+
+var currentLang = 'tr';
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('lang-toggle').textContent = lang === 'tr' ? 'EN' : 'TR';
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+
+  // Text/HTML replacements
+  TRANSLATIONS.forEach(function(item) {
+    var sel = item[0], tr = item[1], en = item[2];
+    try {
+      var els = document.querySelectorAll(sel);
+      els.forEach(function(el) {
+        el.innerHTML = lang === 'tr' ? tr : en;
+      });
+    } catch(e) {}
+  });
+
+  // Modal bodies
+  Object.keys(MODAL_BODIES).forEach(function(id) {
+    var el = document.querySelector('#' + id + ' .blog-modal-body');
+    if (el) el.innerHTML = MODAL_BODIES[id][lang];
+  });
+}
+
+window.toggleLang = function() {
+  applyLang(currentLang === 'tr' ? 'en' : 'tr');
+};
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+  // After hero animations finish (~1.2s), lock opacity so lang swap won't reset it
+  setTimeout(function() {
+    document.body.classList.add('page-loaded');
+  }, 1200);
+
+  var params = new URLSearchParams(window.location.search);
+  var stored = ''; try { stored = localStorage.getItem('lang') || ''; } catch(e) {}
+  var lang = params.get('lang') || stored || 'tr';
+  if (lang !== 'tr' && lang !== 'en') lang = 'tr';
+  if (lang !== 'tr') applyLang(lang);
+});
+})();
+</script>
+
+</body>
+</html>
