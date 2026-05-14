@@ -1162,6 +1162,17 @@ footer {
 
 
 /* ── LANG TOGGLE ── */
+/* After page finishes loading, lock hero animation end-state so language swap
+   doesn't reset opacity to 0 on animated elements */
+body.page-loaded .hero-pre,
+body.page-loaded .hero-sub,
+body.page-loaded .hero-cta,
+body.page-loaded .hero-terminal,
+body.page-loaded .hero-stats {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
 #lang-toggle {
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -1223,7 +1234,7 @@ footer {
     Hasan<br><span class="name-accent">Saldıran</span>
   </h1>
   <p class="hero-sub">
-    <strong>Bilgisayar Mühendisi.</strong> Kurumsal BT altyapısını güvende tutar, risk motorları ve otomasyon sistemleri inşa eder. <span style="color:var(--accent)">Python, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&amp;CK</span> üzerine çalışır.</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&amp;CK</span>.</span>
+    <strong>Bilgisayar Mühendisi.</strong> Kurumsal BT altyapısını güvende tutar, risk motorları ve otomasyon sistemleri inşa eder. <span style="color:var(--accent)">Python</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&amp;CK</span> üzerine çalışır.
   </p>
   <div class="hero-cta">
     <a href="#projects" class="btn btn-primary">Projeleri Gör →</a>
@@ -1240,15 +1251,15 @@ footer {
   <div class="hero-stats">
     <div class="hstat">
       <span class="hstat-num" data-count="2">2+</span>
-      <span class="hstat-label">Yıl Deneyim</span></span>
+      <span class="hstat-label">Yıl Deneyim</span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="2000">2.000+</span>
-      <span class="hstat-label">Kullanıcı+</span></span>
+      <span class="hstat-label">Kullanıcı+</span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="2250">2.250+</span>
-      <span class="hstat-label">BT Varlığı+</span></span>
+      <span class="hstat-label">BT Varlığı+</span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="19">0</span>
@@ -2371,7 +2382,7 @@ function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   document.getElementById('lang-toggle').textContent = lang === 'tr' ? 'EN' : 'TR';
-  localStorage.setItem('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch(e) {}
 
   // Text/HTML replacements
   TRANSLATIONS.forEach(function(item) {
@@ -2397,8 +2408,14 @@ window.toggleLang = function() {
 
 // Init
 document.addEventListener('DOMContentLoaded', function() {
+  // After hero animations finish (~1.2s), lock opacity so lang swap won't reset it
+  setTimeout(function() {
+    document.body.classList.add('page-loaded');
+  }, 1200);
+
   var params = new URLSearchParams(window.location.search);
-  var lang = params.get('lang') || localStorage.getItem('lang') || 'tr';
+  var stored = ''; try { stored = localStorage.getItem('lang') || ''; } catch(e) {}
+  var lang = params.get('lang') || stored || 'tr';
   if (lang !== 'tr' && lang !== 'en') lang = 'tr';
   if (lang !== 'tr') applyLang(lang);
 });
