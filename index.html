@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" id="root">
+<html lang="tr">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-92R1DJMKRC"></script>
@@ -1160,12 +1160,13 @@ footer {
 }
 
 
+
 /* ── LANG TOGGLE ── */
 #lang-toggle {
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.1em;
-  padding: 0.3rem 0.7rem;
+  padding: 0.3rem 0.75rem;
   border: 1px solid var(--border);
   background: transparent;
   color: var(--muted);
@@ -1173,12 +1174,12 @@ footer {
   transition: all 0.2s;
   margin-left: 1.5rem;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 #lang-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
-[data-lang-hide] { display: none !important; }
 
 </style>
   <meta name="description" content="Hasan Saldıran — BT Sistemleri ve Güvenlik Uzmanı. Python, MITRE ATT&CK, CIS Controls v8 alanlarında uzman. Dünyagöz Hastaneler Grubu. İstanbul, Türkiye.">
@@ -1203,7 +1204,7 @@ footer {
 <!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">hs@portfolio:~$</a>
-  <button class="nav-hamburger" id="navHamburger" <span data-tr>aria-label="Menüyü aç"</span><span data-en data-lang-hide>aria-label="Open menu"</span>><span></span><span></span><span></span></button>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">about</a></li>
     <li><a href="#experience">experience</a></li>
@@ -1212,23 +1213,23 @@ footer {
     <li><a href="#blog">blog</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
-  <button id="lang-toggle" onclick="toggleLang()" title="Switch language">EN</button>
+  <button id="lang-toggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <!-- HERO -->
 <section id="hero" style="min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding-top:8rem; padding-bottom:4rem; max-width:1200px; margin:0 auto; padding-left:3rem; padding-right:3rem;">
-  <span data-tr><p class="hero-pre">BT Sistemleri & Güvenlik Uzmanı</p></span><span data-en data-lang-hide><p class="hero-pre">IT Systems & Security Specialist</p></span>
+  <p class="hero-pre">BT Sistemleri & Güvenlik Uzmanı</p>
   <h1 class="hero-h1">
     Hasan<br><span class="name-accent">Saldıran</span>
   </h1>
   <p class="hero-sub">
-    <span data-tr><strong>Bilgisayar Mühendisi.</strong> Kurumsal BT altyapısını güvende tutar, risk motorları ve otomasyon sistemleri inşa eder. <span style="color:var(--accent)">Python</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&amp;CK</span> üzerine çalışır.</span><span data-en data-lang-hide><strong>Computer Engineer.</strong> Secures enterprise IT infrastructure and builds risk engines and automation systems. Works with <span style="color:var(--accent)">Python</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&amp;CK</span>.</span>
+    <strong>Bilgisayar Mühendisi.</strong> Kurumsal BT altyapısını güvende tutar, risk motorları ve otomasyon sistemleri inşa eder. <span style="color:var(--accent)">Python, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&amp;CK</span> üzerine çalışır.</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&amp;CK</span>.</span>
   </p>
   <div class="hero-cta">
-    <span data-tr><a href="#projects" class="btn btn-primary">Projeleri Gör →</a></span><span data-en data-lang-hide><a href="#projects" class="btn btn-primary">View Projects →</a></span>
+    <a href="#projects" class="btn btn-primary">Projeleri Gör →</a>
     <a href="https://github.com/hasansaldiran" target="_blank" class="btn">GitHub</a>
     <a href="https://www.linkedin.com/in/hasansaldiran/" target="_blank" class="btn">LinkedIn</a>
-    <span data-tr><a href="#contact" class="btn">İletişim</a></span><span data-en data-lang-hide><a href="#contact" class="btn">Contact</a></span>
+    <a href="#contact" class="btn">İletişim</a>
   </div>
   <div class="hero-terminal">
     <span class="prompt">hasansaldiran@dev:~$</span>
@@ -1239,15 +1240,15 @@ footer {
   <div class="hero-stats">
     <div class="hstat">
       <span class="hstat-num" data-count="2">2+</span>
-      <span data-tr><span class="hstat-label">Yıl Deneyim</span></span><span data-en data-lang-hide><span class="hstat-label">Years Experience</span></span>
+      <span class="hstat-label">Yıl Deneyim</span></span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="2000">2.000+</span>
-      <span data-tr><span class="hstat-label">Kullanıcı+</span></span><span data-en data-lang-hide><span class="hstat-label">Users+</span></span>
+      <span class="hstat-label">Kullanıcı+</span></span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="2250">2.250+</span>
-      <span data-tr><span class="hstat-label">BT Varlığı+</span></span><span data-en data-lang-hide><span class="hstat-label">IT Assets+</span></span>
+      <span class="hstat-label">BT Varlığı+</span></span>
     </div>
     <div class="hstat">
       <span class="hstat-num" data-count="19">0</span>
@@ -1282,22 +1283,22 @@ footer {
 <section id="about">
   <div class="section-header reveal">
     <span class="section-num">01.</span>
-    <span data-tr><h2 class="section-title">Hakkımda</h2></span><span data-en data-lang-hide><h2 class="section-title">About</h2></span>
+    <h2 class="section-title">Hakkımda</h2>
     <div class="section-line"></div>
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>
-        <span data-tr><strong>Bilgisayar Mühendisliği</strong> altyapısına sahip, sistem mühendisliği kariyeri hedefleyen BT ve güvenlik uzmanıyım. Kariyerime kullanıcıyla birebir temasa geçerek, kritik sistemlerin içinden başladım — bunu kasıtlı bir tercih olarak görüyorum.</span><span data-en data-lang-hide>I am an IT and security specialist with a <strong>Computer Engineering</strong> background, aiming for a career in systems engineering. I deliberately started my career at the front lines — in direct contact with users and critical systems.</span>
+        <strong>Bilgisayar Mühendisliği</strong> altyapısına sahip, sistem mühendisliği kariyeri hedefleyen BT ve güvenlik uzmanıyım. Kariyerime kullanıcıyla birebir temasa geçerek, kritik sistemlerin içinden başladım — bunu kasıtlı bir tercih olarak görüyorum.
       </p>
       <p>
-        <span data-tr><span class="hl">Dünyagöz Hastaneler Grubu</span>'nda 2.000+ kullanıcı ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısını yönetiyorum. Sadece destek vermekle kalmayıp, kendi inisiyatifimle <span class="hl">Python</span> ile MITRE ATT&CK ve CIS Controls v8 çerçevelerine dayalı kurumsal risk yönetim sistemi geliştirdim.</span><span data-en data-lang-hide>At <span class="hl">Dünyagöz Hastaneler Grubu</span> I manage enterprise healthcare infrastructure covering 2,000+ users and 2,250+ IT assets. Beyond support, I proactively built an enterprise risk management system in <span class="hl">Python</span> based on MITRE ATT&CK and CIS Controls v8 frameworks.</span>
+        <span class="hl">Dünyagöz Hastaneler Grubu'nda 2.000+ kullanıcı ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısını yönetiyorum. Sadece destek vermekle kalmayıp, kendi inisiyatifimle <span class="hl">Python</span> ile MITRE ATT&CK ve CIS Controls v8 çerçevelerine dayalı kurumsal risk yönetim sistemi geliştirdim.</span> I manage enterprise healthcare infrastructure covering 2,000+ users and 2,250+ IT assets. Beyond support, I proactively built an enterprise risk management system in <span class="hl">Python</span> based on MITRE ATT&CK and CIS Controls v8 frameworks.</span>
       </p>
       <p>
-        <span data-tr>Öncesinde <span class="hl">Çok Uluslu Müşterek Harp Merkezi Komutanlığı</span>'nda NATO tatbikatlarına ev sahipliği yapan uluslararası askeri ortamda 500'ü aşan çok uluslu katılımcıya gerçek zamanlı teknik destek sağladım.</span><span data-en data-lang-hide>Previously, at the <span class="hl">Multinational Joint Warfare Centre Command</span>, I provided real-time technical support to 500+ multinational participants in an international military environment hosting NATO exercises.</span>
+        Öncesinde <span class="hl">Çok Uluslu Müşterek Harp Merkezi Komutanlığı'nda NATO tatbikatlarına ev sahipliği yapan uluslararası askeri ortamda 500'ü aşan çok uluslu katılımcıya gerçek zamanlı teknik destek sağladım.</span>, I provided real-time technical support to 500+ multinational participants in an international military environment hosting NATO exercises.</span>
       </p>
       <p>
-        <span data-tr>Kodu bir sorun çözme aracı olarak görüyorum — uçtan uca sahiplenerek, ölçülebilir çıktılara odaklanarak.</span><span data-en data-lang-hide>I see code as a problem-solving tool — owning it end-to-end and focusing on measurable outcomes.</span>
+        Kodu bir sorun çözme aracı olarak görüyorum — uçtan uca sahiplenerek, ölçülebilir çıktılara odaklanarak.
       </p>
     </div>
     <div class="reveal">
@@ -1310,14 +1311,14 @@ footer {
         </div>
         <div class="terminal-body">
           <div class="t-line"><span class="t-cmd">{</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"ad"</span></span><span data-en data-lang-hide><span class="t-key">"name"</span></span>: <span class="t-str">"Hasan Saldıran"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"konum"</span></span><span data-en data-lang-hide><span class="t-key">"location"</span></span>: <span class="t-str">"İstanbul, TR"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"pozisyon"</span></span><span data-en data-lang-hide><span class="t-key">"position"</span></span>: <span data-tr><span class="t-str">"BT Sistemleri &amp; Güvenlik Uzmanı"</span></span><span data-en data-lang-hide><span class="t-str">"IT Systems &amp; Security Specialist"</span></span>,</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"şirket"</span></span><span data-en data-lang-hide><span class="t-key">"company"</span></span>: <span class="t-str">"Dünyagöz Hastaneler Grubu"</span>,</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"deneyim"</span></span><span data-en data-lang-hide><span class="t-key">"experience"</span></span>: <span data-tr><span class="t-str">"2+ yıl"</span></span><span data-en data-lang-hide><span class="t-str">"2+ years"</span></span>,</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"uzmanlık"</span></span><span data-en data-lang-hide><span class="t-key">"expertise"</span></span>: [<span class="t-str">"MITRE ATT&amp;CK"</span>, <span class="t-str">"CIS Controls v8"</span>, <span class="t-str">"Python"</span>],</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"hedef"</span></span><span data-en data-lang-hide><span class="t-key">"goal"</span></span>: <span data-tr><span class="t-str">"Sistem Mühendisliği"</span></span><span data-en data-lang-hide><span class="t-str">"Systems Engineering"</span></span>,</span></div>
-          <div class="t-line"><span class="t-out"><span data-tr><span class="t-key">"durum"</span></span><span data-en data-lang-hide><span class="t-key">"status"</span></span>: <span class="t-val" style="color:var(--green)">available</span></span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"ad"</span></span>: <span class="t-str">"Hasan Saldıran"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"konum"</span></span>: <span class="t-str">"İstanbul, TR"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"pozisyon"</span></span>: <span class="t-str">"BT Sistemleri &amp; Güvenlik Uzmanı"</span></span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"şirket"</span></span>: <span class="t-str">"Dünyagöz Hastaneler Grubu"</span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"deneyim"</span></span>: <span class="t-str">"2+ yıl"</span></span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"uzmanlık"</span></span>: [<span class="t-str">"MITRE ATT&amp;CK"</span>, <span class="t-str">"CIS Controls v8"</span>, <span class="t-str">"Python"</span>],</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"hedef"</span></span>: <span class="t-str">"Sistem Mühendisliği"</span></span>,</span></div>
+          <div class="t-line"><span class="t-out"><span class="t-key">"durum"</span></span>: <span class="t-val" style="color:var(--green)">available</span></span></div>
           <div class="t-line"><span class="t-cmd">}</span></div>
         </div></div>
       </div>
@@ -1330,20 +1331,20 @@ footer {
   <div class="exp-inner">
     <div class="section-header reveal">
       <span class="section-num">02.</span>
-      <span data-tr><h2 class="section-title">Deneyim</h2></span><span data-en data-lang-hide><h2 class="section-title">Experience</h2></span>
+      <h2 class="section-title">Deneyim</h2>
       <div class="section-line"></div>
     </div>
     <div class="exp-list">
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <span data-tr><div class="exp-period">Mar 2025 — Halen</div></span><span data-en data-lang-hide><div class="exp-period">Mar 2025 — Present</div></span>
+          <div class="exp-period">Mar 2025 — Halen</div>
           <div class="exp-company">Dünyagöz Hastaneler Grubu</div>
-          <span data-tr><span class="exp-type">Tam Zamanlı</span></span><span data-en data-lang-hide><span class="exp-type">Full-Time</span></span>
+          <span class="exp-type">Tam Zamanlı</span></span>
         </div>
         <div class="exp-content">
-          <span data-tr><div class="exp-role">Sistem Geliştirme &amp; Kullanıcı Destek Uzmanı</div></span><span data-en data-lang-hide><div class="exp-role">System Development &amp; User Support Specialist</div></span>
-          <span data-tr><p class="exp-desc">2.000+ hastane personeli ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısında L1/L2 teknik destek ve sistem yönetimi. Pusula HBYS yönetimi, Python ile MITRE ATT&CK + CIS Controls v8 tabanlı risk motoru, kimlik kartı otomasyon sistemi ve Power BI yönetici panosu geliştirme.</p></span><span data-en data-lang-hide><p class="exp-desc">L1/L2 technical support and system management for enterprise healthcare infrastructure covering 2,000+ hospital staff and 2,250+ IT assets. Pusula HIS management, Python-based MITRE ATT&CK + CIS Controls v8 risk engine, ID card automation system, and Power BI executive dashboard development.</p></span>
+          <div class="exp-role">Sistem Geliştirme &amp; Kullanıcı Destek Uzmanı</div>
+          <p class="exp-desc">2.000+ hastane personeli ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısında L1/L2 teknik destek ve sistem yönetimi. Pusula HBYS yönetimi, Python ile MITRE ATT&CK + CIS Controls v8 tabanlı risk motoru, kimlik kartı otomasyon sistemi ve Power BI yönetici panosu geliştirme.</p>
           <div class="exp-tags">
             <span class="exp-tag">Python</span><span class="exp-tag">Streamlit</span>
             <span class="exp-tag">MITRE ATT&CK</span><span class="exp-tag">CIS Controls v8</span>
@@ -1356,13 +1357,13 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <span data-tr><div class="exp-period">Mar 2024 — Şub 2025</div></span><span data-en data-lang-hide><div class="exp-period">Mar 2024 — Feb 2025</div></span>
+          <div class="exp-period">Mar 2024 — Şub 2025</div>
           <div class="exp-company">ÇMHM</div>
-          <span data-tr><span class="exp-type">Tam Zamanlı</span></span><span data-en data-lang-hide><span class="exp-type">Full-Time</span></span>
+          <span class="exp-type">Tam Zamanlı</span></span>
         </div>
         <div class="exp-content">
-          <span data-tr><div class="exp-role">Bilgi Sistemleri Güvenlik Uzmanı</div></span><span data-en data-lang-hide><div class="exp-role">Information Systems Security Specialist</div></span>
-          <span data-tr><p class="exp-desc">NATO tatbikatlarına ev sahipliği yapan TSK bünyesindeki uluslararası askeri merkezde 100+ sabit personel ve yılda 10–15 etkinlikte 20–500+ çok uluslu katılımcıya gerçek zamanlı teknik destek. Ağ altyapısı kurulumu, cihaz yönetimi, erişim kontrolü ve bilgi güvenliği operasyonları.</p></span><span data-en data-lang-hide><p class="exp-desc">Real-time technical support for 100+ permanent staff and 20–500+ multinational participants across 10–15 annual events at an international military centre hosting NATO exercises. Network infrastructure deployment, device management, access control, and information security operations.</p></span>
+          <div class="exp-role">Bilgi Sistemleri Güvenlik Uzmanı</div>
+          <p class="exp-desc">NATO tatbikatlarına ev sahipliği yapan TSK bünyesindeki uluslararası askeri merkezde 100+ sabit personel ve yılda 10–15 etkinlikte 20–500+ çok uluslu katılımcıya gerçek zamanlı teknik destek. Ağ altyapısı kurulumu, cihaz yönetimi, erişim kontrolü ve bilgi güvenliği operasyonları.</p>
           <div class="exp-tags">
             <span class="exp-tag">Ağ Yönetimi</span><span class="exp-tag">Erişim Kontrolü</span>
             <span class="exp-tag">Güvenlik Operasyonları</span><span class="exp-tag">Çok Dilli Destek</span>
@@ -1372,11 +1373,10 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <span data-tr><div class="exp-period">Tem 2022 — Eyl 2022</div></span><span data-en data-lang-hide><div class="exp-period">Jul 2022 — Sep 2022</div></span>
+          <div class="exp-period">Tem 2022 — Eyl 2022</div>
           <div class="exp-company">İBB — Akıllı Şehir</div>
-          <span data-tr><div class="exp-role">Bilgi İşlem Stajyeri</div>
-          <p class="exp-desc">Flask + NLP ile İBB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taşımada araç/yolcu tespiti uygulaması geliştirdim.</p></span><span data-en data-lang-hide><div class="exp-role">IT Intern</div>
-          <p class="exp-desc">Developed an İBB White Desk Chatbot prototype using Flask + NLP, and a vehicle/passenger detection application for public transit using OpenCV.</p></span> ile İBB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taşımada araç/yolcu tespiti uygulaması geliştirdim.</p>
+          <div class="exp-role">Bilgi İşlem Stajyeri</div>
+          <p class="exp-desc">Flask + NLP ile İBB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taşımada araç/yolcu tespiti uygulaması geliştirdim.</p> ile İBB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taşımada araç/yolcu tespiti uygulaması geliştirdim.</p>
           <div class="exp-tags">
             <span class="exp-tag">Flask</span><span class="exp-tag">NLP</span>
             <span class="exp-tag">OpenCV</span><span class="exp-tag">Python</span>
@@ -1386,14 +1386,13 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <span data-tr><div class="exp-period">Şub 2020 — Mar 2020</div></span><span data-en data-lang-hide><div class="exp-period">Feb 2020 — Mar 2020</div></span>
+          <div class="exp-period">Şub 2020 — Mar 2020</div>
           <div class="exp-company">Burulaş</div>
-          <span data-tr><span class="exp-type">Staj</span></span><span data-en data-lang-hide><span class="exp-type">Internship</span></span>
+          <span class="exp-type">Staj</span></span>
         </div>
         <div class="exp-content">
-          <span data-tr><div class="exp-role">Bilgi Sistemleri Stajyeri</div>
-          <p class="exp-desc">ASP.NET ile kurumsal web uygulamaları geliştirerek toplu taşıma bilgi sistemleri altyapısını destekledim.</p></span><span data-en data-lang-hide><div class="exp-role">Information Systems Intern</div>
-          <p class="exp-desc">Supported public transport information system infrastructure by developing enterprise web applications with ASP.NET.</p></span>
+          <div class="exp-role">Bilgi Sistemleri Stajyeri</div>
+          <p class="exp-desc">ASP.NET ile kurumsal web uygulamaları geliştirerek toplu taşıma bilgi sistemleri altyapısını destekledim.</p>
           <div class="exp-tags">
             <span class="exp-tag">ASP.NET</span><span class="exp-tag">C#</span><span class="exp-tag">SQL</span>
           </div>
@@ -1402,14 +1401,13 @@ footer {
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <span data-tr><div class="exp-period">Haz 2019 — Ağu 2019</div></span><span data-en data-lang-hide><div class="exp-period">Jun 2019 — Aug 2019</div></span>
+          <div class="exp-period">Haz 2019 — Ağu 2019</div>
           <div class="exp-company">İETT</div>
-          <span data-tr><span class="exp-type">Staj</span></span><span data-en data-lang-hide><span class="exp-type">Internship</span></span>
+          <span class="exp-type">Staj</span></span>
         </div>
         <div class="exp-content">
-          <span data-tr><div class="exp-role">Bilgi İşlem Stajyeri</div>
-          <p class="exp-desc">C# ve MSSQL ile stok takip otomasyon uygulaması tasarladım ve geliştirdim.</p></span><span data-en data-lang-hide><div class="exp-role">IT Intern</div>
-          <p class="exp-desc">Designed and developed a stock tracking automation application using C# and MSSQL.</p></span>
+          <div class="exp-role">Bilgi İşlem Stajyeri</div>
+          <p class="exp-desc">C# ve MSSQL ile stok takip otomasyon uygulaması tasarladım ve geliştirdim.</p>
           <div class="exp-tags">
             <span class="exp-tag">C#</span><span class="exp-tag">MSSQL</span><span class="exp-tag">WinForms</span>
           </div>
@@ -1424,16 +1422,16 @@ footer {
 <section id="projects">
   <div class="section-header reveal">
     <span class="section-num">03.</span>
-    <span data-tr><h2 class="section-title">Projeler</h2></span><span data-en data-lang-hide><h2 class="section-title">Projects</h2></span>
+    <h2 class="section-title">Projeler</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="projects-filter reveal">
-    <span data-tr><button class="filter-btn active" data-filter="all">Tümü</button></span><span data-en data-lang-hide><button class="filter-btn active" data-filter="all">All</button></span>
+    <button class="filter-btn active" data-filter="all">Tümü</button>
     <button class="filter-btn" data-filter="python">Python</button>
     <button class="filter-btn" data-filter="csharp">C#</button>
     <button class="filter-btn" data-filter="html">HTML</button>
-    <span data-tr><button class="filter-btn" data-filter="security">Güvenlik</button></span><span data-en data-lang-hide><button class="filter-btn" data-filter="security">Security</button></span>
+    <button class="filter-btn" data-filter="security">Güvenlik</button>
   </div>
 
   <div class="projects-grid">
@@ -1443,11 +1441,11 @@ footer {
         <span class="proj-icon">🛡️</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <span data-tr><div class="proj-name">BT Risk Yönetim Platformu</div></span><span data-en data-lang-hide><div class="proj-name">IT Risk Management Platform</div></span>
-      <span data-tr><p class="proj-desc">Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8 tabanlı kurumsal risk motoru. Z-Score anomali tespiti, Streamlit dashboard, Power BI panosu ve otomatik HTML raporlama.</p></span><span data-en data-lang-hide><p class="proj-desc">Enterprise risk engine based on Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8. Z-Score anomaly detection, Streamlit dashboard, Power BI panel and automated HTML reporting.</p></span>
+      <div class="proj-name">BT Risk Yönetim Platformu</div>
+      <p class="proj-desc">Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8 tabanlı kurumsal risk motoru. Z-Score anomali tespiti, Streamlit dashboard, Power BI panosu ve otomatik HTML raporlama.</p>
       <div class="proj-footer">
-        <span data-tr><span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
-        <span data-tr><span data-tr><span class="proj-stars">★ Öne Çıkan</span></span><span data-en data-lang-hide><span class="proj-stars">★ Featured</span></span></span><span data-en data-lang-hide><span class="proj-stars">★ Featured</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
+        <span class="proj-stars">★ Öne Çıkan</span></span>
       </div>
     </a>
 
@@ -1456,10 +1454,10 @@ footer {
         <span class="proj-icon">🤖</span>
         <span class="proj-lang-badge lang-css">Flask/NLP</span>
       </div>
-      <span data-tr><div class="proj-name">İBB Beyaz Masa Chatbot</div></span><span data-en data-lang-hide><div class="proj-name">İBB White Desk Chatbot</div></span>
-      <span data-tr><p class="proj-desc">NLTK + Keras + Flask tabanlı Türkçe intent chatbot. Vatandaş taleplerine otomatik yanıt üretmek için İBB Akıllı Şehir Müdürlüğü stajında geliştirildi.</p></span><span data-en data-lang-hide><p class="proj-desc">Turkish intent chatbot built with NLTK + Keras + Flask. Developed during the İBB Smart City Directorate internship to automatically respond to citizen requests.</p></span>
+      <div class="proj-name">İBB Beyaz Masa Chatbot</div>
+      <p class="proj-desc">NLTK + Keras + Flask tabanlı Türkçe intent chatbot. Vatandaş taleplerine otomatik yanıt üretmek için İBB Akıllı Şehir Müdürlüğü stajında geliştirildi.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1468,10 +1466,10 @@ footer {
         <span class="proj-icon">🪪</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <span data-tr><div class="proj-name">Kimlik Kartı Otomasyon Sistemi</div></span><span data-en data-lang-hide><div class="proj-name">ID Card Automation System</div></span>
-      <span data-tr><p class="proj-desc">Personel kimlik kartı vesikalık yerleşim + sayfa düzeni otomasyonu. python-docx + PyMuPDF ile basım hazırlık süreçlerini otomatize eder.</p></span><span data-en data-lang-hide><p class="proj-desc">Automates ID card photo placement and page layout for print preparation using python-docx + PyMuPDF.</p></span>
+      <div class="proj-name">Kimlik Kartı Otomasyon Sistemi</div>
+      <p class="proj-desc">Personel kimlik kartı vesikalık yerleşim + sayfa düzeni otomasyonu. python-docx + PyMuPDF ile basım hazırlık süreçlerini otomatize eder.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1480,10 +1478,10 @@ footer {
         <span class="proj-icon">📷</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <span data-tr><div class="proj-name">Vesikalık Tespit (OpenCV)</div></span><span data-en data-lang-hide><div class="proj-name">Passport Photo Detection (OpenCV)</div></span>
-      <span data-tr><p class="proj-desc">Taranan PDF/JPG'lerden OpenCV ile yüz tespiti ve vesikalık kırpma. Kimlik kartı otomasyon sisteminin görüntü işleme modülü.</p></span><span data-en data-lang-hide><p class="proj-desc">Face detection and passport photo cropping from scanned PDFs/JPGs using OpenCV. Image processing module for the ID card automation system.</p></span>
+      <div class="proj-name">Vesikalık Tespit (OpenCV)</div>
+      <p class="proj-desc">Taranan PDF/JPG'lerden OpenCV ile yüz tespiti ve vesikalık kırpma. Kimlik kartı otomasyon sisteminin görüntü işleme modülü.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1492,10 +1490,10 @@ footer {
         <span class="proj-icon">🚗</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <span data-tr><div class="proj-name">Araç Tespiti (OpenCV)</div></span><span data-en data-lang-hide><div class="proj-name">Vehicle Detection (OpenCV)</div></span>
-      <span data-tr><p class="proj-desc">Önceden eğitilmiş Haar Cascade ile video üzerinde gerçek zamanlı araç tespiti. İBB stajı görüntü işleme projesi.</p></span><span data-en data-lang-hide><p class="proj-desc">Real-time vehicle detection on video using a pre-trained Haar Cascade. Image processing project from the İBB internship.</p></span>
+      <div class="proj-name">Araç Tespiti (OpenCV)</div>
+      <p class="proj-desc">Önceden eğitilmiş Haar Cascade ile video üzerinde gerçek zamanlı araç tespiti. İBB stajı görüntü işleme projesi.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1504,10 +1502,10 @@ footer {
         <span class="proj-icon">🔢</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <span data-tr><div class="proj-name">Araç Sayma (OpenCV)</div></span><span data-en data-lang-hide><div class="proj-name">Vehicle Counting (OpenCV)</div></span>
-      <span data-tr><p class="proj-desc">OpenCV BackgroundSubtractorMOG2 ile tek şeritte araç sayma demosu. Toplu taşıma veri analizi için geliştirildi.</p></span><span data-en data-lang-hide><p class="proj-desc">Single-lane vehicle counting demo using OpenCV BackgroundSubtractorMOG2. Developed for public transport data analysis.</p></span>
+      <div class="proj-name">Araç Sayma (OpenCV)</div>
+      <p class="proj-desc">OpenCV BackgroundSubtractorMOG2 ile tek şeritte araç sayma demosu. Toplu taşıma veri analizi için geliştirildi.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1516,10 +1514,10 @@ footer {
         <span class="proj-icon">📦</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <span data-tr><div class="proj-name">Kimlik Otomasyon (Dağıtım)</div></span><span data-en data-lang-hide><div class="proj-name">ID Automation (Distribution)</div></span>
-      <span data-tr><p class="proj-desc">Personel vesikalık ZIP dosyalarını personel.xlsx ile eşleştirip şubelere göre otomatik dağıtan araç.</p></span><span data-en data-lang-hide><p class="proj-desc">Tool that matches staff photo ZIP files with personel.xlsx and automatically distributes them by branch.</p></span>
+      <div class="proj-name">Kimlik Otomasyon (Dağıtım)</div>
+      <p class="proj-desc">Personel vesikalık ZIP dosyalarını personel.xlsx ile eşleştirip şubelere göre otomatik dağıtan araç.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1528,10 +1526,10 @@ footer {
         <span class="proj-icon">📚</span>
         <span class="proj-lang-badge lang-csharp">C#</span>
       </div>
-      <span data-tr><div class="proj-name">Kütüphane Otomasyon Sistemi</div></span><span data-en data-lang-hide><div class="proj-name">Library Automation System</div></span>
-      <span data-tr><p class="proj-desc">C# WinForms + SQL Server kütüphane otomasyonu. Kitap, üye ve ödünç yönetimi; stored procedure, trigger ve view içerir.</p></span><span data-en data-lang-hide><p class="proj-desc">C# WinForms + SQL Server library automation. Book, member and loan management; includes stored procedures, triggers and views.</p></span>
+      <div class="proj-name">Kütüphane Otomasyon Sistemi</div>
+      <p class="proj-desc">C# WinForms + SQL Server kütüphane otomasyonu. Kitap, üye ve ödünç yönetimi; stored procedure, trigger ve view içerir.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1540,10 +1538,10 @@ footer {
         <span class="proj-icon">📊</span>
         <span class="proj-lang-badge lang-csharp">C#</span>
       </div>
-      <span data-tr><div class="proj-name">Stok Takip Sistemi</div></span><span data-en data-lang-hide><div class="proj-name">Inventory Tracking System</div></span>
-      <span data-tr><p class="proj-desc">C# WinForms + MS Access tabanlı ürün/müşteri/stok takip uygulaması. İETT stajı kapsamında geliştirildi.</p></span><span data-en data-lang-hide><p class="proj-desc">Product/customer/stock tracking application based on C# WinForms + MS Access. Developed during the İETT internship.</p></span>
+      <div class="proj-name">Stok Takip Sistemi</div>
+      <p class="proj-desc">C# WinForms + MS Access tabanlı ürün/müşteri/stok takip uygulaması. İETT stajı kapsamında geliştirildi.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1552,10 +1550,10 @@ footer {
         <span class="proj-icon">🛒</span>
         <span class="proj-lang-badge lang-vb">VB.NET</span>
       </div>
-      <span data-tr><div class="proj-name">Market Otomasyon Sistemi</div></span><span data-en data-lang-hide><div class="proj-name">Market Automation System</div></span>
-      <span data-tr><p class="proj-desc">VB.NET WinForms + MS Access tabanlı market otomasyonu. Ürün, satış ve stok yönetimi modülleri içerir.</p></span><span data-en data-lang-hide><p class="proj-desc">Market automation based on VB.NET WinForms + MS Access. Includes product, sales, and inventory management modules.</p></span>
+      <div class="proj-name">Market Otomasyon Sistemi</div>
+      <p class="proj-desc">VB.NET WinForms + MS Access tabanlı market otomasyonu. Ürün, satış ve stok yönetimi modülleri içerir.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1564,10 +1562,10 @@ footer {
         <span class="proj-icon">🗺️</span>
         <span class="proj-lang-badge lang-js">JavaScript</span>
       </div>
-      <span data-tr><div class="proj-name">İstanbul Gezi Rehberi</div></span><span data-en data-lang-hide><div class="proj-name">Istanbul Travel Guide</div></span>
-      <span data-tr><p class="proj-desc">ASP.NET WebForms + ASP.NET Core MVC + Google Maps API ile İstanbul gezi rehberi uygulaması.</p></span><span data-en data-lang-hide><p class="proj-desc">Istanbul travel guide application using ASP.NET WebForms + ASP.NET Core MVC + Google Maps API.</p></span>
+      <div class="proj-name">İstanbul Gezi Rehberi</div>
+      <p class="proj-desc">ASP.NET WebForms + ASP.NET Core MVC + Google Maps API ile İstanbul gezi rehberi uygulaması.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1576,10 +1574,10 @@ footer {
         <span class="proj-icon">🌌</span>
         <span class="proj-lang-badge lang-html">HTML</span>
       </div>
-      <span data-tr><div class="proj-name">Astronomi Topluluğu Sitesi</div></span><span data-en data-lang-hide><div class="proj-name">Astronomy Club Website</div></span>
-      <span data-tr><p class="proj-desc">Uludağ Üniversitesi Astronomi Topluluğu için gönüllü olarak geliştirilen statik web sitesi. uluastro.space arşivi.</p></span><span data-en data-lang-hide><p class="proj-desc">Volunteer-developed static website for Uludağ University Astronomy Club. uluastro.space archive.</p></span>
+      <div class="proj-name">Astronomi Topluluğu Sitesi</div>
+      <p class="proj-desc">Uludağ Üniversitesi Astronomi Topluluğu için gönüllü olarak geliştirilen statik web sitesi. uluastro.space arşivi.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
       </div>
     </a>
 
@@ -1588,11 +1586,11 @@ footer {
         <span class="proj-icon">🍎</span>
         <span class="proj-lang-badge lang-python">Python</span>
       </div>
-      <span data-tr><div class="proj-name">Meyve &amp; Sebze Hastalık Tespiti</div></span><span data-en data-lang-hide><div class="proj-name">Fruit &amp; Vegetable Disease Detection</div></span>
-      <span data-tr><p class="proj-desc">MobileNetV2 ile 36 sınıf meyve/sebze tanıma; ResNet-9 ile 38 sınıf yaprak hastalık tespiti. Streamlit arayüzü · Flask REST API.</p></span><span data-en data-lang-hide><p class="proj-desc">36-class fruit/vegetable recognition with MobileNetV2; 38-class leaf disease detection with ResNet-9. Streamlit UI · Flask REST API.</p></span>
+      <div class="proj-name">Meyve &amp; Sebze Hastalık Tespiti</div>
+      <p class="proj-desc">MobileNetV2 ile 36 sınıf meyve/sebze tanıma; ResNet-9 ile 38 sınıf yaprak hastalık tespiti. Streamlit arayüzü · Flask REST API.</p>
       <div class="proj-footer">
-        <span data-tr><span class="proj-link">GitHub'da Gör →</span></span><span data-en data-lang-hide><span class="proj-link">View on GitHub →</span></span>
-        <span data-tr><span class="proj-stars">★ Öne Çıkan</span></span><span data-en data-lang-hide><span class="proj-stars">★ Featured</span></span>
+        <span class="proj-link">GitHub'da Gör →</span></span>
+        <span class="proj-stars">★ Öne Çıkan</span></span>
       </div>
     </a>
 
@@ -1603,7 +1601,7 @@ footer {
       </div>
       <div class="proj-content">
         <h3 class="proj-title">FinSentinel</h3>
-        <span data-tr><p class="proj-desc">Türkiye piyasalarına odaklı AI destekli finansal analiz platformu. BIST, TEFAS fon tarayıcı, TCMB makro veriler, portföy yönetimi ve Gemini AI yorumları.</p></span><span data-en data-lang-hide><p class="proj-desc">AI-powered financial analysis platform focused on Turkish markets. BIST, TEFAS fund scanner, TCMB macro data, portfolio management and Gemini AI insights.</p></span>
+        <p class="proj-desc">Türkiye piyasalarına odaklı AI destekli finansal analiz platformu. BIST, TEFAS fon tarayıcı, TCMB makro veriler, portföy yönetimi ve Gemini AI yorumları.</p>
         <div class="proj-tags">
           <span class="tag">Streamlit</span>
           <span class="tag">Gemini AI</span>
@@ -1622,24 +1620,24 @@ footer {
   <div class="skills-inner">
     <div class="section-header reveal">
       <span class="section-num">04.</span>
-      <span data-tr><h2 class="section-title">Yetenekler</h2></span><span data-en data-lang-hide><h2 class="section-title">Skills</h2></span>
+      <h2 class="section-title">Yetenekler</h2>
       <div class="section-line"></div>
     </div>
     <div class="skills-grid">
       <div class="skill-group reveal">
-        <span data-tr><div class="skill-group-title">Güvenlik & Risk</div></span><span data-en data-lang-hide><div class="skill-group-title">Security & Risk</div></span>
+        <div class="skill-group-title">Güvenlik & Risk</div>
         <div class="skill-items">
           <span class="skill-item">MITRE ATT&CK</span>
           <span class="skill-item">CIS Controls v8</span>
-          <span data-tr><span class="skill-item">Risk Yönetimi</span></span><span data-en data-lang-hide><span class="skill-item">Risk Management</span></span>
-          <span data-tr><span class="skill-item">Erişim Kontrolü</span></span><span data-en data-lang-hide><span class="skill-item">Access Control</span></span>
-          <span data-tr><span class="skill-item">Güvenlik Operasyonları</span></span><span data-en data-lang-hide><span class="skill-item">Security Operations</span></span>
-          <span data-tr><span class="skill-item">Anomali Tespiti</span></span><span data-en data-lang-hide><span class="skill-item">Anomaly Detection</span></span>
+          <span class="skill-item">Risk Yönetimi</span></span>
+          <span class="skill-item">Erişim Kontrolü</span></span>
+          <span class="skill-item">Güvenlik Operasyonları</span></span>
+          <span class="skill-item">Anomali Tespiti</span></span>
           <span class="skill-item">CVE/NVD</span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <span data-tr><div class="skill-group-title">Geliştirme</div></span><span data-en data-lang-hide><div class="skill-group-title">Development</div></span>
+        <div class="skill-group-title">Geliştirme</div>
         <div class="skill-items">
           <span class="skill-item">Python</span>
           <span class="skill-item">C#</span>
@@ -1652,7 +1650,7 @@ footer {
         </div>
       </div>
       <div class="skill-group reveal">
-        <span data-tr><div class="skill-group-title">Araçlar & Platform</div></span><span data-en data-lang-hide><div class="skill-group-title">Tools & Platform</div></span>
+        <div class="skill-group-title">Araçlar & Platform</div>
         <div class="skill-items">
           <span class="skill-item">Streamlit</span>
           <span class="skill-item">Flask</span>
@@ -1664,34 +1662,34 @@ footer {
         </div>
       </div>
       <div class="skill-group reveal">
-        <span data-tr><div class="skill-group-title">Yapay Zeka & Veri</div></span><span data-en data-lang-hide><div class="skill-group-title">AI & Data</div></span>
+        <div class="skill-group-title">Yapay Zeka & Veri</div>
         <div class="skill-items">
           <span class="skill-item">OpenCV</span>
           <span class="skill-item">NLP / NLTK</span>
           <span class="skill-item">Keras</span>
-          <span data-tr><span class="skill-item">Makine Öğrenmesi</span></span><span data-en data-lang-hide><span class="skill-item">Machine Learning</span></span>
-          <span data-tr><span class="skill-item">Veri Madenciliği</span></span><span data-en data-lang-hide><span class="skill-item">Data Mining</span></span>
-          <span data-tr><span class="skill-item">Görüntü İşleme</span></span><span data-en data-lang-hide><span class="skill-item">Image Processing</span></span>
+          <span class="skill-item">Makine Öğrenmesi</span></span>
+          <span class="skill-item">Veri Madenciliği</span></span>
+          <span class="skill-item">Görüntü İşleme</span></span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <span data-tr><div class="skill-group-title">Sistem & Altyapı</div></span><span data-en data-lang-hide><div class="skill-group-title">Systems & Infrastructure</div></span>
+        <div class="skill-group-title">Sistem & Altyapı</div>
         <div class="skill-items">
           <span class="skill-item">Windows Server</span>
           <span class="skill-item">Active Directory</span>
-          <span data-tr><span class="skill-item">Ağ Yönetimi</span></span><span data-en data-lang-hide><span class="skill-item">Network Management</span></span>
+          <span class="skill-item">Ağ Yönetimi</span></span>
           <span class="skill-item">HBYS (Pusula/Medax)</span>
           <span class="skill-item">UAT Testi</span>
-          <span data-tr><span class="skill-item">Donanım Yönetimi</span></span><span data-en data-lang-hide><span class="skill-item">Hardware Management</span></span>
+          <span class="skill-item">Donanım Yönetimi</span></span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <span data-tr><div class="skill-group-title">Sertifika</div></span><span data-en data-lang-hide><div class="skill-group-title">Certifications</div></span>
+        <div class="skill-group-title">Sertifika</div>
         <div class="skill-items">
-          <span data-tr><span class="skill-item">İHA1 Pilot Lisansı</span></span><span data-en data-lang-hide><span class="skill-item">UAS1 Pilot License</span></span>
-          <span data-tr><span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">ISC2 CC (Planlı)</span></span><span data-en data-lang-hide><span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">ISC2 CC (Planned)</span></span>
-          <span data-tr><span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">BTL1 (Planlı)</span></span><span data-en data-lang-hide><span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">BTL1 (Planned)</span></span>
-          <span data-tr><span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">CompTIA Sec+ (Planlı)</span></span><span data-en data-lang-hide><span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">CompTIA Sec+ (Planned)</span></span>
+          <span class="skill-item">İHA1 Pilot Lisansı</span></span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">ISC2 CC (Planlı)</span></span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">BTL1 (Planlı)</span></span>
+          <span class="skill-item" style="border-color:rgba(245,158,11,0.3); color:var(--amber)">CompTIA Sec+ (Planlı)</span></span>
         </div>
       </div>
     </div>
@@ -1704,15 +1702,15 @@ footer {
 <section id="blog">
   <div class="section-header reveal">
     <span class="section-num">06.</span>
-    <span data-tr><h2 class="section-title">Blog</h2></span><span data-en data-lang-hide><h2 class="section-title">Blog</h2></span>
+    <h2 class="section-title">Blog</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="blog-filter">
-    <span data-tr><button class="blog-filter-btn active" data-filter="all">Tümü</button></span><span data-en data-lang-hide><button class="blog-filter-btn active" data-filter="all">All</button></span>
-    <span data-tr><button class="blog-filter-btn" data-filter="Teknoloji">Teknoloji</button></span><span data-en data-lang-hide><button class="blog-filter-btn" data-filter="Teknoloji">Technology</button></span>
-    <span data-tr><button class="blog-filter-btn" data-filter="Uzay">Uzay</button></span><span data-en data-lang-hide><button class="blog-filter-btn" data-filter="Uzay">Space</button></span>
-    <span data-tr><button class="blog-filter-btn" data-filter="Bilim">Bilim</button></span><span data-en data-lang-hide><button class="blog-filter-btn" data-filter="Bilim">Science</button></span>
+    <button class="blog-filter-btn active" data-filter="all">Tümü</button>
+    <button class="blog-filter-btn" data-filter="Teknoloji">Teknoloji</button>
+    <button class="blog-filter-btn" data-filter="Uzay">Uzay</button>
+    <button class="blog-filter-btn" data-filter="Bilim">Bilim</button>
   </div>
 
   <div class="blog-grid" id="blogGrid">
@@ -1721,13 +1719,13 @@ footer {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Teknoloji</span>
-          <span data-tr><span class="blog-date">Nisan 2021</span></span><span data-en data-lang-hide><span class="blog-date">April 2021</span></span>
+          <span class="blog-date">Nisan 2021</span></span>
         </div>
-        <span data-tr><h3 class="blog-card-title">Veri Madenciliğine Giriş</h3></span><span data-en data-lang-hide><h3 class="blog-card-title">Introduction to Data Mining</h3></span>
-        <span data-tr><p class="blog-card-excerpt">Veri madenciliğinin tanımı, etimolojisi ve tarihsel gelişimi. Büyük veriden anlamlı bilgiye ulaşmanın temel kavramları.</p></span><span data-en data-lang-hide><p class="blog-card-excerpt">Definition, etymology, and historical development of data mining. Key concepts for deriving meaningful knowledge from big data.</p></span>
+        <h3 class="blog-card-title">Veri Madenciliğine Giriş</h3>
+        <p class="blog-card-excerpt">Veri madenciliğinin tanımı, etimolojisi ve tarihsel gelişimi. Büyük veriden anlamlı bilgiye ulaşmanın temel kavramları.</p>
         <div class="blog-card-footer">
-          <span data-tr><span class="blog-read-time">⏱ 6 dk okuma</span></span><span data-en data-lang-hide><span class="blog-read-time">⏱ 6 min read</span></span>
-          <span data-tr><span class="blog-card-cta">Oku →</span></span><span data-en data-lang-hide><span class="blog-card-cta">Read →</span></span>
+          <span class="blog-read-time">⏱ 6 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1735,13 +1733,13 @@ footer {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Teknoloji</span>
-          <span data-tr><span class="blog-date">Nisan 2021</span></span><span data-en data-lang-hide><span class="blog-date">April 2021</span></span>
+          <span class="blog-date">Nisan 2021</span></span>
         </div>
-        <span data-tr><h3 class="blog-card-title">Veri Madenciliği: Süreç ve Metotlar</h3></span><span data-en data-lang-hide><h3 class="blog-card-title">Data Mining: Process and Methods</h3></span>
-        <span data-tr><p class="blog-card-excerpt">Veri madenciliği süreci, CRISP-DM modeli, sınıflama, kümeleme ve birliktelik kuralları metotlarının kapsamlı incelemesi.</p></span><span data-en data-lang-hide><p class="blog-card-excerpt">Comprehensive examination of the data mining process, CRISP-DM model, classification, clustering, and association rule methods.</p></span>
+        <h3 class="blog-card-title">Veri Madenciliği: Süreç ve Metotlar</h3>
+        <p class="blog-card-excerpt">Veri madenciliği süreci, CRISP-DM modeli, sınıflama, kümeleme ve birliktelik kuralları metotlarının kapsamlı incelemesi.</p>
         <div class="blog-card-footer">
-          <span data-tr><span class="blog-read-time">⏱ 8 dk okuma</span></span><span data-en data-lang-hide><span class="blog-read-time">⏱ 8 min read</span></span>
-          <span data-tr><span class="blog-card-cta">Oku →</span></span><span data-en data-lang-hide><span class="blog-card-cta">Read →</span></span>
+          <span class="blog-read-time">⏱ 8 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1749,13 +1747,13 @@ footer {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Teknoloji</span>
-          <span data-tr><span class="blog-date">Mayıs 2021</span></span><span data-en data-lang-hide><span class="blog-date">May 2021</span></span>
+          <span class="blog-date">Mayıs 2021</span></span>
         </div>
-        <span data-tr><h3 class="blog-card-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h3></span><span data-en data-lang-hide><h3 class="blog-card-title">What Is Blockchain Technology?</h3></span>
-        <span data-tr><p class="blog-card-excerpt">Dağıtık defter teknolojisi, kripto para birimleri ve akıllı sözleşmeler. Blockchain'in çalışma prensibi ve kullanım alanları.</p></span><span data-en data-lang-hide><p class="blog-card-excerpt">Distributed ledger technology, cryptocurrencies and smart contracts. How blockchain works and its use cases.</p></span>
+        <h3 class="blog-card-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h3>
+        <p class="blog-card-excerpt">Dağıtık defter teknolojisi, kripto para birimleri ve akıllı sözleşmeler. Blockchain'in çalışma prensibi ve kullanım alanları.</p>
         <div class="blog-card-footer">
-          <span data-tr><span class="blog-read-time">⏱ 7 dk okuma</span></span><span data-en data-lang-hide><span class="blog-read-time">⏱ 7 min read</span></span>
-          <span data-tr><span class="blog-card-cta">Oku →</span></span><span data-en data-lang-hide><span class="blog-card-cta">Read →</span></span>
+          <span class="blog-read-time">⏱ 7 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1763,13 +1761,13 @@ footer {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Uzay</span>
-          <span data-tr><span class="blog-date">Mayıs 2021</span></span><span data-en data-lang-hide><span class="blog-date">May 2021</span></span>
+          <span class="blog-date">Mayıs 2021</span></span>
         </div>
-        <span data-tr><h3 class="blog-card-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h3></span><span data-en data-lang-hide><h3 class="blog-card-title">Getting to Know the Turkish Space Agency (TUA)</h3></span>
-        <span data-tr><p class="blog-card-excerpt">Türkiye'nin uzay hedefleri ve TUA'nın kuruluş hikayesi. Milli uzay programı, roket projeleri ve 2023 hedefleri.</p></span><span data-en data-lang-hide><p class="blog-card-excerpt">Turkey's space goals and TUA's founding story. The national space program, rocket projects and 2023 targets.</p></span>
+        <h3 class="blog-card-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h3>
+        <p class="blog-card-excerpt">Türkiye'nin uzay hedefleri ve TUA'nın kuruluş hikayesi. Milli uzay programı, roket projeleri ve 2023 hedefleri.</p>
         <div class="blog-card-footer">
-          <span data-tr><span class="blog-read-time">⏱ 6 dk okuma</span></span><span data-en data-lang-hide><span class="blog-read-time">⏱ 6 min read</span></span>
-          <span data-tr><span class="blog-card-cta">Oku →</span></span><span data-en data-lang-hide><span class="blog-card-cta">Read →</span></span>
+          <span class="blog-read-time">⏱ 6 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1777,13 +1775,13 @@ footer {
       <div class="blog-card-inner">
         <div class="blog-card-top">
           <span class="blog-tag">Bilim</span>
-          <span data-tr><span class="blog-date">Haziran 2021</span></span><span data-en data-lang-hide><span class="blog-date">June 2021</span></span>
+          <span class="blog-date">Haziran 2021</span></span>
         </div>
-        <span data-tr><h3 class="blog-card-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h3></span><span data-en data-lang-hide><h3 class="blog-card-title">Neuralink: What Is a Brain-Machine Interface?</h3></span>
-        <span data-tr><p class="blog-card-excerpt">Elon Musk'ın Neuralink projesi ve beyin-bilgisayar arayüzü teknolojisi. İnsan beynini dijital dünyaya bağlamanın bilimi.</p></span><span data-en data-lang-hide><p class="blog-card-excerpt">Elon Musk's Neuralink project and brain-computer interface technology. The science of connecting the human brain to the digital world.</p></span>
+        <h3 class="blog-card-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h3>
+        <p class="blog-card-excerpt">Elon Musk'ın Neuralink projesi ve beyin-bilgisayar arayüzü teknolojisi. İnsan beynini dijital dünyaya bağlamanın bilimi.</p>
         <div class="blog-card-footer">
-          <span data-tr><span class="blog-read-time">⏱ 7 dk okuma</span></span><span data-en data-lang-hide><span class="blog-read-time">⏱ 7 min read</span></span>
-          <span data-tr><span class="blog-card-cta">Oku →</span></span><span data-en data-lang-hide><span class="blog-card-cta">Read →</span></span>
+          <span class="blog-read-time">⏱ 7 dk okuma</span></span>
+          <span class="blog-card-cta">Oku →</span></span>
         </div>
       </div>
     </article>
@@ -1797,21 +1795,21 @@ footer {
       <button class="blog-modal-close" onclick="closePost('veri-madenciligi-giris')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Teknoloji</span>
-        <span data-tr><span class="blog-date">Nisan 2021 · ⏱ 6 dk okuma</span></span><span data-en data-lang-hide><span class="blog-date">April 2021 · ⏱ 6 min read</span></span>
+        <span class="blog-date">Nisan 2021 · ⏱ 6 dk okuma</span></span>
       </div>
-      <span data-tr><h2 class="blog-modal-title">Veri Madenciliğine Giriş</h2></span><span data-en data-lang-hide><h2 class="blog-modal-title">Introduction to Data Mining</h2></span>
-      <div class="blog-modal-body" data-tr><h3>1. Introduction</h3>
-<p>Hello! In this post we introduce data mining. We cover the definition, etymology, and historical development of data mining.</p>
-<h3>2. What Is Data Mining?</h3>
-<p>Data mining is the process of discovering patterns in large datasets using methods at the intersection of machine learning, statistics, and database systems. In other words, it is the extraction of hidden, previously unknown, and potentially useful information from large volumes of data.</p>
-<p>Data mining transforms accumulated raw data — that doesn't directly yield useful insights — into meaningful, concise knowledge. Knowledge can be derived directly from data, and further knowledge can be generated from that derived knowledge.</p>
-<h3>3. Etymology of Data Mining</h3>
-<p>The term "data mining" was used by economist Michael Lovell in a 1983 article published in the Review of Economics and Statistics. Its modern meaning became widespread from the early 1990s.</p>
-<p>Major academic forums began in 1995 with the 1st International Workshop on Knowledge Discovery in Databases, held in Montreal under AAAI sponsorship. The KDD journal launched in 1997.</p>
-<h3>4. Historical Development</h3>
-<p>Computers were first used for census purposes in the 1950s. Databases were developed in the 1960s; relational databases and SQL appeared in the 1980s. In the 1990s, data warehousing and data mining were adopted by industry. The 2000s brought new sub-fields such as web mining, text mining, and social network analysis.</p>
-<h3>5. Conclusion</h3>
-<p>With its ever-growing importance in today's digital age, data mining has become an indispensable discipline in both academia and industry. In the next post we will examine the data mining process, its methods, and application areas.</p></div>
+      <h2 class="blog-modal-title">Veri Madenciliğine Giriş</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Merhaba! Bu yazımızda veri madenciliğine giriş yapacağız. Veri madenciliği ile ilgili bu ilk yazımızda veri madenciliğinin tanımından, etimolojisinden ve tarihsel gelişiminden bahsedeceğiz.</p>
+<h3>2. Veri Madenciliği Nedir?</h3>
+<p>Veri madenciliği; makine öğrenimi, istatistik ve veri tabanı sistemlerinin kesiştiği yöntemleri içeren büyük veri kümelerindeki örüntülerin keşfedilmesi sürecidir. Başka bir deyişle veri madenciliği, büyük veri yığınlarından gizli, önceden bilinmeyen ve potansiyel olarak kullanışlı bilgilerin çıkarılması işlemidir.</p>
+<p>Veri Madenciliği; yığılmış, istenilen amaca yönelik faydalı bilgiler vermeyen verilerin anlamlı ve öz bilgiye dönüştürülmesi sürecidir. Veriden doğrudan bilgi elde edilebileceği gibi, elde edilen bu bilgiden de yeni bilgiler türetilebilir.</p>
+<h3>3. Veri Madenciliğinin Etimolojisi</h3>
+<p>"Veri madenciliği" terimi, 1983 yılında İktisadi Araştırmalar Dergisi'nde yayınlanan bir makalede iktisatçı Michael Lovell tarafından kullanılmıştır. Terimin bugünkü anlamda kullanımı 1990'ların başından itibaren yaygınlaşmıştır.</p>
+<p>Akademik toplulukta büyük forumlar 1995 yılında Montreal'de AAAI sponsorluğu altında 1. Uluslararası Veri Madenciliği ve Bilgi Keşfi Çalıştayı ile başlamış, 1997'de KDD dergisi yayın hayatına girmiştir.</p>
+<h3>4. Veri Madenciliğinin Tarihsel Gelişimi</h3>
+<p>Bilgisayarlar ilk olarak 1950'li yıllarda sayım için kullanılmaya başlamıştır. 1960'larda veri tabanları geliştirildi. 1980'lerde ilişkisel veri tabanları ve SQL hayata geçirildi. 1990'larda veri ambarlaması ve veri madenciliği iş dünyası tarafından benimsendi. 2000'li yıllarda web madenciliği, metin madenciliği ve sosyal ağ analizi gibi yeni alt dallar ortaya çıktı.</p>
+<h3>5. Sonuç</h3>
+<p>Veri madenciliği, günümüz dijital çağında giderek artan önemiyle hem akademik hem de endüstriyel alanda vazgeçilmez bir disiplin haline gelmiştir. Bir sonraki yazımızda veri madenciliği sürecini, metotlarını ve uygulama alanlarını inceleyeceğiz.</p></div>
     </div>
   </div>
   <div id="modal-veri-madenciligi-genel" class="blog-modal">
@@ -1820,22 +1818,22 @@ footer {
       <button class="blog-modal-close" onclick="closePost('veri-madenciligi-genel')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Teknoloji</span>
-        <span data-tr><span class="blog-date">Nisan 2021 · ⏱ 8 dk okuma</span></span><span data-en data-lang-hide><span class="blog-date">April 2021 · ⏱ 8 min read</span></span>
+        <span class="blog-date">Nisan 2021 · ⏱ 8 dk okuma</span></span>
       </div>
-      <span data-tr><h2 class="blog-modal-title">Veri Madenciliği: Süreç ve Metotlar</h2></span><span data-en data-lang-hide><h2 class="blog-modal-title">Data Mining: Process and Methods</h2></span>
-      <div class="blog-modal-body" data-tr><h3>1. Introduction</h3>
-<p>In this post we examine the process, methods, application areas, and challenges of data mining — topics we briefly introduced in the previous article.</p>
-<h3>2. The Data Mining Process</h3>
-<p>Data mining is a multi-stage process. The industry-standard CRISP-DM (Cross-Industry Standard Process for Data Mining) model defines its framework.</p>
-<p>Steps followed in the data mining process:</p>
-<ul><li>Problem definition</li><li>Data preparation</li><li>Model building and evaluation</li><li>Model deployment</li><li>Model monitoring</li></ul>
-<h3>3. Data Mining Methods</h3>
-<p>Data mining models are grouped into 3 categories by function:</p>
-<ul><li><strong>Classification and Regression:</strong> Belong to predictive models. Split into two depending on whether the target variable is discrete or continuous.</li><li><strong>Clustering:</strong> Belong to descriptive models. Groups data with similar characteristics.</li><li><strong>Association Rules:</strong> Reveal relationships between data. Market basket analysis is a classic example.</li></ul>
-<h3>4. Application Areas</h3>
-<p>Data mining is used in many fields including healthcare, telecommunications, finance (banking, stock markets), marketing, insurance, astronomy, biology, and medicine.</p>
-<h3>5. Common Challenges</h3>
-<p>In big data environments, challenges such as redundant data, ambiguity, missing values, dynamic data, and incomplete data are encountered. Proper management of these issues is one of the key requirements of a successful data mining project.</p></div>
+      <h2 class="blog-modal-title">Veri Madenciliği: Süreç ve Metotlar</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Bu içeriğimizde daha önce kelime anlamına ve tarihine değindiğimiz veri madenciliğinin süreci, metotları, uygulama alanları ve karşılaşılan problemleri inceleyeceğiz.</p>
+<h3>2. Veri Madenciliği Süreci</h3>
+<p>Veri madenciliği birkaç aşamadan oluşan bir süreçtir. Endüstri standardı CRISP-DM (Cross-Industry Standard Process for Data Mining) modeli bu sürecin çerçevesini belirlemiştir.</p>
+<p>Veri madenciliği sürecinde izlenen adımlar:</p>
+<ul><li>Problemlerin tanımlanması</li><li>Verilerin hazırlanması</li><li>Modelin kurulması ve değerlendirilmesi</li><li>Modelin kullanılması</li><li>Modelin izlenmesi</li></ul>
+<h3>3. Veri Madenciliği Metotları</h3>
+<p>Veri madenciliği modelleri işlevlerine göre 3 grupta toplanır:</p>
+<ul><li><strong>Sınıflama (Classification) ve Regresyon:</strong> Tahmin edici modeller grubuna girer. Hedef değişkenin süreksiz (ayrık) veya sürekli olmasına göre ikiye ayrılır.</li><li><strong>Kümeleme (Clustering):</strong> Tanımlayıcı modeller grubuna girer. Benzer özellikteki verileri gruplar.</li><li><strong>Birliktelik Kuralları (Association Rules):</strong> Veriler arasındaki ilişkileri ortaya çıkarır. Market sepeti analizi klasik bir örneğidir.</li></ul>
+<h3>4. Uygulama Alanları</h3>
+<p>Veri madenciliği; sağlık sektörü, telekomünikasyon, finans (bankacılık, borsa), pazarlama, sigortacılık, astronomi, biyoloji ve tıp gibi pek çok alanda kullanılmaktadır.</p>
+<h3>5. Karşılaşılan Problemler</h3>
+<p>Büyük veri ortamlarında artık veri, belirsizlik, boş veri, dinamik veri ve eksik veri gibi sorunlarla karşılaşılır. Bu sorunların doğru yönetimi, başarılı bir veri madenciliği çalışmasının temel koşullarından biridir.</p></div>
     </div>
   </div>
   <div id="modal-blockchain-nedir" class="blog-modal">
@@ -1844,22 +1842,22 @@ footer {
       <button class="blog-modal-close" onclick="closePost('blockchain-nedir')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Teknoloji</span>
-        <span data-tr><span class="blog-date">Mayıs 2021 · ⏱ 7 dk okuma</span></span><span data-en data-lang-hide><span class="blog-date">May 2021 · ⏱ 7 min read</span></span>
+        <span class="blog-date">Mayıs 2021 · ⏱ 7 dk okuma</span></span>
       </div>
-      <span data-tr><h2 class="blog-modal-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h2></span><span data-en data-lang-hide><h2 class="blog-modal-title">What Is Blockchain Technology?</h2></span>
-      <div class="blog-modal-body" data-tr><h3>1. Introduction</h3>
-<p>In this post we explore Blockchain technology, which has been a frequent topic in the financial world and the tech agenda in recent years.</p>
-<h3>2. What Is Blockchain?</h3>
-<p>Blockchain is a distributed ledger technology in which data is stored in cryptographically linked blocks, with no need for a central authority. Because each block contains the hash of the previous block, altering any link in the chain is extremely difficult.</p>
-<p>Its core properties are: decentralization, immutability, transparency, and security.</p>
-<h3>3. How Does It Work?</h3>
-<p>When a transaction occurs, it is broadcast to all participants in the network. Miners compete to validate the transaction. The validated transaction forms a block and is added to the chain. This process is secured by consensus mechanisms such as "Proof of Work" or "Proof of Stake".</p>
-<h3>4. Use Cases</h3>
-<p>Blockchain technology is not limited to cryptocurrencies. Smart Contracts, supply chain management, health records, digital identity verification, voting systems, and NFTs are among its application areas.</p>
-<h3>5. Bitcoin and Ethereum</h3>
-<p>Bitcoin, introduced by Satoshi Nakamoto in 2009, is the first blockchain application. Ethereum, developed by Vitalik Buterin in 2015, is a second-generation blockchain platform that supports smart contracts.</p>
-<h3>6. Conclusion</h3>
-<p>Blockchain technology offers a revolutionary approach to solving the trust problem without the need for a central intermediary. It is expected to drive fundamental transformations across many industries in the years ahead.</p></div>
+      <h2 class="blog-modal-title">Blockchain (Blok Zinciri) Teknolojisi Nedir?</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Merhaba! Bu yazımızda son yıllarda finans dünyasında ve teknoloji gündeminde sıkça duyulan Blockchain (Blok Zinciri) teknolojisini ele alacağız.</p>
+<h3>2. Blockchain Nedir?</h3>
+<p>Blockchain, verilerin birbirine kriptografik olarak bağlı bloklar halinde saklandığı, merkezi bir otoriteye ihtiyaç duymayan dağıtık bir defter teknolojisidir. Her blok, bir önceki bloğun hash değerini içerdiğinden zincirin herhangi bir halkasını değiştirmek son derece güçtür.</p>
+<p>Temel özellikleri şöyle sıralayabiliriz: merkezi olmayan yapı (decentralization), değişmezlik (immutability), şeffaflık (transparency) ve güvenlik (security).</p>
+<h3>3. Nasıl Çalışır?</h3>
+<p>Bir işlem gerçekleştiğinde ağdaki tüm katılımcılara duyurulur. Madenciler (miners) bu işlemi doğrulamak için rekabet eder. Doğrulanan işlem bir blok oluşturur ve zincire eklenir. Bu süreç "Proof of Work" veya "Proof of Stake" gibi konsensüs mekanizmaları ile güvence altına alınır.</p>
+<h3>4. Kullanım Alanları</h3>
+<p>Blockchain teknolojisi yalnızca kripto para birimleriyle sınırlı değildir. Akıllı sözleşmeler (Smart Contracts), tedarik zinciri yönetimi, sağlık kayıtları, dijital kimlik doğrulama, oylama sistemleri ve NFT'ler bu teknolojinin uygulama alanları arasında yer almaktadır.</p>
+<h3>5. Bitcoin ve Ethereum</h3>
+<p>Bitcoin, 2009 yılında Satoshi Nakamoto tarafından tanıtılan ilk blockchain uygulamasıdır. Ethereum ise 2015'te Vitalik Buterin tarafından geliştirilen ve akıllı sözleşmeleri destekleyen ikinci nesil bir blockchain platformudur.</p>
+<h3>6. Sonuç</h3>
+<p>Blockchain teknolojisi, güven sorununu merkezi bir aracıya ihtiyaç duymadan çözen devrimci bir yaklaşım sunmaktadır. Önümüzdeki yıllarda pek çok sektörde köklü dönüşümlere yol açması beklenmektedir.</p></div>
     </div>
   </div>
   <div id="modal-tua-turkiye-uzay" class="blog-modal">
@@ -1868,22 +1866,22 @@ footer {
       <button class="blog-modal-close" onclick="closePost('tua-turkiye-uzay')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Uzay</span>
-        <span data-tr><span class="blog-date">Mayıs 2021 · ⏱ 6 dk okuma</span></span><span data-en data-lang-hide><span class="blog-date">May 2021 · ⏱ 6 min read</span></span>
+        <span class="blog-date">Mayıs 2021 · ⏱ 6 dk okuma</span></span>
       </div>
-      <span data-tr><h2 class="blog-modal-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h2></span><span data-en data-lang-hide><h2 class="blog-modal-title">Getting to Know the Turkish Space Agency (TUA)</h2></span>
-      <div class="blog-modal-body" data-tr><h3>1. Introduction</h3>
-<p>In this post we explore the Turkish Space Agency (TUA — Türkiye Uzay Ajansı), one of Turkey's most significant institutional steps in the field of space.</p>
-<h3>2. What Is TUA?</h3>
-<p>The Turkish Space Agency (TUA) was established in 2018 to define Turkey's national space policies, coordinate space-related activities, and manage international partnerships. Operating under the Presidency, TUA is tasked with realizing Turkey's space vision.</p>
-<h3>3. Turkey's Space Goals</h3>
-<p>The most important of Turkey's space targets set for 2023 is a controlled lunar landing. Towards this goal, domestic rocket development work continues.</p>
-<p>Other key targets include: development of domestic satellite technologies, site selection studies for a space base, and strengthening international space cooperation.</p>
-<h3>4. TUA's Activities</h3>
-<p>TUA supports R&D activities in space technologies by collaborating with universities and defence industry organisations. It also organises various training and awareness programmes to attract young talent into space science.</p>
-<h3>5. ROKETSAN and Space</h3>
-<p>ROKETSAN, Turkey's most powerful player in rocket technology, is developing domestic rocket engines in coordination with TUA. This work will strengthen Turkey's independent space access capacity.</p>
-<h3>6. Conclusion</h3>
-<p>The establishment of TUA is a concrete demonstration of Turkey's determination in the space domain. This work, carried out with the goal of technological independence, will continue to inspire future generations.</p></div>
+      <h2 class="blog-modal-title">Türkiye Uzay Ajansını (TUA) Tanıyalım</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Merhaba! Bu yazımızda Türkiye'nin uzay alanındaki en önemli kurumsal adımlarından biri olan Türkiye Uzay Ajansı'nı (TUA) tanıyacağız.</p>
+<h3>2. TUA Nedir?</h3>
+<p>Türkiye Uzay Ajansı (TUA), Türkiye'nin ulusal uzay politikalarını belirlemek, uzay alanındaki çalışmaları koordine etmek ve uluslararası iş birliklerini yürütmek amacıyla 2018 yılında kurulmuştur. Cumhurbaşkanlığına bağlı olarak faaliyet gösteren TUA, Türkiye'nin uzay vizyonunu hayata geçirmekle görevlidir.</p>
+<h3>3. Türkiye'nin Uzay Hedefleri</h3>
+<p>Türkiye'nin 2023 yılı için belirlediği uzay hedefleri arasında en önemlisi Ay'a kontrollü iniş yapmaktır. Bu hedef doğrultusunda yerli ve milli roket geliştirme çalışmaları sürdürülmektedir.</p>
+<p>Diğer önemli hedefler şunlardır: yerli uydu teknolojilerinin geliştirilmesi, uzay üssü kurulması için yer seçimi çalışmaları ve uluslararası uzay iş birliklerinin güçlendirilmesi.</p>
+<h3>4. TUA'nın Faaliyetleri</h3>
+<p>TUA, üniversiteler ve savunma sanayii kuruluşlarıyla iş birliği yaparak uzay teknolojileri alanında Ar-Ge çalışmalarını desteklemektedir. Ayrıca genç yetenekleri uzay bilimine kazandırmak amacıyla çeşitli eğitim ve farkındalık programları düzenlemektedir.</p>
+<h3>5. ROKETSAN ve Uzay</h3>
+<p>Türkiye'nin roket teknolojisindeki en güçlü aktörü ROKETSAN, TUA ile koordineli olarak yerli roket motorları geliştirmektedir. Bu çalışmalar Türkiye'nin bağımsız uzay erişim kapasitesini güçlendirecektir.</p>
+<h3>6. Sonuç</h3>
+<p>TUA'nın kuruluşu, Türkiye'nin uzay alanındaki kararlılığının somut bir göstergesidir. Teknoloji bağımsızlığı hedefiyle yürütülen bu çalışmalar, gelecek nesillere ilham vermeye devam edecektir.</p></div>
     </div>
   </div>
   <div id="modal-neuralink-beyin-makine" class="blog-modal">
@@ -1892,32 +1890,32 @@ footer {
       <button class="blog-modal-close" onclick="closePost('neuralink-beyin-makine')">✕</button>
       <div class="blog-modal-header">
         <span class="blog-tag">Bilim</span>
-        <span data-tr><span class="blog-date">Haziran 2021 · ⏱ 7 dk okuma</span></span><span data-en data-lang-hide><span class="blog-date">June 2021 · ⏱ 7 min read</span></span>
+        <span class="blog-date">Haziran 2021 · ⏱ 7 dk okuma</span></span>
       </div>
-      <span data-tr><h2 class="blog-modal-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h2></span><span data-en data-lang-hide><h2 class="blog-modal-title">Neuralink: What Is a Brain-Machine Interface?</h2></span>
-      <div class="blog-modal-body" data-tr><h3>1. Introduction</h3>
-<p>In this post we look at Neuralink, the company founded by Elon Musk, and brain-machine interface (BMI) technology — a topic that has gained significant attention in recent years.</p>
-<h3>2. What Is Neuralink?</h3>
-<p>Neuralink is a neurotech company founded in 2016 by Elon Musk and a group of neuroscientists. Its core goal is to develop high-bandwidth brain-computer interfaces that can be implanted in the human brain.</p>
-<h3>3. What Is a Brain-Machine Interface (BMI)?</h3>
-<p>A brain-machine interface (BMI) is a technological system that reads brain signals and converts them into computer commands. There are two main types: invasive (implanted in the brain) and non-invasive (worn externally, like an EEG headset).</p>
-<h3>4. How Does Neuralink Work?</h3>
-<p>The Neuralink device records the electrical activity of neurons through ultra-thin threads placed in the brain — approximately 1/4 the thickness of a human hair. The collected data is transmitted wirelessly to external devices.</p>
-<p>In 2020 the company unveiled its first device, called "Link". About the size of a coin, it is placed in the skull bone and can record brain activity.</p>
-<h3>5. Application Areas</h3>
-<p>Short-term targets for Neuralink include: enabling paralysed patients to control computers and smartphones, treating memory disorders, providing artificial vision for the visually impaired, and treating neurological diseases.</p>
-<p>Long-term speculative goals include integration of human intelligence with artificial intelligence (Musk's vision of "AI symbiosis") and memory upload/download.</p>
-<h3>6. Ethical Debates</h3>
-<p>This technology raises serious ethical questions: How will the privacy of brain data be protected? Will the cognitive gap between rich and poor deepen? Where do the boundaries of human identity begin and end?</p>
-<h3>7. Conclusion</h3>
-<p>Neuralink and brain-machine interface technology have the potential to be among the most transformative inventions in human history. Starting with medical applications and gradually reshaping human-computer interaction, this technology remains both exciting and a field that demands a careful approach.</p></div>
+      <h2 class="blog-modal-title">Neuralink: Beyin-Makine Arayüzü Nedir?</h2>
+      <div class="blog-modal-body"><h3>1. Giriş</h3>
+<p>Bu yazımızda son yıllarda adından sıkça söz ettiren Elon Musk'ın kurucusu olduğu Neuralink şirketini ve beyin-makine arayüzü (Brain-Machine Interface / BMI) teknolojisini ele alacağız.</p>
+<h3>2. Neuralink Nedir?</h3>
+<p>Neuralink, 2016 yılında Elon Musk ve bir grup nörobilimci tarafından kurulan bir nörotek şirketidir. Şirketin temel amacı, insan beynine implante edilebilecek yüksek bant genişlikli beyin-bilgisayar arayüzleri geliştirmektir.</p>
+<h3>3. Beyin-Makine Arayüzü (BMI) Nedir?</h3>
+<p>Beyin-makine arayüzü (BMI), beyin sinyallerini okuyarak bunları bilgisayar komutlarına dönüştüren bir teknolojik sistemdir. İki temel türü vardır: invazif (beyne implante edilen) ve non-invazif (EEG başlığı gibi dışarıdan takılan) sistemler.</p>
+<h3>4. Neuralink Nasıl Çalışır?</h3>
+<p>Neuralink cihazı, beyne yerleştirilen ultra ince iplikçikler (threads) aracılığıyla nöronların elektriksel aktivitesini kaydeder. Bu iplikçikler insan saçının yaklaşık 1/4'ü kadar incedir. Toplanan veriler kablosuz olarak dış cihazlara aktarılır.</p>
+<p>Şirket, 2020 yılında "Link" adını verdiği ilk cihazını tanıttı. Bir madeni para büyüklüğündeki bu cihaz, kafatası kemiğine yerleştirilerek beyin aktivitesini kaydedebilmektedir.</p>
+<h3>5. Uygulama Alanları</h3>
+<p>Kısa vadede Neuralink'in hedeflediği uygulamalar şunlardır: felçli hastaların bilgisayar ve akıllı telefon kontrolü, hafıza bozukluklarının tedavisi, görme engellilere yapay görme sağlanması ve nörolojik hastalıkların tedavisi.</p>
+<p>Uzun vadede ise insan zekasının yapay zeka ile entegrasyonu (Musk'ın "AI ile simbiyoz" vizyonu) ve bellek yükleme/indirme gibi spekülatif hedefler de gündemdedir.</p>
+<h3>6. Etik Tartışmalar</h3>
+<p>Bu teknoloji beraberinde ciddi etik soruları da getirmektedir: Beyin verilerinin gizliliği nasıl korunacak? Zengin-yoksul arasındaki bilişsel uçurum derinleşecek mi? İnsan kimliğinin sınırları nerede başlar ve nerede biter?</p>
+<h3>7. Sonuç</h3>
+<p>Neuralink ve beyin-makine arayüzü teknolojisi, insanlık tarihinin en dönüştürücü icatlarından biri olma potansiyeli taşımaktadır. Tıbbi uygulamalardan başlayarak zamanla insan-bilgisayar etkileşimini kökten değiştirecek bu teknoloji, hem heyecan verici hem de dikkatli bir yaklaşım gerektiren bir alan olmaya devam etmektedir.</p></div>
     </div>
   </div>
 
 <section id="contact">
-  <span data-tr><p class="contact-eyebrow reveal">Bana ulaş</p></span><span data-en data-lang-hide><p class="contact-eyebrow reveal">Get in touch</p></span>
-  <span data-tr><h2 class="contact-title reveal">Birlikte<br>çalışalım.</h2></span><span data-en data-lang-hide><h2 class="contact-title reveal">Let's<br>work together.</h2></span>
-  <span data-tr><p class="contact-sub reveal">Yeni fırsatlara, projelere ve iş birliklerine açığım. Mesaj atmaktan çekinme.</p></span><span data-en data-lang-hide><p class="contact-sub reveal">I'm open to new opportunities, projects, and collaborations. Don't hesitate to reach out.</p></span>
+  <p class="contact-eyebrow reveal">Bana ulaş</p>
+  <h2 class="contact-title reveal">Birlikte<br>çalışalım.</h2>
+  <p class="contact-sub reveal">Yeni fırsatlara, projelere ve iş birliklerine açığım. Mesaj atmaktan çekinme.</p>
   <div class="contact-links reveal">
     <a href="mailto:hasansaldirann@gmail.com" class="contact-link">
       <span class="cl-icon">✉</span> hasansaldirann@gmail.com
@@ -2104,50 +2102,306 @@ window.addEventListener('scroll', function() {
 </script>
 
 <!-- Scroll to top -->
-<button id="scrollTopBtn" <span data-tr>aria-label="Yukarı çık"</span><span data-en data-lang-hide>aria-label="Back to top"</span> onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+<button id="scrollTopBtn" aria-label="Yukarı çık" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+
+
 
 <script>
-// ── TR/EN Language Toggle ──────────────────────────────────────────────────
+// ── TR/EN Dil Sistemi ─────────────────────────────────────────────────────
 (function() {
-  // Detect language from URL param or localStorage
-  var params = new URLSearchParams(window.location.search);
-  var stored = localStorage.getItem('lang');
-  var lang = params.get('lang') || stored || 'tr';
-  if (lang !== 'tr' && lang !== 'en') lang = 'tr';
 
-  function applyLang(l) {
-    document.documentElement.lang = l;
-    // Update page title
-    var titles = {
-      tr: 'Hasan Saldıran — BT Sistemleri & Güvenlik Uzmanı',
-      en: 'Hasan Saldiran — IT Systems & Security Specialist'
-    };
-    var titleEl = document.getElementById('page-title');
-    if (titleEl) titleEl.textContent = titles[l];
+// Tüm çevirilebilir içerikler — [selector, TR_html, EN_html]
+var TRANSLATIONS = [
+  // ── TITLE ──
+  ['title', 'Hasan Saldıran — BT Sistemleri & Güvenlik Uzmanı', 'Hasan Saldiran — IT Systems & Security Specialist'],
 
-    // Show/hide spans
-    document.querySelectorAll('[data-tr]').forEach(function(el) {
-      el.style.display = (l === 'tr') ? '' : 'none';
-    });
-    document.querySelectorAll('[data-en]').forEach(function(el) {
-      el.style.display = (l === 'en') ? '' : 'none';
-    });
+  // ── HERO ──
+  ['.hero-pre', 'BT Sistemleri & Güvenlik Uzmanı', 'IT Systems & Security Specialist'],
+  ['.hero-sub', '<strong>Bilgisayar Mühendisi.</strong> Kurumsal BT altyapısını güvende tutar, risk motorları ve otomasyon sistemleri inşa eder. <span style="color:var(--accent)">Python</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&CK</span> üzerine çalışır.',
+    '<strong>Computer Engineer.</strong> Secures enterprise IT infrastructure and builds risk engines and automation systems. Works with <span style="color:var(--accent)">Python</span>, <span style="color:var(--accent)">C#</span>, <span style="color:var(--accent)">MITRE ATT&CK</span>.'],
 
-    // Update button label
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.textContent = (l === 'tr') ? 'EN' : 'TR';
+  // ── HERO CTA ──
+  ['a[href="#projects"].btn-primary', 'Projeleri Gör →', 'View Projects →'],
+  ['a[href="#contact"].btn', 'İletişim', 'Contact'],
 
-    localStorage.setItem('lang', l);
+  // ── HERO STATS LABELS ──
+  ['.hero-stats .hstat:nth-child(1) .hstat-label', 'Yıl Deneyim', 'Years Experience'],
+  ['.hero-stats .hstat:nth-child(2) .hstat-label', 'Kullanıcı+', 'Users+'],
+  ['.hero-stats .hstat:nth-child(3) .hstat-label', 'BT Varlığı+', 'IT Assets+'],
+
+  // ── ABOUT ──
+  ['#about .section-title', 'Hakkımda', 'About'],
+  ['#about .about-text p:nth-child(1)', '<strong>Bilgisayar Mühendisliği</strong> altyapısına sahip, sistem mühendisliği kariyeri hedefleyen BT ve güvenlik uzmanıyım. Kariyerime kullanıcıyla birebir temasa geçerek, kritik sistemlerin içinden başladım — bunu kasıtlı bir tercih olarak görüyorum.',
+    'I am an IT and security specialist with a <strong>Computer Engineering</strong> background, aiming for a career in systems engineering. I deliberately started my career at the front lines — in direct contact with users and critical systems.'],
+  ['#about .about-text p:nth-child(2)', '<span class="hl">Dünyagöz Hastaneler Grubu</span>\'nda 2.000+ kullanıcı ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısını yönetiyorum. Sadece destek vermekle kalmayıp, kendi inisiyatifimle <span class="hl">Python</span> ile MITRE ATT&CK ve CIS Controls v8 çerçevelerine dayalı kurumsal risk yönetim sistemi geliştirdim.',
+    'At <span class="hl">Dünyagöz Hastaneler Grubu</span> I manage enterprise healthcare infrastructure covering 2,000+ users and 2,250+ IT assets. Beyond support, I proactively built an enterprise risk management system in <span class="hl">Python</span> based on MITRE ATT&CK and CIS Controls v8 frameworks.'],
+  ['#about .about-text p:nth-child(3)', 'Öncesinde <span class="hl">Çok Uluslu Müşterek Harp Merkezi Komutanlığı</span>\'nda NATO tatbikatlarına ev sahipliği yapan uluslararası askeri ortamda 500\'ü aşan çok uluslu katılımcıya gerçek zamanlı teknik destek sağladım.',
+    'Previously, at the <span class="hl">Multinational Joint Warfare Centre Command</span>, I provided real-time technical support to 500+ multinational participants in an international military environment hosting NATO exercises.'],
+  ['#about .about-text p:nth-child(4)', 'Kodu bir sorun çözme aracı olarak görüyorum — uçtan uca sahiplenerek, ölçülebilir çıktılara odaklanarak.',
+    'I see code as a problem-solving tool — owning it end-to-end and focusing on measurable outcomes.'],
+
+  // ── TERMINAL CARD ──
+  ['#about .t-line:nth-child(2) .t-key', '"ad"', '"name"'],
+  ['#about .t-line:nth-child(3) .t-key', '"konum"', '"location"'],
+  ['#about .t-line:nth-child(4) .t-key', '"pozisyon"', '"position"'],
+  ['#about .t-line:nth-child(4) .t-str', '"BT Sistemleri &amp; Güvenlik Uzmanı"', '"IT Systems &amp; Security Specialist"'],
+  ['#about .t-line:nth-child(5) .t-key', '"şirket"', '"company"'],
+  ['#about .t-line:nth-child(6) .t-key', '"deneyim"', '"experience"'],
+  ['#about .t-line:nth-child(6) .t-str', '"2+ yıl"', '"2+ years"'],
+  ['#about .t-line:nth-child(7) .t-key', '"uzmanlık"', '"expertise"'],
+  ['#about .t-line:nth-child(8) .t-key', '"hedef"', '"goal"'],
+  ['#about .t-line:nth-child(8) .t-str', '"Sistem Mühendisliği"', '"Systems Engineering"'],
+  ['#about .t-line:nth-child(9) .t-key', '"durum"', '"status"'],
+
+  // ── EXPERIENCE ──
+  ['#experience .section-title', 'Deneyim', 'Experience'],
+  ['#experience .exp-item:nth-child(1) .exp-period', 'Mar 2025 — Halen', 'Mar 2025 — Present'],
+  ['#experience .exp-item:nth-child(1) .exp-type', 'Tam Zamanlı', 'Full-Time'],
+  ['#experience .exp-item:nth-child(1) .exp-role', 'Sistem Geliştirme & Kullanıcı Destek Uzmanı', 'System Development & User Support Specialist'],
+  ['#experience .exp-item:nth-child(1) .exp-desc', '2.000+ hastane personeli ve 2.250+ BT varlığını kapsayan kurumsal sağlık altyapısında L1/L2 teknik destek ve sistem yönetimi. Pusula HBYS yönetimi, Python ile MITRE ATT&CK + CIS Controls v8 tabanlı risk motoru, kimlik kartı otomasyon sistemi ve Power BI yönetici panosu geliştirme.',
+    'L1/L2 technical support and system management for enterprise healthcare infrastructure covering 2,000+ hospital staff and 2,250+ IT assets. Pusula HIS management, Python-based MITRE ATT&CK + CIS Controls v8 risk engine, ID card automation system, and Power BI executive dashboard development.'],
+
+  ['#experience .exp-item:nth-child(2) .exp-period', 'Mar 2024 — Şub 2025', 'Mar 2024 — Feb 2025'],
+  ['#experience .exp-item:nth-child(2) .exp-type', 'Tam Zamanlı', 'Full-Time'],
+  ['#experience .exp-item:nth-child(2) .exp-role', 'Bilgi Sistemleri Güvenlik Uzmanı', 'Information Systems Security Specialist'],
+  ['#experience .exp-item:nth-child(2) .exp-desc', 'NATO tatbikatlarına ev sahipliği yapan TSK bünyesindeki uluslararası askeri merkezde 100+ sabit personel ve yılda 10–15 etkinlikte 20–500+ çok uluslu katılımcıya gerçek zamanlı teknik destek. Ağ altyapısı kurulumu, cihaz yönetimi, erişim kontrolü ve bilgi güvenliği operasyonları.',
+    'Real-time technical support for 100+ permanent staff and 20–500+ multinational participants across 10–15 annual events at an international military centre hosting NATO exercises. Network infrastructure deployment, device management, access control, and information security operations.'],
+
+  ['#experience .exp-item:nth-child(3) .exp-period', 'Tem 2022 — Eyl 2022', 'Jul 2022 — Sep 2022'],
+  ['#experience .exp-item:nth-child(3) .exp-type', 'Staj', 'Internship'],
+  ['#experience .exp-item:nth-child(3) .exp-role', 'Bilgi İşlem Stajyeri', 'IT Intern'],
+  ['#experience .exp-item:nth-child(3) .exp-desc', 'Flask + NLP ile İBB Beyaz Masa Chatbot prototipi ve OpenCV ile toplu taşımada araç/yolcu tespiti uygulaması geliştirdim.',
+    'Developed an İBB White Desk Chatbot prototype using Flask + NLP, and a vehicle/passenger detection application for public transit using OpenCV.'],
+
+  ['#experience .exp-item:nth-child(4) .exp-period', 'Şub 2020 — Mar 2020', 'Feb 2020 — Mar 2020'],
+  ['#experience .exp-item:nth-child(4) .exp-type', 'Staj', 'Internship'],
+  ['#experience .exp-item:nth-child(4) .exp-role', 'Bilgi Sistemleri Stajyeri', 'Information Systems Intern'],
+  ['#experience .exp-item:nth-child(4) .exp-desc', 'ASP.NET ile kurumsal web uygulamaları geliştirerek toplu taşıma bilgi sistemleri altyapısını destekledim.',
+    'Supported public transport information system infrastructure by developing enterprise web applications with ASP.NET.'],
+
+  ['#experience .exp-item:nth-child(5) .exp-period', 'Haz 2019 — Ağu 2019', 'Jun 2019 — Aug 2019'],
+  ['#experience .exp-item:nth-child(5) .exp-type', 'Staj', 'Internship'],
+  ['#experience .exp-item:nth-child(5) .exp-role', 'Bilgi İşlem Stajyeri', 'IT Intern'],
+  ['#experience .exp-item:nth-child(5) .exp-desc', 'C# ve MSSQL ile stok takip otomasyon uygulaması tasarladım ve geliştirdim.',
+    'Designed and developed a stock tracking automation application using C# and MSSQL.'],
+
+  // ── PROJECTS ──
+  ['#projects .section-title', 'Projeler', 'Projects'],
+  ['#projects .filter-btn[data-filter="all"]', 'Tümü', 'All'],
+  ['#projects .filter-btn[data-filter="security"]', 'Güvenlik', 'Security'],
+
+  ['#projects .project-card:nth-child(1) .proj-name', 'BT Risk Yönetim Platformu', 'IT Risk Management Platform'],
+  ['#projects .project-card:nth-child(1) .proj-desc', 'Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8 tabanlı kurumsal risk motoru. Z-Score anomali tespiti, Streamlit dashboard, Power BI panosu ve otomatik HTML raporlama.',
+    'Enterprise risk engine based on Lansweeper + NIST NVD CVE + MITRE ATT&CK + CIS Controls v8. Z-Score anomaly detection, Streamlit dashboard, Power BI panel and automated HTML reporting.'],
+  ['#projects .project-card:nth-child(1) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+  ['#projects .project-card:nth-child(1) .proj-stars', '★ Öne Çıkan', '★ Featured'],
+
+  ['#projects .project-card:nth-child(2) .proj-name', 'İBB Beyaz Masa Chatbot', 'İBB White Desk Chatbot'],
+  ['#projects .project-card:nth-child(2) .proj-desc', 'NLTK + Keras + Flask tabanlı Türkçe intent chatbot. Vatandaş taleplerine otomatik yanıt üretmek için İBB Akıllı Şehir Müdürlüğü stajında geliştirildi.',
+    'Turkish intent chatbot built with NLTK + Keras + Flask. Developed during the İBB Smart City Directorate internship to automatically respond to citizen requests.'],
+  ['#projects .project-card:nth-child(2) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(3) .proj-name', 'Kimlik Kartı Otomasyon Sistemi', 'ID Card Automation System'],
+  ['#projects .project-card:nth-child(3) .proj-desc', 'Personel kimlik kartı vesikalık yerleşim + sayfa düzeni otomasyonu. python-docx + PyMuPDF ile basım hazırlık süreçlerini otomatize eder.',
+    'Automates ID card photo placement and page layout for print preparation using python-docx + PyMuPDF.'],
+  ['#projects .project-card:nth-child(3) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(4) .proj-name', 'Vesikalık Tespit (OpenCV)', 'Passport Photo Detection (OpenCV)'],
+  ['#projects .project-card:nth-child(4) .proj-desc', "Taranan PDF/JPG'lerden OpenCV ile yüz tespiti ve vesikalık kırpma. Kimlik kartı otomasyon sisteminin görüntü işleme modülü.",
+    'Face detection and passport photo cropping from scanned PDFs/JPGs using OpenCV. Image processing module for the ID card automation system.'],
+  ['#projects .project-card:nth-child(4) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(5) .proj-name', 'Araç Tespiti (OpenCV)', 'Vehicle Detection (OpenCV)'],
+  ['#projects .project-card:nth-child(5) .proj-desc', 'Önceden eğitilmiş Haar Cascade ile video üzerinde gerçek zamanlı araç tespiti. İBB stajı görüntü işleme projesi.',
+    'Real-time vehicle detection on video using a pre-trained Haar Cascade. Image processing project from the İBB internship.'],
+  ['#projects .project-card:nth-child(5) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(6) .proj-name', 'Araç Sayma (OpenCV)', 'Vehicle Counting (OpenCV)'],
+  ['#projects .project-card:nth-child(6) .proj-desc', 'OpenCV BackgroundSubtractorMOG2 ile tek şeritte araç sayma demosu. Toplu taşıma veri analizi için geliştirildi.',
+    'Single-lane vehicle counting demo using OpenCV BackgroundSubtractorMOG2. Developed for public transport data analysis.'],
+  ['#projects .project-card:nth-child(6) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(7) .proj-name', 'Kimlik Otomasyon (Dağıtım)', 'ID Automation (Distribution)'],
+  ['#projects .project-card:nth-child(7) .proj-desc', 'Personel vesikalık ZIP dosyalarını personel.xlsx ile eşleştirip şubelere göre otomatik dağıtan araç.',
+    'Tool that matches staff photo ZIP files with personel.xlsx and automatically distributes them by branch.'],
+  ['#projects .project-card:nth-child(7) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(8) .proj-name', 'Kütüphane Otomasyon Sistemi', 'Library Automation System'],
+  ['#projects .project-card:nth-child(8) .proj-desc', 'C# WinForms + SQL Server kütüphane otomasyonu. Kitap, üye ve ödünç yönetimi; stored procedure, trigger ve view içerir.',
+    'C# WinForms + SQL Server library automation. Book, member and loan management; includes stored procedures, triggers and views.'],
+  ['#projects .project-card:nth-child(8) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(9) .proj-name', 'Stok Takip Sistemi', 'Inventory Tracking System'],
+  ['#projects .project-card:nth-child(9) .proj-desc', 'C# WinForms + MS Access tabanlı ürün/müşteri/stok takip uygulaması. İETT stajı kapsamında geliştirildi.',
+    'Product/customer/stock tracking application based on C# WinForms + MS Access. Developed during the İETT internship.'],
+  ['#projects .project-card:nth-child(9) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(10) .proj-name', 'Market Otomasyon Sistemi', 'Market Automation System'],
+  ['#projects .project-card:nth-child(10) .proj-desc', 'VB.NET WinForms + MS Access tabanlı market otomasyonu. Ürün, satış ve stok yönetimi modülleri içerir.',
+    'Market automation based on VB.NET WinForms + MS Access. Includes product, sales, and inventory management modules.'],
+  ['#projects .project-card:nth-child(10) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(11) .proj-name', 'İstanbul Gezi Rehberi', 'Istanbul Travel Guide'],
+  ['#projects .project-card:nth-child(11) .proj-desc', 'ASP.NET WebForms + ASP.NET Core MVC + Google Maps API ile İstanbul gezi rehberi uygulaması.',
+    'Istanbul travel guide application using ASP.NET WebForms + ASP.NET Core MVC + Google Maps API.'],
+  ['#projects .project-card:nth-child(11) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(12) .proj-name', 'Astronomi Topluluğu Sitesi', 'Astronomy Club Website'],
+  ['#projects .project-card:nth-child(12) .proj-desc', 'Uludağ Üniversitesi Astronomi Topluluğu için gönüllü olarak geliştirilen statik web sitesi. uluastro.space arşivi.',
+    'Volunteer-developed static website for Uludağ University Astronomy Club. uluastro.space archive.'],
+  ['#projects .project-card:nth-child(12) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+
+  ['#projects .project-card:nth-child(13) .proj-name', 'Meyve &amp; Sebze Hastalık Tespiti', 'Fruit &amp; Vegetable Disease Detection'],
+  ['#projects .project-card:nth-child(13) .proj-desc', 'MobileNetV2 ile 36 sınıf meyve/sebze tanıma; ResNet-9 ile 38 sınıf yaprak hastalık tespiti. Streamlit arayüzü · Flask REST API.',
+    '36-class fruit/vegetable recognition with MobileNetV2; 38-class leaf disease detection with ResNet-9. Streamlit UI · Flask REST API.'],
+  ['#projects .project-card:nth-child(13) .proj-link', "GitHub'da Gör →", 'View on GitHub →'],
+  ['#projects .project-card:nth-child(13) .proj-stars', '★ Öne Çıkan', '★ Featured'],
+
+  ['#projects .project-card:nth-child(14) .proj-desc', 'Türkiye piyasalarına odaklı AI destekli finansal analiz platformu. BIST, TEFAS fon tarayıcı, TCMB makro veriler, portföy yönetimi ve Gemini AI yorumları.',
+    'AI-powered financial analysis platform focused on Turkish markets. BIST, TEFAS fund scanner, TCMB macro data, portfolio management and Gemini AI insights.'],
+
+  // ── SKILLS ──
+  ['#skills .section-title', 'Yetenekler', 'Skills'],
+  ['#skills .skill-group:nth-child(1) .skill-group-title', 'Güvenlik & Risk', 'Security & Risk'],
+  ['#skills .skill-group:nth-child(2) .skill-group-title', 'Geliştirme', 'Development'],
+  ['#skills .skill-group:nth-child(3) .skill-group-title', 'Araçlar & Platform', 'Tools & Platform'],
+  ['#skills .skill-group:nth-child(4) .skill-group-title', 'Yapay Zeka & Veri', 'AI & Data'],
+  ['#skills .skill-group:nth-child(5) .skill-group-title', 'Sistem & Altyapı', 'Systems & Infrastructure'],
+  ['#skills .skill-group:nth-child(6) .skill-group-title', 'Sertifika', 'Certifications'],
+
+  // Skill items
+  ['#skills .skill-group:nth-child(1) .skill-item:nth-child(3)', 'Risk Yönetimi', 'Risk Management'],
+  ['#skills .skill-group:nth-child(1) .skill-item:nth-child(4)', 'Erişim Kontrolü', 'Access Control'],
+  ['#skills .skill-group:nth-child(1) .skill-item:nth-child(5)', 'Güvenlik Operasyonları', 'Security Operations'],
+  ['#skills .skill-group:nth-child(1) .skill-item:nth-child(6)', 'Anomali Tespiti', 'Anomaly Detection'],
+  ['#skills .skill-group:nth-child(4) .skill-item:nth-child(4)', 'Makine Öğrenmesi', 'Machine Learning'],
+  ['#skills .skill-group:nth-child(4) .skill-item:nth-child(5)', 'Veri Madenciliği', 'Data Mining'],
+  ['#skills .skill-group:nth-child(4) .skill-item:nth-child(6)', 'Görüntü İşleme', 'Image Processing'],
+  ['#skills .skill-group:nth-child(5) .skill-item:nth-child(3)', 'Ağ Yönetimi', 'Network Management'],
+  ['#skills .skill-group:nth-child(5) .skill-item:nth-child(6)', 'Donanım Yönetimi', 'Hardware Management'],
+  ['#skills .skill-group:nth-child(6) .skill-item:nth-child(1)', 'İHA1 Pilot Lisansı', 'UAS1 Pilot License'],
+
+  // ── BLOG ──
+  ['#blog .section-title', 'Blog', 'Blog'],
+  ['#blog .blog-filter-btn[data-filter="all"]', 'Tümü', 'All'],
+  ['#blog .blog-filter-btn[data-filter="Teknoloji"]', 'Teknoloji', 'Technology'],
+  ['#blog .blog-filter-btn[data-filter="Uzay"]', 'Uzay', 'Space'],
+  ['#blog .blog-filter-btn[data-filter="Bilim"]', 'Bilim', 'Science'],
+
+  // Blog card 1
+  ['#blogGrid .blog-card:nth-child(1) .blog-card-title', 'Veri Madenciliğine Giriş', 'Introduction to Data Mining'],
+  ['#blogGrid .blog-card:nth-child(1) .blog-card-excerpt', 'Veri madenciliğinin tanımı, etimolojisi ve tarihsel gelişimi. Büyük veriden anlamlı bilgiye ulaşmanın temel kavramları.',
+    'Definition, etymology, and historical development of data mining. Key concepts for deriving meaningful knowledge from big data.'],
+  ['#blogGrid .blog-card:nth-child(1) .blog-date', 'Nisan 2021', 'April 2021'],
+  ['#blogGrid .blog-card:nth-child(1) .blog-read-time', '⏱ 6 dk okuma', '⏱ 6 min read'],
+  ['#blogGrid .blog-card:nth-child(1) .blog-card-cta', 'Oku →', 'Read →'],
+
+  // Blog card 2
+  ['#blogGrid .blog-card:nth-child(2) .blog-card-title', 'Veri Madenciliği: Süreç ve Metotlar', 'Data Mining: Process and Methods'],
+  ['#blogGrid .blog-card:nth-child(2) .blog-card-excerpt', 'Veri madenciliği süreci, CRISP-DM modeli, sınıflama, kümeleme ve birliktelik kuralları metotlarının kapsamlı incelemesi.',
+    'Comprehensive examination of the data mining process, CRISP-DM model, classification, clustering, and association rule methods.'],
+  ['#blogGrid .blog-card:nth-child(2) .blog-date', 'Nisan 2021', 'April 2021'],
+  ['#blogGrid .blog-card:nth-child(2) .blog-read-time', '⏱ 8 dk okuma', '⏱ 8 min read'],
+  ['#blogGrid .blog-card:nth-child(2) .blog-card-cta', 'Oku →', 'Read →'],
+
+  // Blog card 3
+  ['#blogGrid .blog-card:nth-child(3) .blog-card-title', 'Blockchain (Blok Zinciri) Teknolojisi Nedir?', 'What Is Blockchain Technology?'],
+  ['#blogGrid .blog-card:nth-child(3) .blog-card-excerpt', "Dağıtık defter teknolojisi, kripto para birimleri ve akıllı sözleşmeler. Blockchain'in çalışma prensibi ve kullanım alanları.",
+    'Distributed ledger technology, cryptocurrencies and smart contracts. How blockchain works and its use cases.'],
+  ['#blogGrid .blog-card:nth-child(3) .blog-date', 'Mayıs 2021', 'May 2021'],
+  ['#blogGrid .blog-card:nth-child(3) .blog-read-time', '⏱ 7 dk okuma', '⏱ 7 min read'],
+  ['#blogGrid .blog-card:nth-child(3) .blog-card-cta', 'Oku →', 'Read →'],
+
+  // Blog card 4
+  ['#blogGrid .blog-card:nth-child(4) .blog-card-title', 'Türkiye Uzay Ajansını (TUA) Tanıyalım', 'Getting to Know the Turkish Space Agency (TUA)'],
+  ['#blogGrid .blog-card:nth-child(4) .blog-card-excerpt', "Türkiye'nin uzay hedefleri ve TUA'nın kuruluş hikayesi. Milli uzay programı, roket projeleri ve 2023 hedefleri.",
+    "Turkey's space goals and TUA's founding story. The national space program, rocket projects and 2023 targets."],
+  ['#blogGrid .blog-card:nth-child(4) .blog-date', 'Mayıs 2021', 'May 2021'],
+  ['#blogGrid .blog-card:nth-child(4) .blog-read-time', '⏱ 6 dk okuma', '⏱ 6 min read'],
+  ['#blogGrid .blog-card:nth-child(4) .blog-card-cta', 'Oku →', 'Read →'],
+
+  // Blog card 5
+  ['#blogGrid .blog-card:nth-child(5) .blog-card-title', 'Neuralink: Beyin-Makine Arayüzü Nedir?', 'Neuralink: What Is a Brain-Machine Interface?'],
+  ['#blogGrid .blog-card:nth-child(5) .blog-card-excerpt', "Elon Musk'ın Neuralink projesi ve beyin-bilgisayar arayüzü teknolojisi. İnsan beynini dijital dünyaya bağlamanın bilimi.",
+    "Elon Musk's Neuralink project and brain-computer interface technology. The science of connecting the human brain to the digital world."],
+  ['#blogGrid .blog-card:nth-child(5) .blog-date', 'Haziran 2021', 'June 2021'],
+  ['#blogGrid .blog-card:nth-child(5) .blog-read-time', '⏱ 7 dk okuma', '⏱ 7 min read'],
+  ['#blogGrid .blog-card:nth-child(5) .blog-card-cta', 'Oku →', 'Read →'],
+
+  // Blog modal headers
+  ['#modal-veri-madenciligi-giris .blog-modal-title', 'Veri Madenciliğine Giriş', 'Introduction to Data Mining'],
+  ['#modal-veri-madenciligi-genel .blog-modal-title', 'Veri Madenciliği: Süreç ve Metotlar', 'Data Mining: Process and Methods'],
+  ['#modal-blockchain-nedir .blog-modal-title', 'Blockchain (Blok Zinciri) Teknolojisi Nedir?', 'What Is Blockchain Technology?'],
+  ['#modal-tua-turkiye-uzay .blog-modal-title', 'Türkiye Uzay Ajansını (TUA) Tanıyalım', 'Getting to Know the Turkish Space Agency (TUA)'],
+  ['#modal-neuralink-beyin-makine .blog-modal-title', 'Neuralink: Beyin-Makine Arayüzü Nedir?', 'Neuralink: What Is a Brain-Machine Interface?'],
+
+  // ── CONTACT ──
+  ['#contact .contact-eyebrow', 'Bana ulaş', 'Get in touch'],
+  ['#contact .contact-title', 'Birlikte<br>çalışalım.', "Let's<br>work together."],
+  ['#contact .contact-sub', 'Yeni fırsatlara, projelere ve iş birliklerine açığım. Mesaj atmaktan çekinme.', "I'm open to new opportunities, projects, and collaborations. Don't hesitate to reach out."],
+];
+
+// Blog modal bodies (innerHTML swap)
+var MODAL_BODIES = {
+  'modal-veri-madenciligi-giris': {
+    tr: '<h3>1. Giriş</h3><p>Merhaba! Bu yazımızda veri madenciliğine giriş yapacağız.</p><h3>2. Veri Madenciliği Nedir?</h3><p>Veri madenciliği; makine öğrenimi, istatistik ve veri tabanı sistemlerinin kesiştiği yöntemleri içeren büyük veri kümelerindeki örüntülerin keşfedilmesi sürecidir. Başka bir deyişle veri madenciliği, büyük veri yığınlarından gizli, önceden bilinmeyen ve potansiyel olarak kullanışlı bilgilerin çıkarılması işlemidir.</p><p>Veri Madenciliği; yığılmış, istenilen amaca yönelik faydalı bilgiler vermeyen verilerin anlamlı ve öz bilgiye dönüştürülmesi sürecidir.</p><h3>3. Etimoloji</h3><p>"Veri madenciliği" terimi, 1983 yılında iktisatçı Michael Lovell tarafından kullanılmıştır. 1990\'lardan itibaren yaygınlaşmıştır.</p><h3>4. Tarihsel Gelişim</h3><p>1950\'lerde bilgisayarlar sayım için kullanıldı. 1960\'larda veritabanları, 1980\'lerde SQL geliştirildi. 1990\'larda veri ambarlaması iş dünyasına girdi. 2000\'lerde web madenciliği, metin madenciliği ortaya çıktı.</p><h3>5. Sonuç</h3><p>Veri madenciliği hem akademik hem endüstriyel alanda vazgeçilmez bir disiplin haline gelmiştir.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we introduce data mining — its definition, etymology, and historical development.</p><h3>2. What Is Data Mining?</h3><p>Data mining is the process of discovering patterns in large datasets using methods at the intersection of machine learning, statistics, and database systems — extracting hidden, previously unknown, and potentially useful information from large volumes of data.</p><p>It transforms accumulated raw data into meaningful, concise knowledge. Knowledge can be derived directly from data, and further knowledge can be generated from that derived knowledge.</p><h3>3. Etymology</h3><p>The term was used by economist Michael Lovell in 1983. Its modern meaning became widespread from the early 1990s.</p><h3>4. Historical Development</h3><p>Computers were used for census in the 1950s. Databases in the 1960s, SQL in the 1980s, data warehousing in the 1990s. The 2000s brought web mining and text mining.</p><h3>5. Conclusion</h3><p>Data mining has become an indispensable discipline in both academia and industry.</p>'
+  },
+  'modal-veri-madenciligi-genel': {
+    tr: '<h3>1. Giriş</h3><p>Bu içeriğimizde veri madenciliğinin süreci, metotları, uygulama alanları ve karşılaşılan problemleri inceleyeceğiz.</p><h3>2. Veri Madenciliği Süreci</h3><p>Endüstri standardı CRISP-DM modeli bu sürecin çerçevesini belirlemiştir. Adımlar: problem tanımlama, veri hazırlama, model kurma ve değerlendirme, model kullanma, model izleme.</p><h3>3. Metotlar</h3><ul><li><strong>Sınıflama ve Regresyon:</strong> Tahmin edici modeller.</li><li><strong>Kümeleme:</strong> Tanımlayıcı modeller.</li><li><strong>Birliktelik Kuralları:</strong> Market sepeti analizi.</li></ul><h3>4. Uygulama Alanları</h3><p>Sağlık, telekomünikasyon, finans, pazarlama, sigortacılık, astronomi, biyoloji ve tıp.</p><h3>5. Karşılaşılan Problemler</h3><p>Artık veri, belirsizlik, boş veri, dinamik veri ve eksik veri gibi sorunlar.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we examine the process, methods, application areas, and challenges of data mining.</p><h3>2. The Data Mining Process</h3><p>The CRISP-DM model defines its framework. Steps: problem definition, data preparation, model building and evaluation, model deployment, model monitoring.</p><h3>3. Methods</h3><ul><li><strong>Classification and Regression:</strong> Predictive models.</li><li><strong>Clustering:</strong> Descriptive models.</li><li><strong>Association Rules:</strong> Market basket analysis.</li></ul><h3>4. Application Areas</h3><p>Healthcare, telecommunications, finance, marketing, insurance, astronomy, biology, and medicine.</p><h3>5. Common Challenges</h3><p>Redundant data, ambiguity, missing values, dynamic data, and incomplete data.</p>'
+  },
+  'modal-blockchain-nedir': {
+    tr: '<h3>1. Giriş</h3><p>Bu yazımızda Blockchain (Blok Zinciri) teknolojisini ele alacağız.</p><h3>2. Blockchain Nedir?</h3><p>Blockchain, verilerin birbirine kriptografik olarak bağlı bloklar halinde saklandığı, merkezi bir otoriteye ihtiyaç duymayan dağıtık bir defter teknolojisidir. Temel özellikleri: merkezi olmayan yapı, değişmezlik, şeffaflık ve güvenlik.</p><h3>3. Nasıl Çalışır?</h3><p>Bir işlem gerçekleştiğinde ağdaki katılımcılara duyurulur. Madenciler doğrulama için rekabet eder. Doğrulanan işlem zincire eklenir. "Proof of Work" veya "Proof of Stake" mekanizmaları kullanılır.</p><h3>4. Kullanım Alanları</h3><p>Akıllı sözleşmeler, tedarik zinciri, sağlık kayıtları, dijital kimlik, oylama sistemleri ve NFT\'ler.</p><h3>5. Bitcoin ve Ethereum</h3><p>Bitcoin (2009, Satoshi Nakamoto) ilk blockchain uygulamasıdır. Ethereum (2015, Vitalik Buterin) akıllı sözleşmeleri destekler.</p><h3>6. Sonuç</h3><p>Blockchain, güven sorununu merkezi bir aracıya ihtiyaç duymadan çözen devrimci bir yaklaşımdır.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we explore Blockchain technology.</p><h3>2. What Is Blockchain?</h3><p>Blockchain is a distributed ledger in which data is stored in cryptographically linked blocks, with no central authority. Core properties: decentralization, immutability, transparency, and security.</p><h3>3. How Does It Work?</h3><p>A transaction is broadcast to all participants. Miners compete to validate it. The validated transaction is added to the chain, secured by Proof of Work or Proof of Stake consensus mechanisms.</p><h3>4. Use Cases</h3><p>Smart Contracts, supply chain management, health records, digital identity verification, voting systems, and NFTs.</p><h3>5. Bitcoin and Ethereum</h3><p>Bitcoin (2009, Satoshi Nakamoto) is the first blockchain. Ethereum (2015, Vitalik Buterin) supports smart contracts.</p><h3>6. Conclusion</h3><p>Blockchain offers a revolutionary approach to solving the trust problem without a central intermediary.</p>'
+  },
+  'modal-tua-turkiye-uzay': {
+    tr: '<h3>1. Giriş</h3><p>Bu yazımızda Türkiye Uzay Ajansı\'nı (TUA) tanıyacağız.</p><h3>2. TUA Nedir?</h3><p>TUA, 2018 yılında Türkiye\'nin ulusal uzay politikalarını belirlemek amacıyla kurulmuştur. Cumhurbaşkanlığına bağlı olarak faaliyet gösterir.</p><h3>3. Türkiye\'nin Uzay Hedefleri</h3><p>2023 hedefleri arasında Ay\'a kontrollü iniş yer almaktadır. Yerli uydu teknolojileri ve uzay üssü çalışmaları da sürdürülmektedir.</p><h3>4. TUA\'nın Faaliyetleri</h3><p>Üniversiteler ve savunma sanayii ile Ar-Ge iş birlikleri. Genç yeteneklere yönelik eğitim programları.</p><h3>5. ROKETSAN</h3><p>ROKETSAN, TUA ile koordineli olarak yerli roket motorları geliştirmektedir.</p><h3>6. Sonuç</h3><p>TUA\'nın kuruluşu Türkiye\'nin uzay alanındaki kararlılığının göstergesidir.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we explore the Turkish Space Agency (TUA).</p><h3>2. What Is TUA?</h3><p>TUA was established in 2018 to define Turkey\'s national space policies, coordinate space activities, and manage international partnerships.</p><h3>3. Turkey\'s Space Goals</h3><p>Key 2023 targets include a controlled lunar landing. Domestic satellite technologies and space base site selection are also underway.</p><h3>4. TUA\'s Activities</h3><p>R&D collaboration with universities and defence industry organisations. Training programmes to attract young talent into space science.</p><h3>5. ROKETSAN</h3><p>ROKETSAN develops domestic rocket engines in coordination with TUA.</p><h3>6. Conclusion</h3><p>TUA\'s establishment demonstrates Turkey\'s determination in the space domain.</p>'
+  },
+  'modal-neuralink-beyin-makine': {
+    tr: '<h3>1. Giriş</h3><p>Bu yazımızda Neuralink şirketini ve beyin-makine arayüzü teknolojisini ele alacağız.</p><h3>2. Neuralink Nedir?</h3><p>Neuralink, 2016 yılında Elon Musk ve nörobilimciler tarafından kurulan bir nörotek şirketidir. Amacı insan beynine implante edilebilecek beyin-bilgisayar arayüzleri geliştirmektir.</p><h3>3. BMI Nedir?</h3><p>Beyin sinyallerini bilgisayar komutlarına dönüştüren sistemdir. İnvazif ve non-invazif (EEG) olmak üzere iki türü vardır.</p><h3>4. Nasıl Çalışır?</h3><p>Ultra ince iplikçikler nöron aktivitesini kaydeder. 2020\'de tanıtılan "Link" cihazı madeni para büyüklüğündedir.</p><h3>5. Uygulama Alanları</h3><p>Felçli hastalar için bilgisayar kontrolü, hafıza tedavisi, yapay görme ve nörolojik hastalık tedavisi.</p><h3>6. Etik Tartışmalar</h3><p>Beyin verisi gizliliği, bilişsel eşitsizlik ve insan kimliğinin sınırları tartışılmaktadır.</p><h3>7. Sonuç</h3><p>Beyin-makine arayüzü teknolojisi, hem heyecan verici hem dikkatli yaklaşım gerektiren bir alandır.</p>',
+    en: '<h3>1. Introduction</h3><p>In this post we look at Neuralink and brain-machine interface (BMI) technology.</p><h3>2. What Is Neuralink?</h3><p>Neuralink is a neurotech company founded in 2016 by Elon Musk and neuroscientists, developing high-bandwidth brain-computer interfaces that can be implanted in the human brain.</p><h3>3. What Is a BMI?</h3><p>A system that reads brain signals and converts them into computer commands. Two main types: invasive (implanted) and non-invasive (EEG headset).</p><h3>4. How Does It Work?</h3><p>Ultra-thin threads record neuron activity wirelessly. The "Link" device (2020) is coin-sized and placed in the skull.</p><h3>5. Application Areas</h3><p>Computer control for paralysed patients, memory disorder treatment, artificial vision for the visually impaired, and neurological disease treatment.</p><h3>6. Ethical Debates</h3><p>Brain data privacy, cognitive inequality, and the boundaries of human identity.</p><h3>7. Conclusion</h3><p>Brain-machine interface technology remains both exciting and a field that demands careful consideration.</p>'
   }
+};
 
-  window.toggleLang = function() {
-    var current = localStorage.getItem('lang') || 'tr';
-    var next = (current === 'tr') ? 'en' : 'tr';
-    applyLang(next);
-  };
+var currentLang = 'tr';
 
-  // Apply on load
-  applyLang(lang);
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('lang-toggle').textContent = lang === 'tr' ? 'EN' : 'TR';
+  localStorage.setItem('lang', lang);
+
+  // Text/HTML replacements
+  TRANSLATIONS.forEach(function(item) {
+    var sel = item[0], tr = item[1], en = item[2];
+    try {
+      var els = document.querySelectorAll(sel);
+      els.forEach(function(el) {
+        el.innerHTML = lang === 'tr' ? tr : en;
+      });
+    } catch(e) {}
+  });
+
+  // Modal bodies
+  Object.keys(MODAL_BODIES).forEach(function(id) {
+    var el = document.querySelector('#' + id + ' .blog-modal-body');
+    if (el) el.innerHTML = MODAL_BODIES[id][lang];
+  });
+}
+
+window.toggleLang = function() {
+  applyLang(currentLang === 'tr' ? 'en' : 'tr');
+};
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  var lang = params.get('lang') || localStorage.getItem('lang') || 'tr';
+  if (lang !== 'tr' && lang !== 'en') lang = 'tr';
+  if (lang !== 'tr') applyLang(lang);
+});
 })();
 </script>
 
